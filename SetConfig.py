@@ -38,7 +38,7 @@ try:
     # Receive the response
     response_data = client_socket.recv(1024)
     print(f"Response: {response_data}")
-    response = GetConfig_pb2.GetConfigReq()
+    response = GetConfig_pb2.GetConfigReqDTO()
     response.ParseFromString(response_data[10:])
     for field_descriptor, value in response.ListFields():
         field_name = field_descriptor.name
@@ -91,7 +91,7 @@ try:
     # Receive the response
     response_data = client_socket.recv(1024)
     print(f"Response: {response_data}")
-    response = SetConfig_pb2.SetConfigReq()
+    response = SetConfig_pb2.SetConfigReqDTO()
     response.ParseFromString(response_data[10:])
     for field_descriptor, value in response.ListFields():
         field_name = field_descriptor.name
