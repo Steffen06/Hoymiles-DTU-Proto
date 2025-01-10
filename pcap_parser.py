@@ -55,6 +55,14 @@ commands = {
   'A216': 'AppGetHistEDReq', 'A316': 'AppGetHistEDRes',
 }
 
+DTU_INTERNAL_IP = '10.10.100.254' # IP of the DTU on the the internal network for the AP (e.g. DTUBI-SerialNumber)
+CLOUD_IP = '8.211.32.133'         # IP of the cloud server
+DTU_LOCAL_IP = '192.168.XX.XX'    # IP of the DTU on the local (Home / IoT) Network
+
+# How to use:
+# execute the script with the pcapng file as argument e.g.:
+# python.exe pcap_parser.py capture.pcapng
+
 # Verify that all messages exist.
 db = symbol_database.Default()
 for command_name in commands.values():
@@ -67,18 +75,28 @@ for pkt in PcapNgReader(sys.argv[1]):
 
   timestamp = datetime.fromtimestamp(float(pkt.time)).strftime('%Y-%m-%d %H:%M:%S.%f')
   ip = pkt[IP]
-  if ip.src == '10.10.100.254':
+  if ip.src == DTU_INTERNAL_IP:
     direction = 'DTU -> APP'
-    color = '\033[0;35m'
-  elif ip.dst == '10.10.100.254':
+    color = '\033[0;35m' # Magenta
+  elif ip.dst == DTU_INTERNAL_IP:
     direction = 'APP -> DTU'
-    color = '\033[0;36m'
-  elif ip.src == '8.211.32.133':
+    color = '\033[0;36m' # Cyam
+  elif ip.src == CLOUD_IP:
     direction = 'CLOUD -> DTU'
-    color = '\033[0;36m'
-  elif ip.dst == '8.211.32.133':
+    color = '\033[0;36m' # Cyam
+  elif ip.dst == CLOUD_IP:
     direction = 'DTU -> CLOUD'
-    color = '\033[0;35m'
+    color = '\033[0;35m' # Magenta
+  elif ip.src == DTU_LOCAL_IP:
+    direction = 'DTU -> Local Apllication'
+    color = '\033[0;32m' # Green
+  elif ip.dst == DTU_LOCAL_IP:
+    direction = 'Local Apllication -> DTU'
+    color = '\033[0;33m' # Yellow
+  else:
+    direction = 'Other'
+    color = '\033[0;37m' # White
+    # colercodes see: https://gist.github.com/vratiu/9780109
 
   payload = bytes(pkt[Raw])
   command_id = payload[2:4].hex().upper()
