@@ -2,16 +2,20 @@
 
 I created this fork of the original repo because I wanted to add and change some things, but [the original creator of this project does not actively maintain this repo](https://github.com/henkwiedig/Hoymiles-DTU-Proto/pull/2#issuecomment-2438218730).
 
-This Repo contains Hoymiles DTU protobuf message definitions and protocol details.
-
-Some POC python scripts and a message parser wich can parse raw messages extracted from tcpdumps.
+This Repo contains:
+- [Hoymiles DTU protobuf message definitions](protobuf)
+- [protocol details](protocol.md)
+- a [Wireshark plugin](Wireshark) to add decoding for data transmission between Hoymiles DTUs and the app/Hoymiles Cloud/custom application
+- a [pcap file parser](pcap_parser.py) which can parse captured data transmission from *.pcapng files
+- a [message parser](message_parser.py) which can parse raw messages extracted from tcpdumps
+- some (old) [PoC python scripts](PoC)
 
 You will need python-protobuf and protobuf libs.
 
+Compile *.proto files with protoc. see: [protocol details](protocol.md)
+
 > [!TIP]
 > If you want a Python library with more features, see [hoymiles-wifi](https://github.com/suaveolent/hoymiles-wifi)
-
-Compile *.proto files with protoc. see: [protocol.md](protocol.md)
 
 
 ## Disclaimer: 
