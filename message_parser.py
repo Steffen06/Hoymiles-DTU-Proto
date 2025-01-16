@@ -55,6 +55,10 @@ commands = {
     0xA216: 'AppGetHistEDReq', 0xA316: 'AppGetHistEDRes',
 }
 
+# How to use:
+# execute the script with the dump file from pcap_parser.py as argument e.g.:
+# message_parser.py dumped_messages\capture.dump
+
 # Verify that all messages exist.
 db = symbol_database.Default()
 for command_name in commands.values():

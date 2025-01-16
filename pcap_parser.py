@@ -66,8 +66,8 @@ DTU_LOCAL_IP = '192.168.XX.XX'    # IP of the DTU on the local (Home / IoT) Netw
 DUMP_FILE_PATH = 'dumped_messages'# Path to store the dumped messages
 
 # How to use:
-# execute the script with the pcapng file as argument e.g.:
-# python.exe pcap_parser.py capture.pcapng
+# execute the script with the pcapng or tcpdump file as argument e.g.:
+# pcap_parser.py capture.pcapng
 
 # Verify that all messages exist.
 db = symbol_database.Default()

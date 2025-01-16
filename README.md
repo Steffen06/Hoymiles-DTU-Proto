@@ -6,8 +6,8 @@ This Repo contains:
 - [Hoymiles DTU protobuf message definitions](protobuf)
 - [protocol details](protocol.md)
 - a [Wireshark plugin](Wireshark) to add decoding for data transmission between Hoymiles DTUs and the app/Hoymiles Cloud/custom application
-- a [pcap file parser](pcap_parser.py) which can parse captured data transmission from *.pcapng files
-- a [message parser](message_parser.py) which can parse raw messages extracted from tcpdumps
+- a [pcap file parser](pcap_parser.py) which can parse captured data transmission from *.pcapng / tcpdump files
+- a [message parser](message_parser.py) which can parse raw messages extracted with pcap_parser.py from *.pcapng / tcpdump files
 - some (old) [PoC python scripts](PoC)
 
 You will need python-protobuf and protobuf libs.
