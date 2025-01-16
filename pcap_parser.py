@@ -1,6 +1,8 @@
 #!/usr/bin/env python3
+import struct
 import sys
 import os
+import crcmod.predefined
 from scapy.utils import PcapNgReader
 from scapy.layers.inet import IP, TCP
 from scapy.packet import Raw
@@ -25,35 +27,35 @@ import SetConfig_pb2
 import WarnData_pb2
 
 commands = {
-    '2201': 'InfoDataReq', '2301': 'InfoDataRes',
-    '2202': 'HBReq', '2302': 'HBRes',
-    '2203': 'RealDataReq', '2303': 'RealDataRes',
-    '2204': 'RealDataReq', '2304': 'RealDataRes',
-    '2205': 'CommandReq', '2305': 'CommandRes',
-    '2206': 'CommandStatusReq', '2306': 'CommandStatusRes',
-    '2207': 'DevConfigFetchReq', '2307': 'DevConfigFetchRes',
-    '2208': 'DevConfigPutReq', '2308': 'DevConfigPutRes',
-    '220A': 'WaveReq', '230A': 'WaveRes',
-    '220B': 'WarnReq', '230B': 'WarnRes',
-    '220C': 'RealDataNewReq', '230C': 'RealDataNewRes',
-    '220D': 'RealDataNewReq', '230D': 'RealDataNewRes',
+    0x2201: 'InfoDataReq', 0x2301: 'InfoDataRes',
+    0x2202: 'HBReq', 0x2302: 'HBRes',
+    0x2203: 'RealDataReq', 0x2303: 'RealDataRes',
+    0x2204: 'RealDataReq', 0x2304: 'RealDataRes',
+    0x2205: 'CommandReq', 0x2305: 'CommandRes',
+    0x2206: 'CommandStatusReq', 0x2306: 'CommandStatusRes',
+    0x2207: 'DevConfigFetchReq', 0x2307: 'DevConfigFetchRes',
+    0x2208: 'DevConfigPutReq', 0x2308: 'DevConfigPutRes',
+    0x220A: 'WaveReq', 0x230A: 'WaveRes',
+    0x220B: 'WarnReq', 0x230B: 'WarnRes',
+    0x220C: 'RealDataNewReq', 0x230C: 'RealDataNewRes',
+    0x220D: 'RealDataNewReq', 0x230D: 'RealDataNewRes',
 
-    'A201': 'APPInfoDataReq', 'A301': 'APPInfoDataRes',
-    'A202': 'HBReq', 'A302': 'HBRes',
-    'A203': 'RealDataReq', 'A303': 'RealDataRes',
-    'A204': 'WarnReq', 'A304': 'WarnRes',  # TODO: Also uses AlarmData in one place.
-    'A205': 'CommandReq', 'A305': 'CommandRes',
-    'A206': 'CommandStatusReq', 'A306': 'CommandStatusRes',
-    'A207': 'DevConfigFetchReq', 'A307': 'DevConfigFetchRes',
-    'A208': 'DevConfigPutReq', 'A308': 'DevConfigPutRes',
-    'A209': 'GetConfigReq', 'A309': 'GetConfigRes',
-    'A210': 'SetConfigReq', 'A310': 'SetConfigRes',
-    'A211': 'RealDataNewReq', 'A311': 'RealDataNewRes',
-    'A212': 'GPSTReq', 'A312': 'GPSTRes',
-    'A213': 'AutoSearchReq', 'A313': 'AutoSearchRes',
-    'A214': 'NetworkInfoReq', 'A314': 'NetworkInfoRes',
-    'A215': 'AppGetHistPowerReq', 'A315': 'AppGetHistPowerRes',
-    'A216': 'AppGetHistEDReq', 'A316': 'AppGetHistEDRes',
+    0xA201: 'APPInfoDataReq', 0xA301: 'APPInfoDataRes',
+    0xA202: 'HBReq', 0xA302: 'HBRes',
+    0xA203: 'RealDataReq', 0xA303: 'RealDataRes',
+    0xA204: 'WarnReq', 0xA304: 'WarnRes',  # TODO: Also uses AlarmData in one place.
+    0xA205: 'CommandReq', 0xA305: 'CommandRes',
+    0xA206: 'CommandStatusReq', 0xA306: 'CommandStatusRes',
+    0xA207: 'DevConfigFetchReq', 0xA307: 'DevConfigFetchRes',
+    0xA208: 'DevConfigPutReq', 0xA308: 'DevConfigPutRes',
+    0xA209: 'GetConfigReq', 0xA309: 'GetConfigRes',
+    0xA210: 'SetConfigReq', 0xA310: 'SetConfigRes',
+    0xA211: 'RealDataNewReq', 0xA311: 'RealDataNewRes',
+    0xA212: 'GPSTReq', 0xA312: 'GPSTRes',
+    0xA213: 'AutoSearchReq', 0xA313: 'AutoSearchRes',
+    0xA214: 'NetworkInfoReq', 0xA314: 'NetworkInfoRes',
+    0xA215: 'AppGetHistPowerReq', 0xA315: 'AppGetHistPowerRes',
+    0xA216: 'AppGetHistEDReq', 0xA316: 'AppGetHistEDRes',
 }
 
 DTU_INTERNAL_IP = '10.10.100.254' # IP of the DTU on the the internal network for the AP (e.g. DTUBI-SerialNumber)
@@ -69,6 +71,8 @@ DUMP_FILE_PATH = 'dumped_messages'# Path to store the dumped messages
 db = symbol_database.Default()
 for command_name in commands.values():
     db.GetSymbol(command_name + 'DTO')
+
+crc16_modbus = crcmod.predefined.Crc('modbus')
 
 counter = 0
 for pkt in PcapNgReader(sys.argv[1]):
@@ -101,12 +105,17 @@ for pkt in PcapNgReader(sys.argv[1]):
         # colercodes see: https://gist.github.com/vratiu/9780109
 
     payload = bytes(pkt[Raw])
-    command_id = payload[2:4].hex().upper()
+    hm, command_id, sequence, crc16, packet_length = struct.unpack(">2s H H H H", payload[0:10])
     command_name = commands.get(command_id, '???')
-    seq = payload[4:6]
     data = payload[10:]
-    print('%s%s | %s | command %s (%s) | seq %s | ' % (color, timestamp, direction, command_id, command_name, seq.hex().upper()), end='')
-    if command_name == '???':
+    crc_check = "pass" if crc16 == crc16_modbus.new(data).crcValue else "fail"
+
+    print(f"{color}{timestamp} | {direction} | command: {command_id:X} ({command_name}) | sequence: {sequence:X} ({sequence}) | CRC16: {crc16:X} ({crc16}; {crc_check}) | packet length: {packet_length:X} ({packet_length}) |", end='')
+    if command_name != '???':
+        msg = db.GetSymbol(command_name + 'DTO')()
+        msg.ParseFromString(data)
+        print(json_format.MessageToDict(msg, preserving_proto_field_name=True), end='')
+    else:
         if not os.path.exists(DUMP_FILE_PATH):
             os.makedirs(DUMP_FILE_PATH)
         dump_filename = os.path.join(DUMP_FILE_PATH, os.path.splitext(os.path.basename(sys.argv[1]))[0] + '_msg_' + command_id + '_' + str(counter) + '.dump')
@@ -114,8 +123,4 @@ for pkt in PcapNgReader(sys.argv[1]):
             msg_file.write(payload)
         print('see ' + dump_filename, end='')
         counter += 1
-    else:
-        msg = db.GetSymbol(command_name + 'DTO')()
-        msg.ParseFromString(data)
-        print(json_format.MessageToDict(msg, preserving_proto_field_name=True), end='')
     print('\033[0m')
