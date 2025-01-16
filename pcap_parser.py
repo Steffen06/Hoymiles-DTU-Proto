@@ -10,21 +10,23 @@ from datetime import datetime
 from google.protobuf import symbol_database
 from google.protobuf import json_format
 
-import AppGetHistED_pb2
-import AppGetHistPower_pb2
-import APPHeartbeatPB_pb2
-import APPInfomationData_pb2
-import AutoSearch_pb2
-import CommandPB_pb2
-import DevConfig_pb2
-import GetConfig_pb2
-import GPSTData_pb2
-import InfomationData_pb2
-import NetworkInfo_pb2
-import RealData_pb2
-import RealDataNew_pb2
-import SetConfig_pb2
-import WarnData_pb2
+from protobuf import (
+    AppGetHistED_pb2,
+    AppGetHistPower_pb2,
+    APPHeartbeatPB_pb2,
+    APPInfomationData_pb2,
+    AutoSearch_pb2,
+    CommandPB_pb2,
+    DevConfig_pb2,
+    GetConfig_pb2,
+    GPSTData_pb2,
+    InfomationData_pb2,
+    NetworkInfo_pb2,
+    RealData_pb2,
+    RealDataNew_pb2,
+    SetConfig_pb2,
+    WarnData_pb2,
+)
 
 commands = {
     0x2201: 'InfoDataReq', 0x2301: 'InfoDataRes',
