@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 import sys
+import os
 from scapy.utils import PcapNgReader
 from scapy.layers.inet import IP, TCP
 from scapy.packet import Raw
@@ -58,6 +59,7 @@ commands = {
 DTU_INTERNAL_IP = '10.10.100.254' # IP of the DTU on the the internal network for the AP (e.g. DTUBI-SerialNumber)
 CLOUD_IP = '8.211.32.133'         # IP of the cloud server
 DTU_LOCAL_IP = '192.168.XX.XX'    # IP of the DTU on the local (Home / IoT) Network
+DUMP_FILE_PATH = 'dumped_messages'# Path to store the dumped messages
 
 # How to use:
 # execute the script with the pcapng file as argument e.g.:
@@ -105,9 +107,11 @@ for pkt in PcapNgReader(sys.argv[1]):
     data = payload[10:]
     print('%s%s | %s | command %s (%s) | seq %s | ' % (color, timestamp, direction, command_id, command_name, seq.hex().upper()), end='')
     if command_name == '???':
-        dump_filename = sys.argv[1] + '_msg_' + command_id + '_' + str(counter)
-        with open(dump_filename, 'wb') as msg_file:
-            msg_file.write(data)
+        if not os.path.exists(DUMP_FILE_PATH):
+            os.makedirs(DUMP_FILE_PATH)
+        dump_filename = os.path.join(DUMP_FILE_PATH, os.path.splitext(os.path.basename(sys.argv[1]))[0] + '_msg_' + command_id + '_' + str(counter) + '.dump')
+        with open(os.path.join(os.path.dirname(sys.argv[0]),dump_filename), 'wb') as msg_file:
+            msg_file.write(payload)
         print('see ' + dump_filename, end='')
         counter += 1
     else:
