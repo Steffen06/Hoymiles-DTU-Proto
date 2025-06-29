@@ -25,6 +25,8 @@ message LrBaseParameter {
   uint32 pg_clear = 22;
   uint32 his_clear = 23;
   uint32 di2_set = 24;
+  uint32 vf_recon = 25;
+  uint32 pri_fre_sel = 26;
 }
 
 message LrCtrParam {

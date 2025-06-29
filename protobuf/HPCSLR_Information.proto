@@ -2,15 +2,9 @@ syntax = "proto3";
 
 message HPCSLRInfoReqDTO {
   int64 sn = 1;
-  string pro_ser_ver = 2;
-  string sw_arm_ver = 3;
-  string sw_dm_ver = 4;
-  string sw_fpga_ver = 5;
-  string sw_func_ver = 6;
-  string sw_ct_ver = 7;
-  uint32 time = 8;
-  int32 offset = 9;
-  string hd_ver = 10;
+  string sw_ver = 2;
+  uint32 time = 3;
+  int32 offset = 4;
 }
 
 message HPCSLRInfoResDTO {

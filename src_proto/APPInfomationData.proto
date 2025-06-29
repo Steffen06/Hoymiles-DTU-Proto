@@ -23,6 +23,11 @@ message APPDtuInfoMO {
   optional int32 sub1g_rp = 20;
   optional int32 sub1g_chtotal = 21;
   optional bytes gprs_imei = 22;
+  optional uint32 dtu_sw_btime = 23;
+  optional int64 dfs = 24;
+  repeated int64 shls = 25;
+  optional int32 type = 26;
+  optional bytes enc_rand = 27;
 }
 
 message APPMeterInfoMO {
@@ -56,6 +61,7 @@ message APPPvInfoMO {
   optional int32 pv_rf_hw = 9;
   optional int32 pv_rf_sw = 10;
   optional int32 mi_rule_id = 11;
+  optional uint32 pv_sw_btime = 12;
 }
 
 message APPFeatureMO {

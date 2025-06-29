@@ -1,0 +1,50 @@
+syntax = "proto3";
+
+message CfgItemBO {
+  optional int32 id = 1;
+  optional int32 stc_id = 2;
+  optional string name = 3;
+  optional string key = 4;
+  optional int32 type = 6;
+  optional int32 mark = 7;
+  optional string content = 8;
+  optional int32 position = 9;
+  optional string unit = 10;
+  optional float min = 11;
+  optional float max = 12;
+  optional int32 multiple = 13;
+  optional int32 scale = 14;
+  optional int32 length = 15;
+  optional int32 show = 16;
+  optional int32 edit = 17;
+  optional int32 change = 18;
+  optional int32 card_idx = 20;
+  optional string remarks = 22;
+}
+
+message CfgSettingBO {
+  optional int32 id = 1;
+  optional string name = 2;
+  optional int32 type = 3;
+  optional int32 lock = 4;
+  repeated CfgItemBO list = 5;
+}
+
+message CfgSubTableBO {
+  optional int32 id = 1;
+  optional int32 stc_id = 2;
+  optional string name = 3;
+  repeated CfgItemBO list = 5;
+}
+
+message RuleConfigBO {
+  optional int32 rid = 1;
+  repeated CfgSettingBO set_list = 2;
+  repeated CfgSubTableBO sub_list = 3;
+  optional int32 dev_type = 4;
+  repeated string prefix = 5;
+}
+
+message RuleDataDTO {
+  repeated RuleConfigBO cfg = 1;
+}

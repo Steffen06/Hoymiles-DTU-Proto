@@ -211,5 +211,6 @@ The following file tree represents the file structure of the proto files extract
              ┗━📁 net
                 ┣━📁 docs
                 ┃  ┗━📄 ChartPB.proto
+                ┣━📄 CfgRuleConfigPB.proto
                 ┗━📄 PlaybackDataPB.proto
 ```
