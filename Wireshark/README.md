@@ -18,8 +18,8 @@ Hoymiles uses a proprietary implementation of the [Protobuf Protocol](https://pr
 - [x] Basic decoding of all header fields
 - [x] Mapping the command ID to the correct Protobuf message type
 - [x] Decoding the Protobuf message with the associated Protobuf message type
-- [ ] Checking the length of the data based on the length in the header
-- [ ] Checking the crc16 against the Protobuf Data
+- [x] Checking the length of the data based on the length in the header
+- [x] Checking the crc16 against the Protobuf Data (not checked if the calculation is implemented correctly)
 
 
 ## Plugin installation

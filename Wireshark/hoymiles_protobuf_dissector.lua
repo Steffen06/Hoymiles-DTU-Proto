@@ -57,19 +57,28 @@ do
 
         local subtree = tree:add(proto_hoymiles, buffer(), "Hoymiles Protocol Data")
         local header = buffer(0, 2)
-        subtree:add(f_header, header)
         local command_id = buffer(2, 2)
         local command_name = command_id_map[command_id:uint()]
-        subtree:add(f_command_id, command_id):append_text(" (" .. (command_name or "Unknown") .. ")")
         local sequence_id = buffer(4, 2)
-        subtree:add(f_sequence_id, sequence_id)
         local crc16 = buffer(6, 2)
-        subtree:add(f_crc16, crc16)
         local length = buffer(8, 2)
-        subtree:add(f_length, length)
+        local payload = buffer(10):tvb()
+        local crc16_modbus = crc(payload, 0xA001, 0xFFFF, 0)
+        subtree:add(f_header, header)
+        subtree:add(f_command_id, command_id):append_text(" (" .. (command_name or "Unknown") .. ")")
+        subtree:add(f_sequence_id, sequence_id)
+        if crc16_modbus == crc16:uint() then
+            subtree:add(f_crc16, crc16):append_text(" (CRC16 OK)")
+        else
+            subtree:add(f_crc16, crc16):append_text(" (CRC16 ERROR)")
+        end
+        if length:uint() - 10 == payload:len() then
+            subtree:add(f_length, length):append_text(" (Length OK)")
+        else
+            subtree:add(f_length, length):append_text(" (Length ERROR)")
+        end
         
         -- Dissect the protobuf message
-        local payload = buffer(10):tvb()
         if command_name then
             pinfo.private["pb_msg_type"] = "message," .. command_name
         end
@@ -77,4 +86,19 @@ do
     end
 
     DissectorTable.get("tcp.port"):add(10081, proto_hoymiles)
+
+    function crc(data, poly, init, xorout)
+        local crc = init
+        for i = 0, data:len() - 1 do
+            crc = bit.bxor(crc, data(i, 1):uint())
+            for j = 0, 7 do
+                if bit.band(crc, 1) == 1 then
+                    crc = bit.bxor(bit.rshift(crc, 1), poly)
+                else
+                    crc = bit.rshift(crc, 1)
+                end
+            end
+        end
+        return bit.bxor(crc, xorout)
+    end
 end
