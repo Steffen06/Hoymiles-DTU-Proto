@@ -1,0 +1,55 @@
+syntax = "proto3";
+
+message ESRegReqDTO {
+  optional int32 type = 1;
+  optional RegMeterMO meter = 2;
+  repeated RegInvMO inv = 3;
+  optional int32 gen_mode = 4;
+  optional uint32 time = 5;
+  optional int32 offset = 6;
+  repeated RegMidMO mid = 7;
+  optional int64 dfs = 8;
+}
+
+message RegInvMO {
+  optional int64 sn = 1;
+  optional int32 type = 2;
+  optional string hw_ver = 3;
+  optional string sw_m_ver = 4;
+  optional string sw_s_ver = 5;
+  optional string sw_sys_ver = 6;
+  optional string bms_sn = 7;
+  optional string bms_hw_ver = 8;
+  optional string bms_sw_ver = 9;
+  optional int32 bms_cap = 10;
+  optional int32 pv_num = 11;
+  optional int32 addr = 12;
+  optional string model_name = 13;
+  optional int32 bms_prot = 14;
+  optional int32 bms_type = 15;
+  repeated ChgCPMO cps = 16;
+}
+
+message RegMeterMO {
+  optional string sn = 1;
+  optional string sn_pv = 2;
+}
+
+message RegMidMO {
+  optional int64 sn = 1;
+  optional string sw_ver = 2;
+  optional string hw_ver = 3;
+}
+
+message ChgCPMO {
+  optional int64 sn = 1;
+  optional int32 sw_ver = 2;
+  optional int32 hw_ver = 3;
+}
+
+message ESRegResDTO {
+  optional uint32 time = 1;
+  optional string ymd_hms = 2;
+  optional int32 offset = 3;
+  optional int32 cp = 4;
+}

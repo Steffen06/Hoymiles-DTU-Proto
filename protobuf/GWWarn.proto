@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+message GWWarnMO {
+  int64 sn = 1;
+  int32 code = 2;
+  int32 num = 3;
+  uint32 time = 4;
+  string data = 5;
+}
+
+message GWWarnReqDTO {
+  int64 sn = 1;
+  uint32 time = 2;
+  int32 ap = 3;
+  int32 cp = 4;
+  repeated GWWarnMO mgwwarn = 5;
+}
+
+message GWWarnResDTO {
+  int32 cp = 1;
+  uint32 time = 2;
+  int32 oft = 3;
+}

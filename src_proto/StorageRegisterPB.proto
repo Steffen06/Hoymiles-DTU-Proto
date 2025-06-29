@@ -1,0 +1,51 @@
+syntax = "proto3";
+
+message StorageRegisterReqDTO {
+  optional bytes dtu_sn = 1;
+  optional int32 time = 2;
+  optional bytes dtu_ver = 3;
+  optional bytes hw_ver = 4;
+  optional bytes sw_ver = 5;
+  optional bytes rf_hw_ver = 6;
+  optional bytes rf_sw_ver = 7;
+  optional bytes net_hw_ver = 8;
+  optional bytes net_sw_ver = 9;
+  optional bytes imei = 10;
+  optional bytes conn_way = 11;
+  optional InvInfoMO inv = 12;
+  repeated BmsInfoMO bmss = 13;
+  optional MeterInfoMO meter = 14;
+  optional bytes rid = 15;
+}
+
+message InvInfoMO {
+  optional bytes sn = 1;
+  optional bytes hw_m_ver = 2;
+  optional bytes sw_m_ver = 3;
+  optional bytes hw_s_ver = 4;
+  optional bytes sw_s_ver = 5;
+  optional bytes hw_hmi_ver = 6;
+  optional bytes sw_hmi_ver = 7;
+  optional bytes rf_hw_ver = 8;
+  optional bytes rf_sw_ver = 9;
+  optional bytes grid_code = 10;
+  optional bytes grid_ver = 11;
+}
+
+message BmsInfoMO {
+  optional bytes sn = 1;
+  optional bytes hw_ver = 2;
+  optional bytes sw_ver = 3;
+}
+
+message MeterInfoMO {
+  optional bytes sn = 1;
+  optional bytes hw_ver = 2;
+  optional bytes sw_ver = 3;
+}
+
+message RegisterResDTO {
+  optional int32 time = 1;
+  optional bytes ymd_hms = 2;
+  optional int32 offset = 3;
+}

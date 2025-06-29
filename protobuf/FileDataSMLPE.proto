@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+message FileDataReqDTO {
+  int32 offset = 1;
+  int32 time = 2;
+  int64 gw_sn = 3;
+  int64 log_sn = 4;
+  string filenane = 5;
+  int32 ap = 6;
+  int32 cp = 7;
+}
+
+message FileDataResDTO {
+  int32 offset = 1;
+  int32 time = 2;
+  int64 gw_sn = 3;
+  int64 log_sn = 4;
+  string filenane = 5;
+  int32 cp = 6;
+  int32 err_code = 7;
+}

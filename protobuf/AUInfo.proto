@@ -1,0 +1,55 @@
+syntax = "proto3";
+
+message BmsMO {
+  int64 sn = 1;
+  string hw = 2;
+  int32 sw = 3;
+  int32 cap = 4;
+}
+
+message InvMO {
+  int32 bootfw = 1;
+  int32 sw = 2;
+  int32 hw_pn = 3;
+  int32 hw = 4;
+  int32 gpf_code = 5;
+  int32 gpf = 6;
+  int32 rule_id = 7;
+  uint32 sw_tm = 8;
+}
+
+message FeatureMO {
+  int32 key = 1;
+  string value = 2;
+}
+
+message AUInfoReqDTO {
+  int64 sn = 1;
+  int32 type = 2;
+  repeated int64 ssn = 3;
+  uint32 time = 4;
+  int32 oft = 5;
+  int32 hw_ver = 6;
+  int32 hw_pn = 7;
+  int32 rule_id = 8;
+  int32 boot_fw = 9;
+  int32 sw = 10;
+  int32 hw = 11;
+  int32 sw_tm = 12;
+  int32 rf_hw = 13;
+  int32 rf_sw = 14;
+  int32 rf_fqband = 15;
+  int32 rf_chtnum = 16;
+  int32 rf_chnum = 17;
+  int32 rf_rp = 18;
+  int32 rf_chtotal = 19;
+  repeated InvMO m_inv = 20;
+  repeated BmsMO m_bms = 21;
+  repeated FeatureMO m_feature = 22;
+  int32 ssl = 23;
+}
+
+message AUInfoResDTO {
+  int32 oft = 1;
+  uint32 time = 2;
+}

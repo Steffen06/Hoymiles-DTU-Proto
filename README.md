@@ -4,7 +4,7 @@ I created this fork of the original repo because I wanted to add and change some
 
 This Repo contains:
 - [Hoymiles DTU protobuf message definitions](protobuf)
-- [protocol details](protocol.md)
+- [protocol details](#message-structure)
 - a [Wireshark plugin](Wireshark) to add decoding for data transmission between Hoymiles DTUs and the app/Hoymiles Cloud/custom application
 - a [pcap file parser](pcap_parser.py) which can parse captured data transmission from *.pcapng / tcpdump files
 - a [message parser](message_parser.py) which can parse raw messages extracted with pcap_parser.py from *.pcapng / tcpdump files
@@ -12,10 +12,29 @@ This Repo contains:
 
 You will need python-protobuf and protobuf libs.
 
-Compile *.proto files with protoc. see: [protocol details](protocol.md)
+Compile *.proto files with protoc. see: [proto/README.md](proto/README.md)
 
 > [!TIP]
 > If you want a Python library with more features, see [hoymiles-wifi](https://github.com/suaveolent/hoymiles-wifi)
+
+
+## Message Structure
+
+| Size | Type | Additional Informations |
+| --- | --- | --- |
+| 2 Bytes | Header | `0x484D` static, Value for Chars `HM` |
+| 2 Bytes | Command ID | see [src_proto/README.md](src_proto/README.md) |
+| 2 Bytes | Sequence-Counter | increment per message |
+| 2 Bytes | Checksum | CRC-16/MODBUS of Payload |
+| 2 Bytes | Total length | Payload + 10 Bytes |
+| 2 Bytes | Payload  | decode with matching command from Command ID from  coresponding protobuf file |
+
+### Checksum
+
+CRC Params:
+| Check	| Poly | Init	| RefIn	| RefOut | XorOut |
+| --- | --- | --- | --- | --- | --- |
+| 0x4B37 | 0x8005 | 0xFFFF | true | true | 0x0000 |
 
 
 ## Disclaimer: 

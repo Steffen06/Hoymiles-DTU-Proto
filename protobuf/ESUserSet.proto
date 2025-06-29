@@ -1,0 +1,129 @@
+syntax = "proto3";
+
+message EconomicsSetWeekMO {
+  uint32 wr = 1;
+  uint32 peak_time = 2;
+  uint32 peak_in = 3;
+  uint32 peak_out = 4;
+  uint32 valley_time = 5;
+  uint32 valley_in = 6;
+  uint32 valley_out = 7;
+  uint32 in = 8;
+  uint32 out = 9;
+}
+
+message EconomicsSetDateMO {
+  uint32 dr = 1;
+  EconomicsSetWeekMO w1 = 2;
+  EconomicsSetWeekMO w2 = 3;
+}
+
+message RelaySetLoadTimiMO {
+  uint32 wr1 = 1;
+  uint32 wr1_tr1 = 2;
+  uint32 wr1_tr2 = 3;
+  uint32 wr2 = 4;
+  uint32 wr2_tr1 = 5;
+  uint32 wr2_tr2 = 6;
+}
+
+message RelaySetLoadIntelligentMO {
+  uint32 wr1 = 1;
+  uint32 wr1_tr = 2;
+  uint32 wr2 = 3;
+  uint32 wr2_tr = 4;
+  uint32 min_runtime = 5;
+  uint32 rated_pwr = 6;
+}
+
+message GenExerciseSetMO {
+  uint32 mode = 1;
+  uint32 freq = 2;
+  uint32 w = 3;
+  uint32 sta_time = 4;
+  uint32 duration = 5;
+}
+
+message RelayGenSetMO {
+  uint32 mode = 1;
+  uint32 sta_cap = 2;
+  uint32 stp_cap = 3;
+  uint32 chrg_time = 4;
+  uint32 quiet_en = 5;
+  uint32 quiet_tim1 = 6;
+  uint32 quiet_tim2 = 7;
+  GenExerciseSetMO exerc_set = 8;
+}
+
+message HeatpumpSetMO {
+  repeated uint32 dr = 1;
+  repeated uint32 wr = 2;
+  uint32 mode = 3;
+  uint32 sta_pwr = 4;
+  uint32 feed_pwr = 5;
+  uint32 consp_pwr = 6;
+  uint32 soc_en = 7;
+  uint32 min_runtime = 8;
+  uint32 day_runtime = 9;
+  uint32 sta_soc = 10;
+  uint32 stp_soc = 11;
+  uint32 maxtim_en = 12;
+}
+
+message RelaySetMO {
+  uint32 mode = 1;
+  uint32 sw = 2;
+  uint32 load_mode = 3;
+  RelaySetLoadTimiMO timi = 4;
+  RelaySetLoadIntelligentMO intelligent = 5;
+  uint32 protect_soc = 6;
+  uint32 breaker_size = 7;
+  uint32 ev_chrg_size = 8;
+  RelayGenSetMO genset = 9;
+}
+
+message TimeOfUseSetMO {
+  uint32 chrg_tr = 1;
+  uint32 chrg_pwr = 2;
+  uint32 dischrg_tr = 3;
+  uint32 dischrg_pwr = 4;
+  uint32 min_soc = 5;
+  uint32 max_soc = 6;
+}
+
+message RelayCommSetMO {
+  uint32 sw = 1;
+  uint32 load_mode = 2;
+  RelaySetLoadTimiMO timi = 3;
+  RelaySetLoadIntelligentMO intelligent = 4;
+  uint32 protect_soc = 5;
+}
+
+message MidSetMO {
+  uint32 mode = 1;
+  repeated RelayCommSetMO commset = 2;
+  repeated RelayGenSetMO genset = 3;
+}
+
+message ESUserSetPutResDTO {
+  uint32 time = 1;
+  int64 tid = 2;
+  repeated int64 sn = 3;
+  uint32 mode = 4;
+  uint32 rev_soc = 5;
+  uint32 max_power = 6;
+  repeated EconomicsSetDateMO date = 7;
+  repeated RelaySetMO relay = 8;
+  uint32 peak_soc = 9;
+  uint32 peak_meterpwr = 10;
+  repeated TimeOfUseSetMO tou = 11;
+  repeated MidSetMO mid = 12;
+  repeated HeatpumpSetMO hp = 13;
+}
+
+message ESUserSetPutReqDTO {
+  uint32 time = 1;
+  int64 tid = 2;
+  int64 sn = 3;
+  int32 err_code = 4;
+}

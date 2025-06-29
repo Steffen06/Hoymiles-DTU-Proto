@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+message APPNetworkInfoReq {
+  int64 sn = 1;
+  uint32 time = 2;
+  int32 net_set_time = 4;
+  int32 net_set_state = 5;
+  int32 net_work_time = 6;
+  int32 csq = 7;
+  int32 net_work_state = 8;
+  int32 ap_set_state = 9;
+}
+
+message APPNetworkInfoRes {
+  int32 oft = 1;
+  uint32 time = 2;
+}

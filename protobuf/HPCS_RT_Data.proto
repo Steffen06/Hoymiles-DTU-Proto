@@ -1,0 +1,122 @@
+syntax = "proto3";
+
+message HPCSDataReqDTO {
+  int64 sn = 1;
+  uint32 time = 2;
+  sint32 offset = 3;
+  sint32 ap = 4;
+  sint32 cp = 5;
+  SystemParam sysprm = 6;
+  Obsergrid obsgrid = 7;
+  Obserdc obsdc = 8;
+  Obsermon obsmon = 9;
+  Obsertemp obstemp = 10;
+  Obserstat obsstat = 11;
+  repeated sint32 fc = 12;
+  repeated sint32 subfc = 13;
+  repeated sint32 wc = 14;
+  repeated sint32 subwc = 15;
+}
+
+message HPCSDataResDTO {
+  uint32 time = 1;
+  string ymd_hms = 2;
+  sint32 offset = 3;
+  sint32 cp = 4;
+}
+
+message SystemParam {
+  sint32 prt = 1;
+  sint32 vrt = 2;
+  sint32 irt = 3;
+  sint32 frt = 4;
+}
+
+message Obsergrid {
+  sint32 grid_p = 1;
+  sint32 phase_lk = 2;
+  sint32 grid_v = 3;
+  sint32 i_ac = 4;
+  sint32 grid_uab = 5;
+  sint32 grid_ubc = 6;
+  sint32 grid_uca = 7;
+  sint32 i_pa = 8;
+  sint32 i_pb = 9;
+  sint32 i_pc = 10;
+}
+
+message Obserdc {
+  sint32 v_batt = 1;
+  sint32 i_dc = 2;
+  sint32 v_bhf = 3;
+  sint32 v_blf = 4;
+  sint32 v_grad = 5;
+  sint32 f_dc = 6;
+  sint32 b_soc = 7;
+}
+
+message Obsermon {
+  sint32 hpcs_state = 1;
+  sint32 otp_fct = 2;
+  sint32 grid_v = 3;
+  sint32 v_off = 4;
+  sint32 ofgd_uab = 5;
+  sint32 ofgd_ubc = 6;
+  sint32 ofgd_uca = 7;
+  sint32 otp_act = 8;
+  sint32 otp_inact = 9;
+  sint32 otp_app = 10;
+  sint32 d_chg = 11;
+  sint32 d_dchg = 12;
+  sint32 t_chgl = 13;
+  sint32 t_chgh = 14;
+  sint32 t_dchgl = 15;
+  sint32 t_dchgh = 16;
+  sint32 i_rcd = 17;
+  sint32 imp_p = 18;
+  sint32 imp_n = 19;
+  sint32 igbt_tf = 20;
+  sint32 tmp_tf = 21;
+  sint32 phase_tf = 22;
+  sint32 car_syn = 23;
+  sint32 cmd_s = 24;
+  sint32 wk_mod = 25;
+  sint32 pq_mod = 26;
+  sint32 vf_mod = 27;
+  sint32 phase_out = 28;
+}
+
+message Obsertemp {
+  sint32 tmpA = 1;
+  sint32 tmpB = 2;
+  sint32 tmpC = 3;
+  sint32 tmp_idu = 4;
+  sint32 tmp_in = 5;
+  sint32 tmp_pft = 6;
+  sint32 tmp_env = 7;
+}
+
+message Obserstat {
+  sint32 flt_pcs = 1;
+  sint32 warn_pcs = 2;
+  sint32 fan1 = 3;
+  sint32 fan2 = 4;
+  sint32 fan3 = 5;
+  sint32 m_fan1 = 6;
+  sint32 m_fan2 = 7;
+  sint32 surge_dc = 8;
+  sint32 surge_ac = 9;
+  sint32 fuse_dc = 10;
+  sint32 pump = 11;
+  sint32 door = 12;
+  sint32 c_water = 13;
+  sint32 pump_pw = 14;
+  sint32 fan_pw = 15;
+  sint32 m_fanp = 16;
+  sint32 but_s = 17;
+  sint32 but_ac = 18;
+  sint32 but_dc = 19;
+  sint32 buf_dc = 20;
+  sint32 iso_sta = 21;
+  sint32 iso_dec = 22;
+}

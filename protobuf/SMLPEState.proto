@@ -1,0 +1,34 @@
+syntax = "proto3";
+
+message PvStrStateMO {
+  int32 pv_str_v = 1;
+  int64 str_host_sn = 2;
+  int32 str_hrsd_num = 3;
+}
+
+message InvStateMO {
+  int64 inv_sn = 1;
+  int32 inv_online_status = 2;
+  repeated PvStrStateMO pv_str_state = 3;
+}
+
+message DTLStateReqDTO {
+  int32 oft = 1;
+  uint32 time = 2;
+  int64 sn = 3;
+  int32 ap = 4;
+  int32 cp = 5;
+  int32 wifi_rssi = 6;
+  int32 state = 7;
+  int32 total_samptime = 8;
+  int32 str_num = 9;
+  int32 hrsd_sn_num = 10;
+  repeated InvStateMO inv_state = 11;
+}
+
+message DTLStateResDTO {
+  int32 oft = 1;
+  int32 time = 2;
+  int64 sn = 3;
+  int32 cp = 4;
+}

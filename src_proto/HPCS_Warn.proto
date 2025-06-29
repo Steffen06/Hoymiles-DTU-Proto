@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+message HPCSWarnReqDTO {
+  optional int64 PCS_sn = 1;
+  optional uint32 time = 2;
+  repeated int32 fc = 3;
+  repeated int32 subfc = 4;
+  repeated uint32 ymd_hms = 5;
+  repeated sint32 v_bhf = 6;
+  repeated sint32 v_blf = 7;
+  repeated sint32 i_dc = 8;
+  repeated sint32 grid_v = 9;
+  repeated sint32 i_ac = 10;
+  repeated sint32 stat = 11;
+}
+
+message HPCSWarnResDTO {
+  optional uint32 time = 1;
+  optional string ymd_hms = 2;
+  optional int32 offset = 3;
+}

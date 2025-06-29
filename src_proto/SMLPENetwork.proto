@@ -1,0 +1,28 @@
+syntax = "proto3";
+
+message SMLPEInfoMo {
+  optional int64 sn = 1;
+  optional int32 pos_n = 2;
+}
+
+message StringInfoMo {
+  optional bytes str_name = 1;
+  optional int32 str_n = 2;
+  repeated SMLPEInfoMo smlpe = 3;
+}
+
+message SMLPENetworkResDTO {
+  optional int32 oft = 1;
+  optional uint32 time = 2;
+  optional int64 sn = 3;
+  optional int32 ap = 4;
+  optional int32 cp = 5;
+  repeated StringInfoMo string = 6;
+}
+
+message SMLPENetworkReqDTO {
+  optional int32 oft = 1;
+  optional uint32 time = 2;
+  optional int64 sn = 3;
+  optional int32 cp = 4;
+}

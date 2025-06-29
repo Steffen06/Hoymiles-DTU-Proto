@@ -1,0 +1,64 @@
+syntax = "proto3";
+
+message WorkModeMO {
+  optional uint32 mode = 1;
+  optional int32 soc_h = 2;
+  optional int32 soc_l = 3;
+}
+
+message LoadCurDataMO {
+  repeated uint32 day = 1;
+  repeated uint32 cur = 2;
+}
+
+message AULoadCurMO {
+  optional int32 load_type = 1;
+  optional int32 const_data = 2;
+  repeated LoadCurDataMO cur_data = 3;
+}
+
+message PowerPublicMO {
+  optional int32 set_para = 1;
+  optional int32 word_data = 2;
+}
+
+message AUDspCmdSetResDTO {
+  optional int64 sn = 1;
+  optional uint32 time = 2;
+  optional int32 ap = 3;
+  optional int32 cp = 4;
+  optional int64 tid = 5;
+  optional uint32 type = 6;
+  optional WorkModeMO work_mode = 7;
+  optional AULoadCurMO spci = 8;
+  optional PowerPublicMO power_public = 9;
+}
+
+message AUDspCmdSetReqDTO {
+  optional int64 sn = 1;
+  optional uint32 time = 2;
+  optional int32 cp = 3;
+  optional int64 tid = 4;
+  optional int32 type = 5;
+  optional int32 err_code = 6;
+}
+
+message AUDspCmdGetResDTO {
+  optional int64 sn = 1;
+  optional uint32 time = 2;
+  optional int32 cp = 3;
+  optional int64 tid = 4;
+  optional uint32 type = 5;
+}
+
+message AUDspCmdGetReqDTO {
+  optional int64 sn = 1;
+  optional uint32 time = 2;
+  optional int32 ap = 3;
+  optional int32 cp = 4;
+  optional int64 tid = 5;
+  optional uint32 type = 6;
+  optional WorkModeMO work_mode = 7;
+  optional AULoadCurMO spci = 8;
+  optional PowerPublicMO power_public = 9;
+}

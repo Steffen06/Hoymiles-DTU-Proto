@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+message LineChart {
+  repeated string x_axis = 1;
+  repeated LineSeries series = 2;
+  string type = 3;
+}
+
+message LineSeries {
+  string type = 1;
+  repeated float data = 2;
+  int32 did = 3;
+  int32 port = 4;
+}
+
+message LineChartArray {
+  repeated LineChart line_charts = 1;
+}

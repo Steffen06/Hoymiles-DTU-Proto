@@ -1,0 +1,53 @@
+syntax = "proto3";
+
+message CommCmdResDTO {
+  uint32 time = 1;
+  int32 action = 2;
+  int32 ap = 3;
+  int32 cp = 4;
+  int64 tid = 5;
+  string data = 6;
+  repeated int64 sn = 7;
+  uint32 crc = 8;
+}
+
+message CommCmdReqDTO {
+  int64 sn = 1;
+  uint32 time = 2;
+  int32 action = 3;
+  int32 cp = 4;
+  int64 tid = 5;
+  int32 err_code = 6;
+}
+
+message RPgsMO {
+  int64 sn = 1;
+  int32 prate = 2;
+}
+
+message ErrMO {
+  int64 sn = 1;
+  int64 ecode = 2;
+}
+
+message CommCmdStatusReqDTO {
+  int64 sn = 1;
+  uint32 time = 2;
+  int32 action = 3;
+  int32 ap = 4;
+  int32 cp = 5;
+  int64 tid = 6;
+  repeated int64 sns_sucs = 7;
+  repeated int64 sns_failds = 8;
+  repeated RPgsMO mrpgs = 9;
+  repeated ErrMO merr = 10;
+  int32 sts = 11;
+  int32 type = 12;
+}
+
+message CommCmdStatusResDTO {
+  uint32 time = 1;
+  int32 action = 2;
+  int32 cp = 3;
+  int64 tid = 4;
+}

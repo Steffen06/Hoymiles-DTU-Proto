@@ -1,0 +1,274 @@
+syntax = "proto3";
+
+message DPVProdMO {
+  int32 e2l = 1;
+  int32 e2b = 2;
+  int32 e2g = 3;
+}
+
+message DLoadConsMO {
+  int32 efpv = 1;
+  int32 efb = 2;
+  int32 efg = 3;
+}
+
+message DPvMO {
+  int32 si = 1;
+  int32 v = 2;
+  int32 i = 3;
+  int32 p = 4;
+  int32 e = 5;
+}
+
+message DBmsMO {
+  int32 type = 1;
+  int32 sts = 2;
+  int32 fc = 3;
+  int32 soc = 4;
+  int32 soh = 5;
+  int32 v = 6;
+  int32 i = 7;
+  int32 p = 8;
+  int32 icm = 9;
+  int32 idm = 10;
+  int32 vc = 11;
+  int32 vd = 12;
+  int32 tch = 13;
+  int32 tcl = 14;
+  int32 tmh = 15;
+  int32 tml = 16;
+  int32 echg = 17;
+  int32 edchg = 18;
+  int32 vch = 19;
+  int32 vcl = 20;
+  int32 vmh = 21;
+  int32 vml = 22;
+}
+
+message GridParamMO {
+  int32 sts = 1;
+  int32 f = 2;
+  int32 pfd = 3;
+}
+
+message GridPhaseMO {
+  int32 ph = 1;
+  int32 v = 2;
+  int32 i = 3;
+  int32 p = 4;
+  int32 q = 5;
+  int32 pf = 6;
+  int32 ef = 7;
+  int32 ec = 8;
+}
+
+message DGridMO {
+  GridParamMO param = 1;
+  repeated GridPhaseMO phase = 2;
+}
+
+message LoadParamMO {
+  int32 sts = 1;
+  int32 f = 2;
+}
+
+message LoadPhaseMO {
+  int32 ph = 1;
+  int32 v = 2;
+  int32 p = 3;
+  int32 ec = 4;
+}
+
+message DLoadMO {
+  LoadParamMO param = 1;
+  repeated LoadPhaseMO phase = 2;
+}
+
+message SmartLoadPhaseMO {
+  int32 ph = 1;
+  int32 v = 2;
+  int32 i = 3;
+  int32 p = 4;
+  int32 ec = 5;
+}
+
+message DSmartLoadMO {
+  LoadParamMO param = 1;
+  repeated SmartLoadPhaseMO phase = 2;
+  int32 total_power = 3;
+}
+
+message InvParamMO {
+  int32 role = 1;
+  int32 sts = 2;
+  int32 mf = 3;
+  int32 sf = 4;
+  int32 f = 5;
+  int32 riso = 6;
+  int32 ilk = 7;
+  int32 drm = 8;
+  int32 afd = 9;
+  int32 tin = 10;
+  int32 tpv = 11;
+  int32 tinv = 12;
+  int32 vbus = 13;
+  int32 vbusp = 14;
+  int32 vbusn = 15;
+  int32 vbat = 16;
+  int32 ibat = 17;
+  int32 pbat = 18;
+  int32 spd1 = 19;
+  int32 spd2 = 20;
+  int32 spd3 = 21;
+  int32 arcok = 24;
+  int32 coa_s = 25;
+  int32 ips_en = 26;
+}
+
+message InvPhaseMO {
+  int32 ph = 1;
+  int32 v = 2;
+  int32 i = 3;
+  int32 p = 4;
+  int32 q = 5;
+  int32 idc = 6;
+  int32 vdc = 7;
+  int32 veps = 8;
+  int32 ieps = 9;
+  int32 peps = 10;
+}
+
+message DInvMO {
+  InvParamMO param = 1;
+  repeated InvPhaseMO phase = 2;
+}
+
+message GenParamMO {
+  int32 sts = 1;
+  int32 f = 2;
+}
+
+message GenPhaseMO {
+  int32 ph = 1;
+  int32 v = 2;
+  int32 i = 3;
+  int32 p = 4;
+  int32 q = 5;
+  int32 e = 6;
+}
+
+message DGenMO {
+  GenParamMO param = 1;
+  repeated GenPhaseMO phase = 2;
+}
+
+message IPSMO {
+  int32 IPS_Step = 1;
+  int32 IPS_sts = 2;
+  int32 OVP1_Vt = 3;
+  int32 OVP1_Vs = 4;
+  int32 OVP1_Vo = 5;
+  int32 OVP1_Tt = 6;
+  int32 OVP1_To = 7;
+  int32 OVP2_Vt = 8;
+  int32 OVP2_Vs = 9;
+  int32 OVP2_Vo = 10;
+  int32 OVP2_Tt = 11;
+  int32 OVP2_T0 = 12;
+  int32 UVP1_Vt = 13;
+  int32 UVP1_Vs = 14;
+  int32 UVP1_Vo = 15;
+  int32 UVP1_Tt = 16;
+  int32 UVP1_To = 17;
+  int32 UVP2_Vt = 18;
+  int32 UVP2_Vs = 19;
+  int32 UVP2_Vo = 20;
+  int32 UVP2_Tt = 21;
+  int32 UVP2_T0 = 22;
+  int32 OFP1_Ft = 23;
+  int32 OFP1_Fs = 24;
+  int32 OFP1_Fo = 25;
+  int32 OFP1_Tt = 26;
+  int32 OFP1_To = 27;
+  int32 OFP2_Ft = 28;
+  int32 OFP2_Fs = 29;
+  int32 OFP2_Fo = 30;
+  int32 OFP2_Tt = 31;
+  int32 OFP2_To = 32;
+  int32 UFP1_Ft = 33;
+  int32 UFP1_Fs = 34;
+  int32 UFP1_Fo = 35;
+  int32 UFP1_Tt = 36;
+  int32 UFP1_To = 37;
+  int32 UFP2_Ft = 38;
+  int32 UFP2_Fs = 39;
+  int32 UFP2_Fo = 40;
+  int32 UFP2_Tt = 41;
+  int32 UFP2_To = 42;
+  int32 code = 43;
+}
+
+message DChgCPMO {
+  repeated ChgCPParamMO param = 1;
+  repeated ChgCPBillMO bills = 2;
+}
+
+message ChgCPParamMO {
+  int32 sts = 1;
+  int32 ec = 2;
+  int32 dur = 3;
+  int32 v = 4;
+  int32 i = 5;
+  int32 p = 6;
+  int32 wc = 7;
+  int64 sn = 8;
+}
+
+message ChgCPBillMO {
+  int64 sn = 1;
+  uint32 time = 2;
+  repeated uint32 tid = 3;
+  uint32 s_time = 4;
+  uint32 e_time = 5;
+  int32 ec = 6;
+  int32 sts = 7;
+}
+
+message DFlowMO {
+  int32 pv2l = 1;
+  int32 pv2b = 2;
+  int32 pv2g = 3;
+  int32 b2l = 4;
+  int32 g2l = 5;
+  int32 b2g = 6;
+  int32 soc = 7;
+}
+
+message ESDataReqDTO {
+  int64 sn = 1;
+  uint32 time = 2;
+  int32 offset = 3;
+  int32 ap = 4;
+  int32 cp = 5;
+  DPVProdMO prod = 6;
+  DLoadConsMO cons = 7;
+  repeated DPvMO pvs = 8;
+  DBmsMO bms = 9;
+  DGridMO grid = 10;
+  DLoadMO load = 11;
+  DInvMO inv = 12;
+  DGenMO gen = 13;
+  DGenMO pvi = 14;
+  IPSMO ips = 15;
+  repeated DSmartLoadMO smart_load = 16;
+  DFlowMO pflow = 17;
+  repeated DChgCPMO cps = 18;
+}
+
+message ESDataResDTO {
+  uint32 time = 1;
+  string ymd_hms = 2;
+  int32 offset = 3;
+  int32 cp = 4;
+  int64 sn = 5;
+}

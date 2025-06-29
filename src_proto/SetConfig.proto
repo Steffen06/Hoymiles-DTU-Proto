@@ -1,0 +1,60 @@
+syntax = "proto3";
+
+message SetConfigRes {
+  optional int32 offset = 1;
+  optional uint32 time = 2;
+  optional int32 lock_password = 3;
+  optional int32 lock_time = 4;
+  optional int32 limit_power_mypower = 5;
+  optional int32 zero_export_433_addr = 6;
+  optional int32 zero_export_enable = 7;
+  optional int32 netmode_select = 8;
+  optional int32 channel_select = 9;
+  optional int32 server_send_time = 10;
+  optional int32 serverport = 11;
+  optional bytes apn_set = 12;
+  optional bytes meter_kind = 13;
+  optional bytes meter_interface = 14;
+  optional bytes wifi_ssid = 15;
+  optional bytes wifi_passward = 16;
+  optional bytes server_domain_name = 17;
+  optional int32 inv_type = 18;
+  optional bytes dtu_sn = 19;
+  optional int32 access_model = 20;
+  optional int32 mac_0 = 21;
+  optional int32 mac_1 = 22;
+  optional int32 mac_2 = 23;
+  optional int32 mac_3 = 24;
+  optional int32 dhcp_switch = 25;
+  optional int32 ip_addr_0 = 26;
+  optional int32 ip_addr_1 = 27;
+  optional int32 ip_addr_2 = 28;
+  optional int32 ip_addr_3 = 29;
+  optional int32 subnet_mask_0 = 30;
+  optional int32 subnet_mask_1 = 31;
+  optional int32 subnet_mask_2 = 32;
+  optional int32 subnet_mask_3 = 33;
+  optional int32 default_gateway_0 = 34;
+  optional int32 default_gateway_1 = 35;
+  optional int32 default_gateway_2 = 36;
+  optional int32 default_gateway_3 = 37;
+  optional bytes apn_name = 38;
+  optional bytes apn_passward = 39;
+  optional int32 sub1g_sweep_switch = 40;
+  optional int32 sub1g_work_channel = 41;
+  optional int32 cable_dns_0 = 42;
+  optional int32 cable_dns_1 = 43;
+  optional int32 cable_dns_2 = 44;
+  optional int32 cable_dns_3 = 45;
+  optional int32 mac_4 = 46;
+  optional int32 mac_5 = 47;
+  optional bytes dtu_ap_ssid = 48;
+  optional bytes dtu_ap_pass = 49;
+  optional int32 app_page = 50;
+}
+
+message SetConfigReq {
+  optional int32 offset = 1;
+  optional uint32 time = 2;
+  optional int32 err_code = 3;
+}

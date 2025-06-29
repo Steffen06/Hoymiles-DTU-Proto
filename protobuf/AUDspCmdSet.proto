@@ -1,0 +1,64 @@
+syntax = "proto3";
+
+message WorkModeMO {
+  uint32 mode = 1;
+  int32 soc_h = 2;
+  int32 soc_l = 3;
+}
+
+message LoadCurDataMO {
+  repeated uint32 day = 1;
+  repeated uint32 cur = 2;
+}
+
+message AULoadCurMO {
+  int32 load_type = 1;
+  int32 const_data = 2;
+  repeated LoadCurDataMO cur_data = 3;
+}
+
+message PowerPublicMO {
+  int32 set_para = 1;
+  int32 word_data = 2;
+}
+
+message AUDspCmdSetResDTO {
+  int64 sn = 1;
+  uint32 time = 2;
+  int32 ap = 3;
+  int32 cp = 4;
+  int64 tid = 5;
+  uint32 type = 6;
+  WorkModeMO work_mode = 7;
+  AULoadCurMO spci = 8;
+  PowerPublicMO power_public = 9;
+}
+
+message AUDspCmdSetReqDTO {
+  int64 sn = 1;
+  uint32 time = 2;
+  int32 cp = 3;
+  int64 tid = 4;
+  int32 type = 5;
+  int32 err_code = 6;
+}
+
+message AUDspCmdGetResDTO {
+  int64 sn = 1;
+  uint32 time = 2;
+  int32 cp = 3;
+  int64 tid = 4;
+  uint32 type = 5;
+}
+
+message AUDspCmdGetReqDTO {
+  int64 sn = 1;
+  uint32 time = 2;
+  int32 ap = 3;
+  int32 cp = 4;
+  int64 tid = 5;
+  uint32 type = 6;
+  WorkModeMO work_mode = 7;
+  AULoadCurMO spci = 8;
+  PowerPublicMO power_public = 9;
+}

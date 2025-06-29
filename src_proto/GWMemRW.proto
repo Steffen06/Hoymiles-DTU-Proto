@@ -1,0 +1,46 @@
+syntax = "proto3";
+
+message MemBlockDataMO {
+  optional int32 s_addr = 1;
+  optional int32 len = 2;
+  optional bytes data = 3;
+  optional int32 crc = 4;
+}
+
+message MemBlockDescMO {
+  optional int32 s_addr = 1;
+  optional int32 len = 2;
+  optional int32 op_code = 3;
+}
+
+message MemReadResDTO {
+  optional uint32 time = 1;
+  optional int64 tid = 2;
+  repeated MemBlockDescMO blocks_desc = 3;
+}
+
+message MemReadReqDTO {
+  optional int64 sn = 1;
+  optional uint32 time = 2;
+  optional int32 ap = 3;
+  optional int32 cp = 4;
+  optional int64 tid = 5;
+  repeated MemBlockDataMO blocks = 6;
+  optional int32 err_code = 7;
+}
+
+message MemWriteResDTO {
+  optional uint32 time = 1;
+  optional int32 ap = 2;
+  optional int32 cp = 3;
+  optional int64 tid = 4;
+  optional int32 op_code = 5;
+  repeated MemBlockDataMO blocks = 6;
+}
+
+message MemWriteReqDTO {
+  optional uint32 time = 1;
+  optional int64 sn = 2;
+  optional int64 tid = 3;
+  optional int32 err_code = 4;
+}

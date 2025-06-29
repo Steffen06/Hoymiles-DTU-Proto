@@ -1,0 +1,75 @@
+syntax = "proto3";
+
+message InvBlockInfoMO {
+  optional bytes data = 1;
+}
+
+message InvertInfoMO {
+  optional bytes ds = 1;
+  optional int32 addr = 2;
+  optional bytes model = 3;
+  optional int32 pv_type = 4;
+  optional int32 str_n = 5;
+  optional int32 mppt_n = 6;
+  repeated InvBlockInfoMO inv_block_info = 7;
+}
+
+message SMLPEInfoMO {
+  optional int64 sn = 1;
+  optional int32 addr = 2;
+  optional int32 hw_pn = 3;
+  optional int32 hw_ver = 4;
+  optional int32 fw_pn = 5;
+  optional int32 fw_ver = 6;
+  optional int32 app_fw_ver = 7;
+  optional int32 dev_reg = 8;
+  optional int64 msn = 9;
+  optional bytes str_name = 10;
+  optional int32 str_n = 11;
+  optional int32 mppt_n = 12;
+  optional int32 pos_n = 13;
+}
+
+message DTLInfoMO {
+  optional int64 sn = 1;
+  optional int32 addr = 2;
+  optional bytes model = 3;
+  optional int32 hw_pn = 4;
+  optional int32 hw_ver = 5;
+  optional int32 fw_pn = 6;
+  optional int32 fw_ver = 7;
+  optional int32 app_fwver = 8;
+  optional int32 bl_fwver = 9;
+  optional int32 app_fw_bt = 10;
+  optional int32 bl_fw_bt = 11;
+  optional int32 hw_desc = 12;
+  optional int32 pd_addr = 13;
+  optional bytes pd_model = 14;
+  optional int32 pd_hw_pn = 15;
+  optional int32 pd_hw_ver = 16;
+  optional int32 pd_fw_pn = 17;
+  optional int32 pd_fw_ver = 18;
+  optional int32 pd_app_fw_ver = 19;
+  optional int32 pd_bl_fw_ver = 20;
+  optional int32 pd_app_fw_bt = 21;
+  optional int32 pd_bl_fw_bt = 22;
+  optional int32 pd_hw_desc = 23;
+}
+
+message InfoReqDTO {
+  optional int32 oft = 1;
+  optional uint32 time = 2;
+  optional int64 sn = 3;
+  optional int32 ap = 4;
+  optional int32 cp = 5;
+  repeated DTLInfoMO dtl = 6;
+  repeated InvertInfoMO inv = 7;
+  repeated SMLPEInfoMO smlpe = 8;
+}
+
+message InfoResDTO {
+  optional int32 oft = 1;
+  optional uint32 time = 2;
+  optional int64 sn = 3;
+  optional int32 cp = 4;
+}

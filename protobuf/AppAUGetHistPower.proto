@@ -1,0 +1,40 @@
+syntax = "proto3";
+
+message AUGetHistPowerRes {
+  int64 sn = 1;
+  int32 cp = 2;
+  int32 oft = 3;
+  uint32 time = 4;
+  int32 get_day = 5;
+  uint32 power_type = 6;
+}
+
+message AUGetHistPowerReq {
+  int64 sn = 1;
+  int32 type = 2;
+  int32 ap = 3;
+  int32 cp = 4;
+  int32 oft = 5;
+  uint32 time = 6;
+  uint32 abs_time_start = 7;
+  int32 step_time = 8;
+  int32 warn_num = 9;
+  uint32 power_type = 10;
+  repeated SysPower sys_data = 11;
+  repeated DevPower dev_data = 12;
+}
+
+message SysPower {
+  int32 p_pv = 1;
+  int32 p_g = 2;
+  int32 p_l = 3;
+  int32 p_b = 4;
+}
+
+message DevPower {
+  int32 pv1 = 1;
+  int32 pv2 = 2;
+  int32 p_grid_on = 3;
+  int32 p_grid_off = 4;
+  int32 p_battery = 5;
+}

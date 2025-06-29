@@ -1,0 +1,78 @@
+syntax = "proto3";
+
+message DebugInvParam {
+  int32 db1 = 1;
+  int32 db2 = 2;
+  int32 db3 = 3;
+  int32 db4 = 4;
+  int32 db5 = 5;
+  int32 db6 = 6;
+  int32 db7 = 7;
+  int32 db8 = 8;
+  int32 sw_f_code = 9;
+  int32 hw_f_code = 10;
+  int32 self_f_code = 11;
+  int32 saf_status = 12;
+  int32 saf_f_code = 13;
+  int32 sys_status = 14;
+  int32 sys_f_code = 15;
+  int32 zero_cr_frq = 16;
+  int32 safety_cr_frq = 17;
+  int32 peak_va_flag = 18;
+  int32 peak_va_rem = 19;
+  int32 saf_p_lim = 20;
+  int32 gcf_p_lim = 21;
+  int32 auxi_sup_12v = 22;
+  int32 auxi_sup_7v = 23;
+  int32 auxi_sup_5v = 24;
+  int32 auxi_sup_33v = 25;
+  int32 auxi_sup_15v = 26;
+  int32 pe_v = 27;
+  int32 bala_brid_i = 28;
+  int32 bat_temp = 29;
+  int32 bat_in_v = 30;
+  int32 bat_res_i1 = 31;
+  int32 bat_res_i2 = 32;
+  int32 bat_ems_mode = 33;
+  int32 pv_status = 34;
+  int32 inv_status = 35;
+  int32 bms_status = 36;
+  int32 res_soc = 37;
+  int32 saf_sup_15v = 38;
+  int32 arc_fft = 39;
+  int32 arc_flit = 40;
+  int32 arc_f_i1 = 41;
+  int32 arc_fd_i1l1 = 42;
+  int32 arc_fd_i1l2 = 43;
+  int32 arc_f_i2 = 44;
+  int32 arc_fd_i2l1 = 45;
+  int32 arc_fd_i2l2 = 46;
+  int32 arc_fd_nu = 47;
+  int32 arc_amp = 48;
+}
+
+message DebugInvPhase {
+  int32 ph = 1;
+  int32 eps_ph_ap = 2;
+  int32 grid_v = 3;
+  int32 safety_grid_v = 4;
+  int32 gen_ph_v = 5;
+}
+
+message DebugDInv {
+  DebugInvParam param = 1;
+  repeated DebugInvPhase phase = 3;
+}
+
+message ESDebugLogReqDTO {
+  uint32 time = 1;
+  int64 inv_sn = 2;
+  uint32 type = 3;
+  string data = 4;
+  DebugDInv dinv = 5;
+}
+
+message ESDebugLogResDTO {
+  uint32 time = 1;
+  int64 inv_sn = 2;
+}

@@ -1,0 +1,73 @@
+syntax = "proto3";
+
+message BaseParameter {
+  optional uint32 cmd_source = 1;
+  optional uint32 wk_mod = 2;
+  optional uint32 pq_mod = 3;
+  optional uint32 vsg_ct = 4;
+  optional uint32 vsg_of = 5;
+  optional uint32 v_gro = 6;
+  optional uint32 vf_mod = 7;
+  optional sint32 p_set = 8;
+  optional sint32 q_set = 9;
+  optional sint32 p_fct = 10;
+  optional uint32 v_bus = 11;
+  optional sint32 i_bus = 12;
+  optional sint32 i_pq = 13;
+  optional sint32 i_vf = 14;
+  optional uint32 f_out = 15;
+  optional uint32 ph_out = 16;
+  optional uint32 iso_det = 17;
+  optional uint32 s_auto1 = 18;
+  optional uint32 s_auto2 = 19;
+  optional uint32 zo_pwm = 20;
+  optional uint32 zo_pwmt = 21;
+  optional uint32 fcap_rep = 22;
+}
+
+message CtrParam {
+  optional uint32 p_appr = 1;
+  optional uint32 i_appr = 2;
+  optional uint32 i_disac = 3;
+  optional uint32 i_chgac = 4;
+  optional uint32 p_disac = 5;
+  optional uint32 p_chgac = 6;
+  optional uint32 p_indr = 7;
+  optional uint32 p_capr = 8;
+  optional uint32 i_indr = 9;
+  optional uint32 i_capr = 10;
+  optional uint32 v_ofl = 11;
+  optional uint32 i_disdc = 12;
+  optional uint32 i_chgdc = 13;
+  optional uint32 v_busdc = 14;
+}
+
+message TimerSync {
+  optional uint32 year = 1;
+  optional uint32 mon_day = 2;
+  optional uint32 hou_min = 3;
+  optional uint32 second = 4;
+  optional uint32 syn_en = 5;
+}
+
+message HPCSUserSetGetResDTO {
+  optional uint32 time = 1;
+  optional int32 err_code = 2;
+}
+
+message HPCSUserSetGetReqDTO {
+  optional BaseParameter bs_prm = 1;
+  optional CtrParam ctr_prm = 2;
+  optional TimerSync tm_syn = 3;
+}
+
+message HPCSUserSetPutResDTO {
+  optional BaseParameter bs_prm = 1;
+  optional CtrParam ctr_prm = 2;
+  optional TimerSync tm_syn = 3;
+}
+
+message HPCSUserSetPutReqDTO {
+  optional uint32 time = 1;
+  optional int32 err_code = 2;
+}

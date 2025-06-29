@@ -1,0 +1,78 @@
+syntax = "proto3";
+
+message BaseParam {
+  optional uint32 cmd_source = 1;
+  optional uint32 q_ctrlmd = 2;
+  optional sint32 pf_set = 3;
+  optional sint32 q_set = 4;
+  optional uint32 p_set = 5;
+  optional uint32 r_autorun = 6;
+  optional uint32 r_delay = 7;
+  optional uint32 vbus_adval = 8;
+  optional sint32 ivf_set = 9;
+  optional uint32 grid_qmax = 10;
+  optional uint32 r_ptm = 11;
+  optional uint32 grid_apmax = 12;
+  optional uint32 grid_pmax = 13;
+  optional uint32 t_pd = 14;
+  optional uint32 iv_cmd = 15;
+}
+
+message RunOperateParam {
+  optional uint32 svg_nten = 1;
+  optional sint32 svg_qrt = 2;
+  optional uint32 pwoff_lmten = 3;
+  optional uint32 rv_uplmt = 4;
+  optional uint32 rv_lowlmt = 5;
+  optional uint32 rf_uplmt = 6;
+  optional uint32 rf_lowlmt = 7;
+  optional uint32 bst_clpbs = 8;
+  optional uint32 bst_vlpbs = 9;
+  optional uint32 mppt_scan = 10;
+  optional uint32 mppt_scant = 11;
+  optional uint32 svg_st = 12;
+  optional uint32 svg_et = 13;
+  optional uint32 en_cmd = 14;
+}
+
+message DiSet {
+  optional uint32 md = 1;
+}
+
+message DoSet {
+  optional uint32 md = 1;
+  optional uint32 hl = 2;
+}
+
+message AiSet {
+  optional uint32 md = 1;
+  optional uint32 fct = 2;
+}
+
+message DiDoAiSet {
+  repeated DiSet di_set = 1;
+  repeated DoSet do_set = 2;
+  repeated AiSet ai_set = 3;
+}
+
+message PVInvUserSetGetResDTO {
+  optional uint32 time = 1;
+  optional int32 err_code = 2;
+}
+
+message PVInvUserSetGetReqDTO {
+  optional BaseParam bs_prm = 1;
+  optional RunOperateParam op_prm = 2;
+  optional DiDoAiSet dio_ai = 3;
+}
+
+message PVInvUserSetPutResDTO {
+  optional BaseParam bs_prm = 1;
+  optional RunOperateParam op_prm = 2;
+  optional DiDoAiSet dio_ai = 3;
+}
+
+message PVInvUserSetPutReqDTO {
+  optional uint32 time = 1;
+  optional int32 err_code = 2;
+}

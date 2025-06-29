@@ -1,0 +1,89 @@
+syntax = "proto3";
+
+message AUPvDataMO {
+  int32 si = 1;
+  int32 v = 2;
+  int32 i = 3;
+  int32 p = 4;
+  int32 e = 5;
+  int32 et = 6;
+}
+
+message AUGridMO {
+  int32 type = 1;
+  int32 v = 2;
+  int32 i = 3;
+  int32 freq = 4;
+  int32 p = 5;
+  int32 q = 6;
+  int32 e_in = 7;
+  int32 e_out = 8;
+  int32 et_in = 9;
+  int32 et_out = 10;
+}
+
+message AUBmsMO {
+  int32 sts = 1;
+  int32 soc = 2;
+  int32 soh = 3;
+  int32 v = 4;
+  int32 i = 5;
+  int32 p_b = 6;
+  int32 v_b = 7;
+  int32 i_b1 = 8;
+  int32 i_b2 = 9;
+  int32 i_b3 = 10;
+  int32 temp = 11;
+  int32 echg = 12;
+  int32 edchg = 13;
+  int32 soe = 14;
+}
+
+message AUPVProdMO {
+  int32 e2l = 1;
+  int32 e2b = 2;
+  int32 e2g = 3;
+  int32 b2g = 4;
+}
+
+message AULoadConsMO {
+  int32 efpv = 1;
+  int32 efb = 2;
+  int32 efg = 3;
+  int32 g2b = 4;
+}
+
+message AUPFlowMO {
+  int32 pv2l = 1;
+  int32 pv2b = 2;
+  int32 pv2g = 3;
+  int32 b2l = 4;
+  int32 g2l = 5;
+  int32 b2g = 6;
+  int32 soc = 7;
+}
+
+message AuRealReqDTO {
+  int64 sn = 1;
+  int32 role = 2;
+  int32 oft = 3;
+  uint32 time = 4;
+  int32 v_bus = 5;
+  int32 work_mod = 6;
+  int32 relay_sts = 7;
+  int32 temp = 8;
+  int32 w_qty = 9;
+  int32 p_lim = 10;
+  repeated AUPvDataMO pvs = 11;
+  repeated AUGridMO grid = 12;
+  repeated AUBmsMO bms = 13;
+  AUPFlowMO pflow = 14;
+  AUPVProdMO eprod = 15;
+  AULoadConsMO econs = 16;
+  int32 sts = 17;
+}
+
+message AuRealResDTO {
+  int32 oft = 1;
+  uint32 time = 2;
+}

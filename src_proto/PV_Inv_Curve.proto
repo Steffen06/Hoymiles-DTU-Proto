@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+message CurveMO {
+  optional int32 si = 1;
+  optional uint32 ymd = 2;
+  repeated uint32 p = 3;
+}
+
+message PVInvCurveReqDTO {
+  optional int64 inv_sn = 1;
+  optional uint32 time = 2;
+  optional int32 ap = 3;
+  optional int32 cp = 4;
+  repeated CurveMO curves = 5;
+}
+
+message PVInvCurveResDTO {
+  optional uint32 time = 1;
+  optional string ymd_hms = 2;
+  optional int32 offset = 3;
+  optional int32 cp = 4;
+  optional int32 index = 5;
+}

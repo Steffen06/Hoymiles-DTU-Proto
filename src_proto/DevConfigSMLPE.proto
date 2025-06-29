@@ -1,0 +1,239 @@
+syntax = "proto3";
+
+message PDbusConfigMO {
+  optional int32 sys_type = 1;
+  optional int32 sys_cfg = 2;
+  optional int32 dev_num = 3;
+  optional int32 str_num = 4;
+  optional int32 reserve1 = 5;
+  optional int32 smlpe_ad_ver = 6;
+  optional int32 cmd_interval = 7;
+  optional int32 hbs_interval = 8;
+  optional int32 t_bd = 9;
+  optional int32 data_samp_mode = 10;
+  optional int32 pdbus_com_err_cnt = 11;
+  optional int32 smlpe_com_err_cnt = 12;
+  optional int32 day_mode_check_tm = 13;
+  optional int32 day_mode_smlpe_percent = 14;
+  optional int32 reserve2 = 15;
+  optional int32 enex_search_cnt = 16;
+  optional int32 en_search_hbs_cnt = 17;
+  optional int32 clear_search_data_cnt = 18;
+  optional int32 search_host_err_cnt = 19;
+  optional int32 search_slave_cnt = 20;
+  optional int32 search_host_tout = 21;
+  optional int32 compete_host_receiptnone = 22;
+  optional int32 search_host1_reciptnone_cnt = 23;
+  optional int32 search_host2_recipterr_cnt = 24;
+  optional int32 reg_master_rssi_th = 25;
+  optional int32 reg_master_reply_err_cnt = 26;
+  optional int32 slave_reg_master_rssi_th = 27;
+  optional int32 reg_master_cnt = 28;
+  optional int32 close_str_cnt = 29;
+  optional int32 cancel_master_reg_cnt = 30;
+  optional int32 turn_on_str_cnt = 31;
+  optional int32 turn_on_str_hbs_cnt = 32;
+  optional int32 search_slave1_reciptnone = 33;
+  optional int32 search_slave2_seciptsrr_cnt = 34;
+  optional int32 reg_slave_cnt = 35;
+  optional int32 seed_num = 36;
+  optional int32 reserve3 = 37;
+  optional int32 reserve4 = 38;
+  optional int32 reserve5 = 39;
+  optional int32 reserve6 = 40;
+  optional int32 reserve7 = 41;
+  optional int32 reserve8 = 42;
+}
+
+message InvInfoAddrMO {
+  optional int32 en = 1;
+  optional int32 fc = 2;
+  optional int32 start_addr = 3;
+  optional int32 length = 4;
+}
+
+message InvRealAddrMO {
+  optional int32 en = 1;
+  optional int32 fc = 2;
+  optional int32 start_addr = 3;
+  optional int32 length = 4;
+}
+
+message PvStrAddrMO {
+  optional int32 v_addr = 1;
+  optional int32 i_addr = 2;
+}
+
+message InvConfigMO {
+  optional int32 inv_ver = 1;
+  optional bytes ds = 2;
+  optional bytes model = 3;
+  optional int32 f_boost = 4;
+  optional int32 f_inv = 5;
+  optional int32 mppt_num = 6;
+  optional int32 str_num_max = 7;
+  optional int32 pv_samp_cfg = 8;
+  optional int32 ac_mode = 9;
+  optional int32 es_ready = 10;
+  optional int32 load_monitor_mode = 11;
+  optional int32 com_mode = 12;
+  optional int32 endian = 13;
+  optional int32 inv_interval = 14;
+  optional int32 start_delay = 15;
+  optional int32 refresh_delay_tm = 16;
+  optional int32 inv_data_safety_mode = 17;
+  optional int32 com_err_delay = 18;
+  optional int32 night_mode_detect_tm = 19;
+  optional int32 day_mode_check_tm = 20;
+  optional int32 battery_en = 21;
+  optional int32 load_monitor_en = 22;
+  optional int32 link_mode = 23;
+  optional int32 inv_slave_addr = 24;
+  optional bytes inv_ip = 25;
+  optional int32 inv_port = 26;
+  optional int32 inv_bd = 27;
+  optional int32 inv_parity = 28;
+  optional int32 inv_start = 29;
+  optional int32 inv_stop = 30;
+  repeated InvInfoAddrMO inv_info_addr = 31;
+  repeated InvRealAddrMO inv_real_addr = 32;
+  optional int32 ac_p_sf = 33;
+  optional int32 ac_eh_sf = 34;
+  optional int32 load_p_sf = 35;
+  optional int32 grid_p_sf = 36;
+  optional int32 load_eh_sf = 37;
+  optional int32 bat_soc_sf = 38;
+  optional int32 bat_p_sf = 39;
+  optional int32 pv_str_v_sf = 40;
+  optional int32 pv_str_i_sf = 41;
+  optional int32 pv_str_p_sf = 42;
+  optional int32 pv_str_eh_sf = 43;
+  optional int32 ac_p_addr = 44;
+  optional int32 ac_p_fc = 45;
+  optional int32 ac_p_num = 46;
+  optional int32 ac_eh_addr = 47;
+  optional int32 ac_eh_fc = 48;
+  optional int32 ac_eh_num = 49;
+  optional int32 load_p_addr = 50;
+  optional int32 load_p_fc = 51;
+  optional int32 load_p_num = 52;
+  optional int32 load_eh_addr = 53;
+  optional int32 load_eh_fc = 54;
+  optional int32 load_eh_num = 55;
+  optional int32 pv_p_addr = 56;
+  optional int32 pv_p_fc = 57;
+  optional int32 pv_p_num = 58;
+  optional int32 grid_p_addr = 59;
+  optional int32 grid_p_fc = 60;
+  optional int32 grid_p_num = 61;
+  optional int32 buy_p_addr = 62;
+  optional int32 buy_p_fc = 63;
+  optional int32 buy_p_num = 64;
+  optional int32 sail_p_addr = 65;
+  optional int32 sail_p_fc = 66;
+  optional int32 sail_p_num = 67;
+  optional int32 bat_soc_addr = 68;
+  optional int32 bat_soc_fc = 69;
+  optional int32 bat_soc_num = 70;
+  optional int32 bat_p_addr = 71;
+  optional int32 bat_p_fc = 72;
+  optional int32 bat_p_num = 73;
+  optional int32 pv_str_total_p_addr = 74;
+  optional int32 pv_str_total_p_fc = 75;
+  optional int32 pv_str_total_p_num = 76;
+  optional int32 pv_str_total_eh_addr = 77;
+  optional int32 pv_str_total_eh_fc = 78;
+  optional int32 pv_str_total_eh_num = 79;
+  repeated PvStrAddrMO pv_str_real_addr = 80;
+  optional int32 inv_sw_addr = 81;
+  optional int32 inv_sw_fc = 82;
+  optional int32 inv_sw_num = 83;
+  optional int32 pd_sw_addr = 84;
+  optional int32 pd_sw_fc = 85;
+  optional int32 pd_sw_num = 86;
+  optional int32 open_val = 87;
+  optional int32 close_val = 88;
+  optional int32 pd_val_type = 89;
+  optional int32 pd_val_sf = 90;
+  optional int32 reserve9 = 91;
+  optional int32 reserve10 = 92;
+  optional int32 reserve11 = 93;
+  optional int32 reserve12 = 94;
+  optional int32 reserve13 = 95;
+  optional int32 reserve14 = 96;
+  optional int32 s_interval = 97;
+  optional int32 reserve15 = 98;
+  optional int32 dev_mode = 99;
+  optional int32 dev_addr = 100;
+  optional int32 baud_bd = 101;
+  optional int32 parity = 102;
+  optional int32 start = 103;
+  optional int32 stop = 104;
+  optional int32 reserve16 = 105;
+}
+
+message LoggerConfigMO {
+  optional int32 work_mode = 1;
+  optional int32 comm_mode = 2;
+  optional int32 dhcp_sw = 3;
+  optional bytes ip = 4;
+  optional bytes netmask = 5;
+  optional bytes gw = 6;
+  optional bytes dns = 7;
+  optional bytes ap_ssid = 8;
+  optional bytes ap_pwd = 9;
+  optional bytes sp_apn = 10;
+  optional bytes sp_name = 11;
+  optional bytes sp_pwd = 12;
+  optional bytes gprs_no = 13;
+  optional int32 reserve19 = 14;
+  optional int32 svr_port = 15;
+  optional bytes svr_host = 16;
+  optional int32 reserve20 = 17;
+}
+
+message ConfigParaMO {
+  repeated PDbusConfigMO pdbus_cfg = 1;
+  repeated InvConfigMO inv_cfg = 2;
+  repeated LoggerConfigMO log_cfg = 3;
+}
+
+message WriteHRegResDTO {
+  optional int32 offset = 1;
+  optional int32 time = 2;
+  optional int32 action = 3;
+  optional int64 gw_sn = 4;
+  optional int64 log_sn = 5;
+  optional int32 ap = 6;
+  optional int32 cp = 7;
+  repeated ConfigParaMO cfg_para = 8;
+}
+
+message WriteHRegReqDTO {
+  optional int32 offset = 1;
+  optional int32 time = 2;
+  optional int32 action = 3;
+  optional int64 gw_sn = 4;
+  optional int64 log_sn = 5;
+  optional int32 cp = 6;
+  optional int32 err_code = 7;
+}
+
+message ReadHRegReqDTO {
+  optional int32 offset = 1;
+  optional int32 time = 2;
+  optional int32 action = 3;
+  optional int64 gw_sn = 4;
+  optional int64 log_sn = 5;
+  optional int32 ap = 6;
+  optional int32 cp = 7;
+  repeated ConfigParaMO cfg_para = 8;
+}
+
+message ReadHRegResDTO {
+  optional int32 offset = 1;
+  optional int32 time = 2;
+  optional int32 action = 3;
+  optional int64 gw_sn = 4;
+  optional int64 log_sn = 5;
+}

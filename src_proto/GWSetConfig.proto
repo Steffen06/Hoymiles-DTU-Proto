@@ -1,0 +1,48 @@
+syntax = "proto3";
+
+message GWSetConfigRes {
+  optional int64 sn = 1;
+  optional int32 oft = 2;
+  optional uint32 time = 3;
+  optional int32 netmode_select = 4;
+  optional int32 server_send_time = 5;
+  optional int32 serverport = 6;
+  optional bytes apn_set = 7;
+  optional bytes wifi_ssid = 8;
+  optional bytes wifi_passward = 9;
+  optional bytes server_domain_name = 10;
+  optional int32 access_model = 11;
+  optional int32 mac_0 = 12;
+  optional int32 mac_1 = 13;
+  optional int32 mac_2 = 14;
+  optional int32 mac_3 = 15;
+  optional int32 mac_4 = 16;
+  optional int32 mac_5 = 17;
+  optional int32 dhcp_switch = 18;
+  optional int32 ip_addr_0 = 19;
+  optional int32 ip_addr_1 = 20;
+  optional int32 ip_addr_2 = 21;
+  optional int32 ip_addr_3 = 22;
+  optional int32 subnet_mask_0 = 23;
+  optional int32 subnet_mask_1 = 24;
+  optional int32 subnet_mask_2 = 25;
+  optional int32 subnet_mask_3 = 26;
+  optional int32 default_gateway_0 = 27;
+  optional int32 default_gateway_1 = 28;
+  optional int32 default_gateway_2 = 29;
+  optional int32 default_gateway_3 = 30;
+  optional bytes apn_name = 31;
+  optional bytes apn_passward = 32;
+  optional int32 cable_dns_0 = 33;
+  optional int32 cable_dns_1 = 34;
+  optional int32 cable_dns_2 = 35;
+  optional int32 cable_dns_3 = 36;
+  optional bytes dtu_ap_ssid = 37;
+  optional bytes dtu_ap_pass = 38;
+}
+
+message GWSetConfigReq {
+  optional int32 oft = 1;
+  optional uint32 time = 2;
+  optional int32 err_code = 3;
+}

@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+message PVInvEventLogReqDTO {
+  int64 inv_sn = 1;
+  uint32 time = 2;
+  int32 ap = 3;
+  int32 cp = 4;
+  repeated uint32 event = 5;
+  repeated uint32 ymd_hms = 6;
+}
+
+message PVInvEventLogResDTO {
+  uint32 time = 1;
+  string ymd_hms = 2;
+  int32 offset = 3;
+  int32 cp = 4;
+}

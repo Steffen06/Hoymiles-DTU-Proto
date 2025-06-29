@@ -1,0 +1,27 @@
+syntax = "proto3";
+
+message PVInvUpdateResDTO {
+  optional uint32 time = 1;
+  optional int32 total_size = 2;
+  optional int32 dev_type = 3;
+  optional int32 crc = 4;
+  optional int32 state = 5;
+}
+
+message PVInvUpdateReqDTO {
+  optional int32 err_code = 1;
+  optional int32 rate = 2;
+  optional int32 state = 3;
+}
+
+message PVInvOTAResDTO {
+  optional bytes data = 1;
+  optional int32 s_range = 2;
+  optional int32 e_range = 3;
+}
+
+message PVInvOTAReqDTO {
+  optional int32 s_range = 1;
+  optional int32 e_range = 2;
+  optional int32 err_code = 3;
+}

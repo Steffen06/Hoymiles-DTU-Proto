@@ -1,0 +1,29 @@
+syntax = "proto3";
+
+message AUGetHistEDRes {
+  int64 sn = 1;
+  int32 oft = 2;
+  int32 kind = 3;
+  int32 get_y = 4;
+  int32 get_m = 5;
+  uint32 time = 6;
+}
+
+message AUGetHistEDReq {
+  int64 sn = 1;
+  int32 type = 2;
+  int32 oft = 3;
+  uint32 time = 4;
+  int32 kind = 5;
+  repeated EDMO au_eg = 6;
+}
+
+message EDMO {
+  uint32 time = 1;
+  int32 epv = 2;
+  int32 el = 3;
+  int32 eb_dchg = 4;
+  int32 eb_chg = 5;
+  int32 eg_in = 6;
+  int32 eg_out = 7;
+}

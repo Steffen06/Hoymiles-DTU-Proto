@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+message GWHBReqDTO {
+  optional int32 oft = 1;
+  optional uint32 time = 2;
+  optional int32 csq = 3;
+  optional int64 sn = 4;
+  optional int32 ping_oft = 5;
+  optional int32 rs_tms = 6;
+}
+
+message GWHBResDTO {
+  optional int32 oft = 1;
+  optional uint32 time = 2;
+  optional bytes ymd_hms = 3;
+}

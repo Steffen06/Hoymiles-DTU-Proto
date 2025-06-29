@@ -1,0 +1,173 @@
+syntax = "proto3";
+
+message EmsParRevSocMO {
+  optional int32 rev_soc = 1;
+}
+
+message EcoSetWeekMO {
+  optional uint32 wr = 1;
+  optional uint32 peak_time = 2;
+  optional uint32 vale_time = 3;
+  optional int32 peak_in = 4;
+  optional int32 peak_out = 5;
+  optional int32 vale_in = 6;
+  optional int32 vale_out = 7;
+  optional int32 in = 8;
+  optional int32 out = 9;
+}
+
+message EcoSetTimMO {
+  optional uint32 dr = 1;
+  optional EcoSetWeekMO w1 = 2;
+  optional EcoSetWeekMO w2 = 3;
+}
+
+message EmsParEcoSetMO {
+  optional int32 rev_soc = 1;
+  repeated EcoSetTimMO ts = 2;
+}
+
+message EmsParChgDchgMO {
+  optional int32 rev_soc = 1;
+  optional int32 max_p = 2;
+}
+
+message EmsParPeakCutMO {
+  optional int32 peakrev_soc = 1;
+  optional int32 peak_meterp = 2;
+}
+
+message TimeOfSetMO {
+  optional uint32 chg_tr = 1;
+  optional int32 chg_p = 2;
+  optional uint32 dchg_tr = 3;
+  optional int32 dchg_p = 4;
+  optional int32 min_soc = 5;
+  optional int32 max_soc = 6;
+}
+
+message EmsParUseTiSetMO {
+  optional int32 rev_soc = 1;
+  repeated TimeOfSetMO trs = 2;
+}
+
+message ParaEmsMO {
+  optional uint32 mode = 1;
+  optional EmsParRevSocMO selfu = 2;
+  optional EmsParEcoSetMO date = 3;
+  optional EmsParRevSocMO back = 4;
+  optional EmsParChgDchgMO chrg_m = 5;
+  optional EmsParChgDchgMO dchg_m = 6;
+  optional EmsParPeakCutMO peakcut = 7;
+  optional EmsParUseTiSetMO tou = 8;
+}
+
+message LCtrlManualMO {
+  optional int32 sw = 1;
+}
+
+message LCtrlTiMO {
+  optional uint32 wr1 = 1;
+  optional uint32 wr1_tr1 = 2;
+  optional uint32 wr1_tr2 = 3;
+  optional uint32 wr2 = 4;
+  optional uint32 wr2_tr1 = 5;
+  optional uint32 wr2_tr2 = 6;
+}
+
+message LCtrlAiMO {
+  optional uint32 wr1 = 1;
+  optional uint32 wr1_tr = 2;
+  optional uint32 wr2 = 3;
+  optional uint32 wr2_tr = 4;
+  optional int32 min_rti = 5;
+  optional int32 rated_p = 6;
+}
+
+message LCtrlOffNetMO {
+  optional int32 ptect_soc = 1;
+}
+
+message LCtrlAcChgMO {
+  optional int32 air_i = 1;
+  optional int32 evchrg_i = 2;
+}
+
+message HpTiSetMO {
+  optional uint32 dr = 1;
+  optional uint32 wr = 2;
+}
+
+message ParaHpSetMO {
+  optional int32 mode = 1;
+  optional int32 sta_p = 2;
+  optional int32 feed_p = 3;
+  optional int32 consp_p = 4;
+  optional int32 soc_en = 5;
+  optional int32 min_rti = 6;
+  optional int32 day_rti = 7;
+  optional int32 sta_soc = 8;
+  optional int32 stp_soc = 9;
+  optional int32 maxti_en = 10;
+  repeated HpTiSetMO hp_tim = 11;
+}
+
+message RelayParLCtrlMO {
+  optional int32 load_mode = 1;
+  optional LCtrlManualMO sw = 2;
+  optional LCtrlTiMO timi = 3;
+  optional LCtrlAiMO ai = 4;
+  optional LCtrlOffNetMO offnet = 5;
+  optional LCtrlAcChgMO acch = 6;
+  optional ParaHpSetMO hp = 7;
+}
+
+message GenExeSetMO {
+  optional int32 freq = 1;
+  optional uint32 w = 2;
+  optional uint32 sta_ti = 3;
+  optional int32 durti = 4;
+}
+
+message GenRunSetMO {
+  optional int32 sta_cap = 1;
+  optional int32 stp_cap = 2;
+  optional int32 quiet_en = 3;
+  optional uint32 quiet_ti1 = 4;
+  optional uint32 quiet_ti2 = 5;
+}
+
+message ParaGenSetMO {
+  optional int32 rmode = 1;
+  optional GenRunSetMO run_set = 2;
+  optional int32 exemode = 3;
+  optional GenExeSetMO exe_set = 4;
+  optional uint32 chg_ti = 5;
+}
+
+message ParaRelaySetMO {
+  optional int32 mode = 1;
+  optional RelayParLCtrlMO lctrl = 2;
+  optional ParaGenSetMO genset = 3;
+}
+
+message MidLSetMO {
+  optional int32 l_mode = 1;
+  optional LCtrlManualMO sw = 2;
+  optional LCtrlTiMO ti = 3;
+  optional LCtrlAiMO ai = 4;
+  optional LCtrlOffNetMO offnet = 5;
+}
+
+message ParaMidSetMO {
+  optional int32 mode = 1;
+  repeated MidLSetMO comset = 2;
+}
+
+message ESParaSetBO {
+  optional ParaEmsMO emspara = 1;
+  optional ParaRelaySetMO relay = 2;
+  optional ParaMidSetMO midrelay = 3;
+  optional ParaGenSetMO genset = 4;
+  optional ParaHpSetMO hp = 5;
+}

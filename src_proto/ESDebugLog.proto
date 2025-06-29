@@ -1,0 +1,78 @@
+syntax = "proto3";
+
+message DebugInvParam {
+  optional int32 db1 = 1;
+  optional int32 db2 = 2;
+  optional int32 db3 = 3;
+  optional int32 db4 = 4;
+  optional int32 db5 = 5;
+  optional int32 db6 = 6;
+  optional int32 db7 = 7;
+  optional int32 db8 = 8;
+  optional int32 sw_f_code = 9;
+  optional int32 hw_f_code = 10;
+  optional int32 self_f_code = 11;
+  optional int32 saf_status = 12;
+  optional int32 saf_f_code = 13;
+  optional int32 sys_status = 14;
+  optional int32 sys_f_code = 15;
+  optional int32 zero_cr_frq = 16;
+  optional int32 safety_cr_frq = 17;
+  optional int32 peak_va_flag = 18;
+  optional int32 peak_va_rem = 19;
+  optional int32 saf_p_lim = 20;
+  optional int32 gcf_p_lim = 21;
+  optional int32 auxi_sup_12v = 22;
+  optional int32 auxi_sup_7v = 23;
+  optional int32 auxi_sup_5v = 24;
+  optional int32 auxi_sup_33v = 25;
+  optional int32 auxi_sup_15v = 26;
+  optional int32 pe_v = 27;
+  optional int32 bala_brid_i = 28;
+  optional int32 bat_temp = 29;
+  optional int32 bat_in_v = 30;
+  optional int32 bat_res_i1 = 31;
+  optional int32 bat_res_i2 = 32;
+  optional int32 bat_ems_mode = 33;
+  optional int32 pv_status = 34;
+  optional int32 inv_status = 35;
+  optional int32 bms_status = 36;
+  optional int32 res_soc = 37;
+  optional int32 saf_sup_15v = 38;
+  optional int32 arc_fft = 39;
+  optional int32 arc_flit = 40;
+  optional int32 arc_f_i1 = 41;
+  optional int32 arc_fd_i1l1 = 42;
+  optional int32 arc_fd_i1l2 = 43;
+  optional int32 arc_f_i2 = 44;
+  optional int32 arc_fd_i2l1 = 45;
+  optional int32 arc_fd_i2l2 = 46;
+  optional int32 arc_fd_nu = 47;
+  optional int32 arc_amp = 48;
+}
+
+message DebugInvPhase {
+  optional int32 ph = 1;
+  optional int32 eps_ph_ap = 2;
+  optional int32 grid_v = 3;
+  optional int32 safety_grid_v = 4;
+  optional int32 gen_ph_v = 5;
+}
+
+message DebugDInv {
+  optional DebugInvParam param = 1;
+  repeated DebugInvPhase phase = 3;
+}
+
+message ESDebugLogReqDTO {
+  optional uint32 time = 1;
+  optional int64 inv_sn = 2;
+  optional uint32 type = 3;
+  optional bytes data = 4;
+  optional DebugDInv dinv = 5;
+}
+
+message ESDebugLogResDTO {
+  optional uint32 time = 1;
+  optional int64 inv_sn = 2;
+}

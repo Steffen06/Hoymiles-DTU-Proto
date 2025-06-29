@@ -1,0 +1,48 @@
+syntax = "proto3";
+
+message GWSetConfigRes {
+  int64 sn = 1;
+  int32 oft = 2;
+  uint32 time = 3;
+  int32 netmode_select = 4;
+  int32 server_send_time = 5;
+  int32 serverport = 6;
+  string apn_set = 7;
+  string wifi_ssid = 8;
+  string wifi_passward = 9;
+  string server_domain_name = 10;
+  int32 access_model = 11;
+  int32 mac_0 = 12;
+  int32 mac_1 = 13;
+  int32 mac_2 = 14;
+  int32 mac_3 = 15;
+  int32 mac_4 = 16;
+  int32 mac_5 = 17;
+  int32 dhcp_switch = 18;
+  int32 ip_addr_0 = 19;
+  int32 ip_addr_1 = 20;
+  int32 ip_addr_2 = 21;
+  int32 ip_addr_3 = 22;
+  int32 subnet_mask_0 = 23;
+  int32 subnet_mask_1 = 24;
+  int32 subnet_mask_2 = 25;
+  int32 subnet_mask_3 = 26;
+  int32 default_gateway_0 = 27;
+  int32 default_gateway_1 = 28;
+  int32 default_gateway_2 = 29;
+  int32 default_gateway_3 = 30;
+  string apn_name = 31;
+  string apn_passward = 32;
+  int32 cable_dns_0 = 33;
+  int32 cable_dns_1 = 34;
+  int32 cable_dns_2 = 35;
+  int32 cable_dns_3 = 36;
+  string dtu_ap_ssid = 37;
+  string dtu_ap_pass = 38;
+}
+
+message GWSetConfigReq {
+  int32 oft = 1;
+  uint32 time = 2;
+  int32 err_code = 3;
+}

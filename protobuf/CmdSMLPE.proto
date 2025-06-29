@@ -1,0 +1,26 @@
+syntax = "proto3";
+
+message CmdSmlpeResDTO {
+  int32 offset = 1;
+  int32 time = 2;
+  int64 tid = 3;
+  int32 action = 4;
+  int64 gw_sn = 5;
+  int64 log_sn = 6;
+  int32 dev_kind = 7;
+  int32 ap = 8;
+  int32 cp = 9;
+  string data = 10;
+}
+
+message CmdSmlpeReqDTO {
+  int32 offset = 1;
+  int32 time = 2;
+  int64 tid = 3;
+  int32 action = 4;
+  int64 gw_sn = 5;
+  int64 log_sn = 6;
+  int32 dev_kind = 7;
+  int32 cp = 8;
+  int32 err_code = 9;
+}

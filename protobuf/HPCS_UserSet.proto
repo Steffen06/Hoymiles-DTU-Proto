@@ -1,0 +1,73 @@
+syntax = "proto3";
+
+message BaseParameter {
+  uint32 cmd_source = 1;
+  uint32 wk_mod = 2;
+  uint32 pq_mod = 3;
+  uint32 vsg_ct = 4;
+  uint32 vsg_of = 5;
+  uint32 v_gro = 6;
+  uint32 vf_mod = 7;
+  sint32 p_set = 8;
+  sint32 q_set = 9;
+  sint32 p_fct = 10;
+  uint32 v_bus = 11;
+  sint32 i_bus = 12;
+  sint32 i_pq = 13;
+  sint32 i_vf = 14;
+  uint32 f_out = 15;
+  uint32 ph_out = 16;
+  uint32 iso_det = 17;
+  uint32 s_auto1 = 18;
+  uint32 s_auto2 = 19;
+  uint32 zo_pwm = 20;
+  uint32 zo_pwmt = 21;
+  uint32 fcap_rep = 22;
+}
+
+message CtrParam {
+  uint32 p_appr = 1;
+  uint32 i_appr = 2;
+  uint32 i_disac = 3;
+  uint32 i_chgac = 4;
+  uint32 p_disac = 5;
+  uint32 p_chgac = 6;
+  uint32 p_indr = 7;
+  uint32 p_capr = 8;
+  uint32 i_indr = 9;
+  uint32 i_capr = 10;
+  uint32 v_ofl = 11;
+  uint32 i_disdc = 12;
+  uint32 i_chgdc = 13;
+  uint32 v_busdc = 14;
+}
+
+message TimerSync {
+  uint32 year = 1;
+  uint32 mon_day = 2;
+  uint32 hou_min = 3;
+  uint32 second = 4;
+  uint32 syn_en = 5;
+}
+
+message HPCSUserSetGetResDTO {
+  uint32 time = 1;
+  int32 err_code = 2;
+}
+
+message HPCSUserSetGetReqDTO {
+  BaseParameter bs_prm = 1;
+  CtrParam ctr_prm = 2;
+  TimerSync tm_syn = 3;
+}
+
+message HPCSUserSetPutResDTO {
+  BaseParameter bs_prm = 1;
+  CtrParam ctr_prm = 2;
+  TimerSync tm_syn = 3;
+}
+
+message HPCSUserSetPutReqDTO {
+  uint32 time = 1;
+  int32 err_code = 2;
+}

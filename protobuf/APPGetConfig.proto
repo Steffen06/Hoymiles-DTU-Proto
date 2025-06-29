@@ -1,0 +1,30 @@
+syntax = "proto3";
+
+message APPGetConfigRes {
+  int32 oft = 1;
+  uint32 time = 2;
+  uint32 get_type = 3;
+}
+
+message APPGetConfigReq {
+  int32 oft = 1;
+  uint32 time = 2;
+  uint32 get_type = 3;
+  int32 p_lim = 4;
+  int32 zero_export_enable = 5;
+  int32 server_send_time = 6;
+  int32 serverport = 7;
+  int32 dhcp_switch = 8;
+  string dns_0 = 9;
+  string dns_1 = 10;
+  string ip_addr = 11;
+  string subnet_mask = 12;
+  string def_gateway = 13;
+  string sta_mac = 14;
+  string ap_mac = 15;
+  string meter_kind = 16;
+  string meter_interface = 17;
+  string wifi_ssid = 18;
+  string wifi_passward = 19;
+  string server_domain_name = 20;
+}

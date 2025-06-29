@@ -1,0 +1,35 @@
+syntax = "proto3";
+
+message FWInfoResDTO {
+  repeated FWModMO mods = 1;
+  int32 p_len = 2;
+}
+
+message FWModMO {
+  int64 sn = 1;
+  int32 fid = 2;
+  int32 len = 3;
+  int32 dev_type = 4;
+  int32 version = 5;
+  int32 ftype = 6;
+  int32 crc = 7;
+}
+
+message FWInfoReqDTO {
+  int64 sn = 1;
+  int32 err_code = 2;
+}
+
+message FWOTAReqDTO {
+  int32 fid = 1;
+  int32 s_range = 2;
+  int32 e_range = 3;
+  int32 err_code = 4;
+}
+
+message FWOTAResDTO {
+  string data = 1;
+  int32 fid = 2;
+  int32 s_range = 3;
+  int32 e_range = 4;
+}

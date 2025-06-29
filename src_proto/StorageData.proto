@@ -1,0 +1,246 @@
+syntax = "proto3";
+
+message StorageDataReqDTO {
+  optional bytes dtu_sn = 1;
+  optional int32 time = 2;
+  optional int32 time_oft = 3;
+  repeated PvMO pvs = 4;
+  optional PvTotalMO pv_total = 5;
+  repeated BmsMO bmss = 6;
+  optional BmsTotalMO bms_total = 7;
+  optional GridMO grid = 8;
+  optional EpsMO eps = 9;
+  optional LoadMO load = 10;
+  optional InvMO inv = 11;
+  optional bytes fault = 12;
+  repeated EventOperateMO event_operates = 13;
+  repeated EventFaultMO event_faults = 14;
+  optional InvBatMO InvBat = 15;
+}
+
+message PvMO {
+  optional int32 v = 1;
+  optional int32 i = 2;
+  optional int32 p = 3;
+  optional int32 e_total = 4;
+}
+
+message PvTotalMO {
+  optional int32 p_total = 1;
+  optional int32 e_total = 2;
+  optional int32 e2Bat = 3;
+  optional int32 e2load = 4;
+  optional int32 e2grid = 5;
+}
+
+message BmsMO {
+  optional int32 status = 1;
+  optional int32 chrg_cap = 2;
+  optional int32 dischrg_cap = 3;
+  optional int32 fault_message = 4;
+  optional int32 bat_cap = 5;
+  optional int32 chrg_cutoff_v = 6;
+  optional int32 dischrg_cutoff_v = 7;
+  optional int32 max_charge_i = 8;
+  optional int32 max_discharge_i = 9;
+  optional int32 bat_temp_h = 10;
+  optional int32 bat_temp_l = 11;
+  optional int32 bat_v = 12;
+  optional int32 bat_i = 13;
+  optional int32 bat_p = 14;
+  optional int32 e_chrg_daily = 15;
+  optional int32 e_chrg_total = 16;
+  optional int32 e_dischrg_daily = 17;
+  optional int32 e_dischrg_total = 18;
+  optional bytes sn = 19;
+}
+
+message BmsTotalMO {
+  optional int32 p_all = 1;
+  optional int32 bat_cap = 2;
+  optional int32 e_chrg_Total_all = 3;
+  optional int32 e_dischrg_Total_all = 4;
+}
+
+message InvBatMO {
+  optional int32 bat1_SOC = 1;
+  optional int32 bat1_v = 2;
+  optional int32 bat1_i = 3;
+  optional int32 bat1_p = 4;
+  optional int32 bat2_SOC = 5;
+  optional int32 bat2_v = 6;
+  optional int32 bat2_i = 7;
+  optional int32 bat2_p = 8;
+  optional int32 bat_p_total = 9;
+  optional int32 bat_SOC_total = 10;
+}
+
+message GridMO {
+  optional int32 v_a = 1;
+  optional int32 v_b = 2;
+  optional int32 v_c = 3;
+  optional int32 i_a = 4;
+  optional int32 i_b = 5;
+  optional int32 i_c = 6;
+  optional int32 p_a = 7;
+  optional int32 p_b = 8;
+  optional int32 p_c = 9;
+  optional int32 f_a = 10;
+  optional int32 f_b = 11;
+  optional int32 f_c = 12;
+  optional int32 ap_a = 13;
+  optional int32 ap_b = 14;
+  optional int32 ap_c = 15;
+  optional int32 rp_a = 16;
+  optional int32 rp_b = 17;
+  optional int32 rp_c = 18;
+  optional int32 pf_a = 19;
+  optional int32 pf_b = 20;
+  optional int32 pf_c = 21;
+  optional int32 p_total = 22;
+  optional int32 ap_total = 23;
+  optional int32 rp_total = 24;
+  optional int32 sm_positive = 25;
+  optional int32 sm_negative = 26;
+  optional int32 sm_connect_Status = 27;
+  optional int32 pf_total = 28;
+  optional int32 sm_positive_a = 29;
+  optional int32 sm_positive_b = 30;
+  optional int32 sm_positive_c = 31;
+  optional int32 sm_negative_a = 32;
+  optional int32 sm_negative_b = 33;
+  optional int32 sm_negative_c = 34;
+}
+
+message EpsMO {
+  optional int32 v_a = 1;
+  optional int32 v_b = 2;
+  optional int32 v_c = 3;
+  optional int32 i_a = 4;
+  optional int32 i_b = 5;
+  optional int32 i_c = 6;
+  optional int32 ap_a = 7;
+  optional int32 ap_b = 8;
+  optional int32 ap_c = 9;
+  optional int32 f_a = 10;
+  optional int32 f_b = 11;
+  optional int32 f_c = 12;
+  optional int32 p_a = 13;
+  optional int32 p_b = 14;
+  optional int32 p_c = 15;
+  optional int32 yield_total_a = 16;
+  optional int32 yield_total_b = 17;
+  optional int32 yield_total_c = 18;
+  optional int32 p_total = 19;
+  optional int32 ap_total = 20;
+  optional int32 yield_daily = 21;
+  optional int32 yield_total = 22;
+}
+
+message LoadMO {
+  optional int32 v_a = 1;
+  optional int32 v_b = 2;
+  optional int32 v_c = 3;
+  optional int32 i_a = 4;
+  optional int32 i_b = 5;
+  optional int32 i_c = 6;
+  optional int32 p_a = 7;
+  optional int32 p_b = 8;
+  optional int32 p_c = 9;
+  optional int32 f_a = 10;
+  optional int32 f_b = 11;
+  optional int32 f_c = 12;
+  optional int32 ap_a = 13;
+  optional int32 ap_b = 14;
+  optional int32 ap_c = 15;
+  optional int32 rp_a = 16;
+  optional int32 rp_b = 17;
+  optional int32 rp_c = 18;
+  optional int32 p_total = 19;
+  optional int32 ap_total = 20;
+  optional int32 rp_total = 21;
+  optional int32 e_load_total = 22;
+  optional int32 e_load_from_pv_total = 23;
+  optional int32 e_load_from_bat_total = 24;
+  optional int32 e_load_from_grid_total = 25;
+  optional int32 e_load_total_a = 26;
+  optional int32 e_load_total_b = 27;
+  optional int32 e_load_total_c = 28;
+}
+
+message InvMO {
+  optional int32 work_status = 1;
+  optional int32 v_a = 2;
+  optional int32 v_b = 3;
+  optional int32 v_c = 4;
+  optional int32 i_a = 5;
+  optional int32 i_b = 6;
+  optional int32 i_c = 7;
+  optional int32 p_a = 8;
+  optional int32 p_b = 9;
+  optional int32 p_c = 10;
+  optional int32 f_a = 11;
+  optional int32 f_b = 12;
+  optional int32 f_c = 13;
+  optional int32 ap_a = 14;
+  optional int32 ap_b = 15;
+  optional int32 ap_c = 16;
+  optional int32 rp_a = 17;
+  optional int32 rp_b = 18;
+  optional int32 rp_c = 19;
+  optional int32 pf_a = 20;
+  optional int32 pf_b = 21;
+  optional int32 pf_c = 22;
+  optional int32 p_total = 23;
+  optional int32 ap_total = 24;
+  optional int32 rp_total = 25;
+  optional int32 dc_bus_v_p = 26;
+  optional int32 dc_bus_v_n = 27;
+  optional int32 dc_bus_v = 28;
+  optional int32 e_out_total = 29;
+  optional int32 e_charge_total = 30;
+  optional int32 temp_ths_npc1 = 31;
+  optional int32 temp_ths_npc2 = 32;
+  optional int32 inv_temp = 33;
+  optional int32 leakage_i = 34;
+  optional int32 dc_Injection_i = 35;
+  optional int32 temp_tcb = 36;
+  optional int32 connection_time = 37;
+  optional int32 run_time_yield_total = 38;
+  optional int32 inv_v_a = 39;
+  optional int32 inv_v_b = 40;
+  optional int32 inv_v_c = 41;
+  optional int32 inv_i_a = 42;
+  optional int32 inv_i_b = 43;
+  optional int32 inv_i_c = 44;
+  optional int32 inv_f = 45;
+  optional int32 pf_total = 46;
+  optional int32 e_out_total_a = 47;
+  optional int32 e_out_total_b = 48;
+  optional int32 e_out_total_c = 49;
+  optional int32 e_charge_total_a = 50;
+  optional int32 e_charge_total_b = 51;
+  optional int32 e_charge_total_c = 52;
+  optional int32 insu_resistance = 53;
+  optional int32 mppt_module_status = 54;
+  optional int32 mppt_tracker_1 = 55;
+  optional int32 mppt_tracker_2 = 56;
+  optional int32 bat_current_1 = 57;
+  optional int32 bat_current_2 = 58;
+}
+
+message EventOperateMO {
+  optional int32 time = 1;
+  optional int32 Code = 2;
+}
+
+message EventFaultMO {
+  optional int32 time = 1;
+  optional int32 Code = 2;
+}
+
+message StorageDataRes {
+  optional int32 time = 1;
+  optional bytes ymd_hms = 2;
+  optional int32 offset = 3;
+}

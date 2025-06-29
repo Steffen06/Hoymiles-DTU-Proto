@@ -1,0 +1,123 @@
+syntax = "proto3";
+
+message MeterMO {
+  optional int32 type = 1;
+  optional int64 sn = 2;
+  optional int32 p_tt = 3;
+  optional int32 p_tta = 4;
+  optional int32 p_ttb = 5;
+  optional int32 p_ttc = 6;
+  optional int32 pf_tt = 7;
+  optional int32 ep_tt = 8;
+  optional int32 ep_tta = 9;
+  optional int32 ep_ttb = 10;
+  optional int32 ep_ttc = 11;
+  optional int32 en_tt = 12;
+  optional int32 en_tta = 13;
+  optional int32 en_ttb = 14;
+  optional int32 en_ttc = 15;
+  optional int32 fault = 16;
+  optional int32 u_a = 17;
+  optional int32 u_b = 18;
+  optional int32 u_c = 19;
+  optional int32 i_a = 20;
+  optional int32 i_b = 21;
+  optional int32 i_c = 22;
+  optional int32 pf_a = 23;
+  optional int32 pf_b = 24;
+  optional int32 pf_c = 25;
+}
+
+message RpMO {
+  optional int64 sn = 1;
+  optional int32 sign = 2;
+  optional int32 chan = 3;
+  optional int32 pv_nub = 4;
+  optional int32 link = 5;
+}
+
+message RSDMO {
+  optional int64 sn = 1;
+  optional int32 ver = 2;
+  optional int32 v = 3;
+  optional int32 p = 4;
+  optional int32 temp = 5;
+  optional int32 wnum = 6;
+  optional int32 crc = 7;
+  optional int32 link = 8;
+}
+
+message SGSMO {
+  optional int64 sn = 1;
+  optional int32 ver = 2;
+  optional int32 v = 3;
+  optional int32 freq = 4;
+  optional int32 p = 5;
+  optional int32 q = 6;
+  optional int32 i = 7;
+  optional int32 pf = 8;
+  optional int32 temp = 9;
+  optional int32 wnum = 10;
+  optional int32 crc = 11;
+  optional int32 link = 12;
+  optional int32 p_lim = 13;
+  optional int32 mi_signal = 20;
+}
+
+message TGSMO {
+  optional int64 sn = 1;
+  optional int32 ver = 2;
+  optional int32 v_a = 3;
+  optional int32 v_b = 4;
+  optional int32 v_c = 5;
+  optional int32 v_ab = 6;
+  optional int32 v_bc = 7;
+  optional int32 v_ca = 8;
+  optional int32 freq = 9;
+  optional int32 p = 10;
+  optional int32 q = 11;
+  optional int32 i_a = 12;
+  optional int32 i_b = 13;
+  optional int32 i_c = 14;
+  optional int32 pf = 15;
+  optional int32 temp = 16;
+  optional int32 wnum = 17;
+  optional int32 crc = 18;
+  optional int32 link = 19;
+  optional int32 mi_signal = 20;
+}
+
+message PvMO {
+  optional int64 sn = 1;
+  optional int32 pi = 2;
+  optional int32 v = 3;
+  optional int32 i = 4;
+  optional int32 p = 5;
+  optional int32 et = 6;
+  optional int32 ed = 7;
+  optional int32 code = 8;
+}
+
+message RealReqDTO {
+  optional bytes sn = 1;
+  optional int32 time = 2;
+  optional int32 ap = 3;
+  optional int32 cp = 4;
+  optional int32 ver = 5;
+  repeated MeterMO meter_datas = 6;
+  repeated RpMO rp_datas = 7;
+  repeated RSDMO rsd_datas = 8;
+  repeated SGSMO sgs_datas = 9;
+  repeated TGSMO tgs_datas = 10;
+  repeated PvMO pv_datas = 11;
+  optional uint64 dtu_p = 12;
+  optional uint64 dtu_ed = 13;
+}
+
+message RealResDTO {
+  optional bytes ymd_hms = 1;
+  optional int32 cp = 2;
+  optional int32 err_code = 3;
+  optional int32 oft = 4;
+  optional int32 time = 5;
+}

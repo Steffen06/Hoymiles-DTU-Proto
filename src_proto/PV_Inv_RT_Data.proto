@@ -1,0 +1,78 @@
+syntax = "proto3";
+
+message PVInvDataReqDTO {
+  optional int64 sn = 1;
+  optional uint32 time = 2;
+  optional sint32 offset = 3;
+  optional sint32 ap = 4;
+  optional sint32 cp = 5;
+  optional SystemParm sysprm = 6;
+  optional ObserParm obsprm = 7;
+  optional UserParm usrprm = 8;
+  repeated DC_Inf dc_inf = 9;
+  repeated sint32 fc = 12;
+  repeated sint32 subfc = 13;
+  repeated sint32 wc = 14;
+  repeated sint32 subwc = 15;
+}
+
+message PVInvDataResDTO {
+  optional uint32 time = 1;
+  optional string ymd_hms = 2;
+  optional sint32 offset = 3;
+  optional sint32 cp = 4;
+}
+
+message SystemParm {
+  optional sint32 prt = 1;
+  optional sint32 vrt = 2;
+  optional sint32 irt = 3;
+  optional sint32 frt = 4;
+  optional sint32 grid_code = 5;
+  optional sint32 pcom_addr = 6;
+}
+
+message ObserParm {
+  optional sint32 vbus = 1;
+  optional sint32 grid_uab = 2;
+  optional sint32 grid_ubc = 3;
+  optional sint32 grid_uca = 4;
+  optional sint32 i_lphu = 5;
+  optional sint32 i_lphv = 6;
+  optional sint32 i_lphw = 7;
+  optional sint32 grid_phf = 8;
+  optional sint32 inv_state = 9;
+  optional sint32 otp_fct = 10;
+  optional sint32 otp_act = 11;
+  optional sint32 otp_inact = 12;
+  optional sint32 otp_app = 13;
+  optional sint32 pid_opsta = 14;
+  optional sint32 temp1 = 15;
+  optional sint32 temp2 = 16;
+  optional sint32 rd = 17;
+  optional sint32 rtl = 18;
+  optional sint32 rth = 19;
+  optional sint32 dgen = 20;
+  optional sint32 mgenl = 21;
+  optional sint32 mgenh = 22;
+  optional sint32 ygenl = 23;
+  optional sint32 ygenh = 24;
+  optional sint32 tgenl = 25;
+  optional sint32 tgenh = 26;
+  optional sint32 grid_ubl = 27;
+  optional sint32 ac_ubl = 28;
+  optional uint32 iv_state = 29;
+}
+
+message UserParm {
+  optional sint32 di1 = 1;
+  optional sint32 di2 = 2;
+  optional sint32 ai1 = 3;
+  optional sint32 ai2 = 4;
+}
+
+message DC_Inf {
+  repeated sint32 pvsv = 1;
+  repeated sint32 pvsi = 2;
+  repeated sint32 bstp = 3;
+}

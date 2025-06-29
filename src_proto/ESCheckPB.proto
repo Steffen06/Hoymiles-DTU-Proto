@@ -1,0 +1,72 @@
+syntax = "proto3";
+
+message SysMO {
+  optional int32 step = 1;
+  optional int32 code = 2;
+}
+
+message IpsMO {
+  optional int32 IPS_Step = 1;
+  optional int32 IPS_sts = 2;
+  optional int32 OVP1_Vt = 3;
+  optional int32 OVP1_Vs = 4;
+  optional int32 OVP1_Vo = 5;
+  optional int32 OVP1_Tt = 6;
+  optional int32 OVP1_To = 7;
+  optional int32 OVP2_Vt = 8;
+  optional int32 OVP2_Vs = 9;
+  optional int32 OVP2_Vo = 10;
+  optional int32 OVP2_Tt = 11;
+  optional int32 OVP2_To = 12;
+  optional int32 UVP1_Vt = 13;
+  optional int32 UVP1_Vs = 14;
+  optional int32 UVP1_Vo = 15;
+  optional int32 UVP1_Tt = 16;
+  optional int32 UVP1_To = 17;
+  optional int32 UVP2_Vt = 18;
+  optional int32 UVP2_Vs = 19;
+  optional int32 UVP2_Vo = 20;
+  optional int32 UVP2_Tt = 21;
+  optional int32 UVP2_To = 22;
+  optional int32 OFP1_Ft = 23;
+  optional int32 OFP1_Fs = 24;
+  optional int32 OFP1_Fo = 25;
+  optional int32 OFP1_Tt = 26;
+  optional int32 OFP1_To = 27;
+  optional int32 OFP2_Ft = 28;
+  optional int32 OFP2_Fs = 29;
+  optional int32 OFP2_Fo = 30;
+  optional int32 OFP2_Tt = 31;
+  optional int32 OFP2_To = 32;
+  optional int32 UFP1_Ft = 33;
+  optional int32 UFP1_Fs = 34;
+  optional int32 UFP1_Fo = 35;
+  optional int32 UFP1_Tt = 36;
+  optional int32 UFP1_To = 37;
+  optional int32 UFP2_Ft = 38;
+  optional int32 UFP2_Fs = 39;
+  optional int32 UFP2_Fo = 40;
+  optional int32 UFP2_Tt = 41;
+  optional int32 UFP2_To = 42;
+  optional int32 code = 43;
+}
+
+message ESChkReqDTO {
+  optional int64 sn = 1;
+  optional uint32 time = 2;
+  optional int32 offset = 3;
+  optional int32 ap = 4;
+  optional int32 cp = 5;
+  optional int64 tid = 6;
+  optional int32 type = 7;
+  repeated SysMO sys = 8;
+  optional IpsMO ips = 9;
+}
+
+message ESChkResDTO {
+  optional uint32 time = 1;
+  optional string ymd_hms = 2;
+  optional int32 offset = 3;
+  optional int32 cp = 4;
+  optional int64 tid = 5;
+}

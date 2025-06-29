@@ -1,0 +1,28 @@
+syntax = "proto3";
+
+message CPOrderTimeMO {
+  uint32 wr = 1;
+  repeated uint32 wr_tr = 2;
+}
+
+message ChgCPOrderCfgMO {
+  int32 ord_en = 1;
+  repeated CPOrderTimeMO ord_ti = 2;
+}
+
+message ChgCPCommCfgMO {
+  uint32 max_p = 1;
+  uint32 off_p = 2;
+  int32 str_mode = 3;
+  int32 gre_en = 4;
+  uint32 max_sp = 5;
+}
+
+message ChgCPCfgMO {
+  repeated ChgCPCommCfgMO cps_com = 1;
+  repeated ChgCPOrderCfgMO cps_ord = 2;
+}
+
+message ESCPCfgBO {
+  repeated ChgCPCfgMO cps = 1;
+}

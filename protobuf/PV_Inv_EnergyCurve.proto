@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+message PVInvEnergyCurveReqDTO {
+  int64 inv_sn = 1;
+  uint32 time = 2;
+  int32 ap = 3;
+  int32 cp = 4;
+  repeated uint32 date = 5;
+  repeated uint32 e_val = 6;
+}
+
+message PVInvEnergyCurveResDTO {
+  uint32 time = 1;
+  string ymd_hms = 2;
+  int32 offset = 3;
+  int32 cp = 4;
+  int32 ec_tag = 5;
+  int32 index = 6;
+}

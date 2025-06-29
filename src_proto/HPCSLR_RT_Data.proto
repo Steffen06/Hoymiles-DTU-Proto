@@ -1,0 +1,209 @@
+syntax = "proto3";
+
+message HPCSLRDataReqDTO {
+  optional int64 sn = 1;
+  optional uint32 time = 2;
+  optional sint32 offset = 3;
+  optional sint32 ap = 4;
+  optional sint32 cp = 5;
+  optional LrSystemParam sysprm = 6;
+  optional LrObsergrid obsgrid = 7;
+  optional LrObserdc obsdc = 8;
+  optional LrObsermon obsmon = 9;
+  optional LrObsertemp obstemp = 10;
+  optional LrObserstat obsstat = 11;
+  optional LrObserbattery obsbat = 12;
+  optional LrObserchiller obschil = 13;
+  repeated sint32 fc = 14;
+  repeated sint32 subfc = 15;
+  repeated sint32 wc = 16;
+  repeated sint32 subwc = 17;
+}
+
+message HPCSLRDataResDTO {
+  optional uint32 time = 1;
+  optional string ymd_hms = 2;
+  optional sint32 offset = 3;
+  optional sint32 cp = 4;
+}
+
+message LrSystemParam {
+  optional sint32 prt = 1;
+  optional sint32 vrt = 2;
+  optional sint32 irt = 3;
+  optional sint32 frt = 4;
+}
+
+message LrObsergrid {
+  optional sint32 grid_p = 1;
+  optional sint32 phase_lk = 2;
+  optional sint32 grid_v = 3;
+  optional sint32 i_ac = 4;
+  optional sint32 grid_uab = 5;
+  optional sint32 grid_ubc = 6;
+  optional sint32 grid_uca = 7;
+  optional sint32 i_pa = 8;
+  optional sint32 i_pb = 9;
+  optional sint32 i_pc = 10;
+}
+
+message LrObserdc {
+  optional sint32 v_batt = 1;
+  optional sint32 i_dc = 2;
+  optional sint32 v_bhf = 3;
+  optional sint32 v_blf = 4;
+  optional sint32 f_dc = 5;
+  optional sint32 b_soc = 6;
+}
+
+message LrObsermon {
+  optional sint32 hpcs_state = 1;
+  optional sint32 otp_fct = 2;
+  optional sint32 grid_v = 3;
+  optional sint32 v_off = 4;
+  optional sint32 ofgd_uab = 5;
+  optional sint32 ofgd_ubc = 6;
+  optional sint32 ofgd_uca = 7;
+  optional sint32 otp_act = 8;
+  optional sint32 otp_inact = 9;
+  optional sint32 otp_app = 10;
+  optional sint32 v_ope = 11;
+  optional sint32 v_iso = 12;
+  optional sint32 i_mlc = 13;
+  optional sint32 i_tlc = 14;
+  optional sint32 v_tf = 15;
+  optional sint32 d_chg = 16;
+  optional sint32 d_dchg = 17;
+  optional sint32 t_chgl = 18;
+  optional sint32 t_chgh = 19;
+  optional sint32 t_dchgl = 20;
+  optional sint32 t_dchgh = 21;
+  optional sint32 imp_p = 22;
+  optional sint32 imp_n = 23;
+  optional sint32 cmd_s = 24;
+  optional sint32 wk_mod = 25;
+  optional sint32 pq_mod = 26;
+  optional sint32 vf_mod = 27;
+  optional sint32 BMS_pro_sta = 28;
+}
+
+message LrObsertemp {
+  optional sint32 tmp_igbt = 1;
+  optional sint32 tmp_icml = 2;
+  optional sint32 tmp_out = 3;
+  optional sint32 tmp_in = 4;
+  optional sint32 tmp_ienv = 5;
+  optional sint32 env_tmp_H_prt = 6;
+  optional sint32 env_tmp_L_ptr = 7;
+  optional sint32 IGBT_tmp_H_prt = 8;
+  optional sint32 IGBT_tmp_L_prt = 9;
+  optional sint32 ind_tmp_prt = 10;
+  optional sint32 water_tmp_I_prt = 11;
+  optional sint32 water_tmp_O_prt = 12;
+}
+
+message LrObserstat {
+  optional sint32 flt_pcs = 1;
+  optional sint32 warn_pcs = 2;
+  optional sint32 fan_in = 3;
+  optional sint32 unit_w = 4;
+  optional sint32 v_ctrl = 5;
+  optional sint32 fan_out = 6;
+  optional sint32 dcr_pf = 7;
+  optional sint32 dcr_nf = 8;
+  optional sint32 surge_dc = 9;
+  optional sint32 surge_ac = 10;
+  optional sint32 fuse_dc = 11;
+  optional sint32 drive_r = 12;
+  optional sint32 drive_s = 13;
+  optional sint32 drive_t = 14;
+  optional sint32 cp_w = 15;
+  optional sint32 but_s = 16;
+  optional sint32 but_ac = 17;
+  optional sint32 but_dc = 18;
+  optional sint32 buf_dc = 19;
+  optional sint32 iso_dec = 20;
+  optional sint32 but_di2 = 21;
+}
+
+message LrObserbattery {
+  optional sint32 bps = 1;
+  optional sint32 bsb = 2;
+  optional sint32 bpre = 3;
+  optional sint32 bpvu = 4;
+  optional sint32 bpvl = 5;
+  optional sint32 soc = 6;
+  optional sint32 soh = 7;
+  optional sint32 total_vol = 8;
+  optional sint32 total_cur = 9;
+  optional sint32 re = 10;
+  optional sint32 de = 11;
+  optional sint32 max_ic = 12;
+  optional sint32 max_oc = 13;
+  optional sint32 max_ip = 14;
+  optional sint32 max_op = 15;
+  optional sint32 smax_soc = 16;
+  optional sint32 smin_soc = 17;
+  optional sint32 smax_t = 18;
+  optional sint32 smin_t = 19;
+  optional sint32 smax_v = 20;
+  optional sint32 smin_v = 21;
+  optional sint32 max_iu = 22;
+  optional sint32 max_ou = 23;
+  optional sint32 sop = 24;
+  optional sint32 cha_or_discha_en = 25;
+  optional sint32 bat_agr = 26;
+}
+
+message LrObserchiller {
+  optional sint32 bj_st = 1;
+  optional sint32 bj_cst = 2;
+  optional sint32 bj_tc = 3;
+  optional sint32 bj_cn = 4;
+  optional sint32 bj_wst = 5;
+  optional sint32 bj_pl = 6;
+  optional sint32 bj_ph = 7;
+  optional sint32 bj_prw = 8;
+  optional sint32 bj_pow = 9;
+  optional sint32 bj_trw = 10;
+  optional sint32 bj_tow = 11;
+  optional sint32 bj_texh = 12;
+  optional sint32 bj_tsuc = 13;
+  optional sint32 fault_num1 = 14;
+  optional sint32 fault_num2 = 15;
+  optional sint32 fault_num3 = 16;
+  optional sint32 fault_num4 = 17;
+  optional sint32 fault_num5 = 18;
+  optional sint32 fault_num6 = 19;
+  optional sint32 fault_num7 = 20;
+  optional sint32 fault_num8 = 21;
+  optional sint32 fault_num9 = 22;
+  optional sint32 bj_r_wcs = 23;
+  optional sint32 bj_r_tcm = 24;
+  optional sint32 bj_r_cup = 25;
+  optional sint32 bj_r_rws = 26;
+  optional sint32 bj_r_ows = 27;
+  optional sint32 bj_r_hup = 28;
+  optional sint32 bj_r_crd = 29;
+  optional sint32 bj_r_hrd = 30;
+  optional sint32 bj_r_uc = 31;
+  optional sint32 bj_r_war = 32;
+  optional sint32 bj_r_fcm = 33;
+  optional sint32 xm_pst = 34;
+  optional sint32 xm_cst1 = 35;
+  optional sint32 xm_cst2 = 36;
+  optional sint32 xm_hst = 37;
+  optional sint32 xm_fst = 38;
+  optional sint32 xm_tow = 39;
+  optional sint32 xm_trw = 40;
+  optional sint32 xm_pow = 41;
+  optional sint32 xm_prw = 42;
+  optional sint32 xm_toe = 43;
+  optional sint32 xm_rps = 44;
+  optional sint32 xm_fwc = 45;
+  optional sint32 xm_r_mc = 46;
+  optional sint32 xm_r_wcs = 47;
+  optional sint32 xm_r_ts = 48;
+  optional sint32 f_wcr = 49;
+  optional sint32 w_fun = 50;
+}

@@ -1,0 +1,52 @@
+syntax = "proto3";
+
+message PlayPowerChart {
+  optional string date = 1;
+  repeated string x_axis = 2;
+  repeated float data = 3;
+  repeated int32 at_step = 4;
+  repeated int64 time_long = 5;
+}
+
+message PlayPowerChartArray {
+  repeated PlayPowerChart power_charts = 1;
+}
+
+message PlayModuleData {
+  message MicroDataMapEntry {
+    optional int32 key = 1;
+    optional PlayMicroData value = 2;
+  }
+
+  optional int32 sid = 1;
+  optional string date = 2;
+  repeated PlayModuleData.MicroDataMapEntry micro_data_map = 3;
+}
+
+message PlayMicroData {
+  message PortDataMapEntry {
+    optional int32 key = 1;
+    optional PlayPortDataArray value = 2;
+  }
+
+  optional int32 port_num = 1;
+  repeated string time = 2;
+  repeated PlayMicroData.PortDataMapEntry port_data_map = 4;
+  repeated float pn_hz = 5;
+  repeated float pn_temp = 6;
+  repeated float pn_u_a = 7;
+  repeated float pn_u_b = 8;
+  repeated float pn_u_c = 9;
+}
+
+message PlayPortDataArray {
+  repeated PlayPortData module_data = 1;
+}
+
+message PlayPortData {
+  optional float pv_u = 1;
+  optional float pv_i = 2;
+  optional float bn_p = 3;
+  optional float total_eq = 4;
+  optional int32 fault_code = 5;
+}

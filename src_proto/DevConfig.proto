@@ -1,0 +1,76 @@
+syntax = "proto3";
+
+message DevConfigFetchResDTO {
+  optional int32 time = 1;
+  optional int64 tid = 2;
+  optional bytes dtu_sn = 3;
+  optional bytes dev_sn = 4;
+  optional int32 package_now = 5;
+  optional int32 rule_type = 6;
+}
+
+message DevConfigFetchReqDTO {
+  optional int32 time = 1;
+  optional int64 tid = 2;
+  optional int32 rule_id = 3;
+  optional bytes data = 4;
+  optional int32 crc = 5;
+  optional bytes dtu_sn = 6;
+  optional bytes dev_sn = 7;
+  optional bytes cfg_data = 8;
+  optional int32 cfg_crc = 9;
+  optional int32 package_nub = 10;
+  optional int32 package_now = 11;
+  optional int32 rule_type = 12;
+}
+
+message DevConfigPutResDTO {
+  optional int32 time = 1;
+  optional int64 tid = 2;
+  optional int32 rule_id = 3;
+  optional bytes data = 4;
+  optional int32 crc = 5;
+  optional bytes dtu_sn = 6;
+  optional bytes dev_sn = 7;
+  optional bytes cfg_data = 8;
+  optional int32 cfg_crc = 9;
+  optional int32 package_nub = 10;
+  optional int32 package_now = 11;
+  repeated int64 mi_to_sn = 12;
+  optional int32 rule_type = 13;
+}
+
+message DevConfigPutReqDTO {
+  optional int32 time = 1;
+  optional int64 tid = 2;
+  optional bytes dtu_sn = 3;
+  optional bytes dev_sn = 4;
+  optional int32 status = 5;
+  optional int32 package_now = 6;
+  repeated int64 mi_to_sn = 7;
+  optional int32 rule_type = 8;
+}
+
+message DevConfigReportReqDTO {
+  optional int32 time = 1;
+  optional int64 tid = 2;
+  optional int32 rule_id = 3;
+  optional bytes data = 4;
+  optional int32 crc = 5;
+  optional bytes dtu_sn = 6;
+  optional bytes dev_sn = 7;
+  optional bytes cfg_data = 8;
+  optional int32 cfg_crc = 9;
+  optional int32 package_nub = 10;
+  optional int32 package_now = 11;
+  optional int32 rule_type = 12;
+}
+
+message DevConfigReportResDTO {
+  optional int32 time = 1;
+  optional int64 tid = 2;
+  optional bytes dtu_sn = 3;
+  optional bytes dev_sn = 4;
+  optional int32 package_now = 5;
+  optional int32 rule_type = 6;
+}

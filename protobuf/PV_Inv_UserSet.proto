@@ -1,0 +1,78 @@
+syntax = "proto3";
+
+message BaseParam {
+  uint32 cmd_source = 1;
+  uint32 q_ctrlmd = 2;
+  sint32 pf_set = 3;
+  sint32 q_set = 4;
+  uint32 p_set = 5;
+  uint32 r_autorun = 6;
+  uint32 r_delay = 7;
+  uint32 vbus_adval = 8;
+  sint32 ivf_set = 9;
+  uint32 grid_qmax = 10;
+  uint32 r_ptm = 11;
+  uint32 grid_apmax = 12;
+  uint32 grid_pmax = 13;
+  uint32 t_pd = 14;
+  uint32 iv_cmd = 15;
+}
+
+message RunOperateParam {
+  uint32 svg_nten = 1;
+  sint32 svg_qrt = 2;
+  uint32 pwoff_lmten = 3;
+  uint32 rv_uplmt = 4;
+  uint32 rv_lowlmt = 5;
+  uint32 rf_uplmt = 6;
+  uint32 rf_lowlmt = 7;
+  uint32 bst_clpbs = 8;
+  uint32 bst_vlpbs = 9;
+  uint32 mppt_scan = 10;
+  uint32 mppt_scant = 11;
+  uint32 svg_st = 12;
+  uint32 svg_et = 13;
+  uint32 en_cmd = 14;
+}
+
+message DiSet {
+  uint32 md = 1;
+}
+
+message DoSet {
+  uint32 md = 1;
+  uint32 hl = 2;
+}
+
+message AiSet {
+  uint32 md = 1;
+  uint32 fct = 2;
+}
+
+message DiDoAiSet {
+  repeated DiSet di_set = 1;
+  repeated DoSet do_set = 2;
+  repeated AiSet ai_set = 3;
+}
+
+message PVInvUserSetGetResDTO {
+  uint32 time = 1;
+  int32 err_code = 2;
+}
+
+message PVInvUserSetGetReqDTO {
+  BaseParam bs_prm = 1;
+  RunOperateParam op_prm = 2;
+  DiDoAiSet dio_ai = 3;
+}
+
+message PVInvUserSetPutResDTO {
+  BaseParam bs_prm = 1;
+  RunOperateParam op_prm = 2;
+  DiDoAiSet dio_ai = 3;
+}
+
+message PVInvUserSetPutReqDTO {
+  uint32 time = 1;
+  int32 err_code = 2;
+}

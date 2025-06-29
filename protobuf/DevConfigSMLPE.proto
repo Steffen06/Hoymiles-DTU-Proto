@@ -1,0 +1,239 @@
+syntax = "proto3";
+
+message PDbusConfigMO {
+  int32 sys_type = 1;
+  int32 sys_cfg = 2;
+  int32 dev_num = 3;
+  int32 str_num = 4;
+  int32 reserve1 = 5;
+  int32 smlpe_ad_ver = 6;
+  int32 cmd_interval = 7;
+  int32 hbs_interval = 8;
+  int32 t_bd = 9;
+  int32 data_samp_mode = 10;
+  int32 pdbus_com_err_cnt = 11;
+  int32 smlpe_com_err_cnt = 12;
+  int32 day_mode_check_tm = 13;
+  int32 day_mode_smlpe_percent = 14;
+  int32 reserve2 = 15;
+  int32 enex_search_cnt = 16;
+  int32 en_search_hbs_cnt = 17;
+  int32 clear_search_data_cnt = 18;
+  int32 search_host_err_cnt = 19;
+  int32 search_slave_cnt = 20;
+  int32 search_host_tout = 21;
+  int32 compete_host_receiptnone = 22;
+  int32 search_host1_reciptnone_cnt = 23;
+  int32 search_host2_recipterr_cnt = 24;
+  int32 reg_master_rssi_th = 25;
+  int32 reg_master_reply_err_cnt = 26;
+  int32 slave_reg_master_rssi_th = 27;
+  int32 reg_master_cnt = 28;
+  int32 close_str_cnt = 29;
+  int32 cancel_master_reg_cnt = 30;
+  int32 turn_on_str_cnt = 31;
+  int32 turn_on_str_hbs_cnt = 32;
+  int32 search_slave1_reciptnone = 33;
+  int32 search_slave2_seciptsrr_cnt = 34;
+  int32 reg_slave_cnt = 35;
+  int32 seed_num = 36;
+  int32 reserve3 = 37;
+  int32 reserve4 = 38;
+  int32 reserve5 = 39;
+  int32 reserve6 = 40;
+  int32 reserve7 = 41;
+  int32 reserve8 = 42;
+}
+
+message InvInfoAddrMO {
+  int32 en = 1;
+  int32 fc = 2;
+  int32 start_addr = 3;
+  int32 length = 4;
+}
+
+message InvRealAddrMO {
+  int32 en = 1;
+  int32 fc = 2;
+  int32 start_addr = 3;
+  int32 length = 4;
+}
+
+message PvStrAddrMO {
+  int32 v_addr = 1;
+  int32 i_addr = 2;
+}
+
+message InvConfigMO {
+  int32 inv_ver = 1;
+  string ds = 2;
+  string model = 3;
+  int32 f_boost = 4;
+  int32 f_inv = 5;
+  int32 mppt_num = 6;
+  int32 str_num_max = 7;
+  int32 pv_samp_cfg = 8;
+  int32 ac_mode = 9;
+  int32 es_ready = 10;
+  int32 load_monitor_mode = 11;
+  int32 com_mode = 12;
+  int32 endian = 13;
+  int32 inv_interval = 14;
+  int32 start_delay = 15;
+  int32 refresh_delay_tm = 16;
+  int32 inv_data_safety_mode = 17;
+  int32 com_err_delay = 18;
+  int32 night_mode_detect_tm = 19;
+  int32 day_mode_check_tm = 20;
+  int32 battery_en = 21;
+  int32 load_monitor_en = 22;
+  int32 link_mode = 23;
+  int32 inv_slave_addr = 24;
+  string inv_ip = 25;
+  int32 inv_port = 26;
+  int32 inv_bd = 27;
+  int32 inv_parity = 28;
+  int32 inv_start = 29;
+  int32 inv_stop = 30;
+  repeated InvInfoAddrMO inv_info_addr = 31;
+  repeated InvRealAddrMO inv_real_addr = 32;
+  int32 ac_p_sf = 33;
+  int32 ac_eh_sf = 34;
+  int32 load_p_sf = 35;
+  int32 grid_p_sf = 36;
+  int32 load_eh_sf = 37;
+  int32 bat_soc_sf = 38;
+  int32 bat_p_sf = 39;
+  int32 pv_str_v_sf = 40;
+  int32 pv_str_i_sf = 41;
+  int32 pv_str_p_sf = 42;
+  int32 pv_str_eh_sf = 43;
+  int32 ac_p_addr = 44;
+  int32 ac_p_fc = 45;
+  int32 ac_p_num = 46;
+  int32 ac_eh_addr = 47;
+  int32 ac_eh_fc = 48;
+  int32 ac_eh_num = 49;
+  int32 load_p_addr = 50;
+  int32 load_p_fc = 51;
+  int32 load_p_num = 52;
+  int32 load_eh_addr = 53;
+  int32 load_eh_fc = 54;
+  int32 load_eh_num = 55;
+  int32 pv_p_addr = 56;
+  int32 pv_p_fc = 57;
+  int32 pv_p_num = 58;
+  int32 grid_p_addr = 59;
+  int32 grid_p_fc = 60;
+  int32 grid_p_num = 61;
+  int32 buy_p_addr = 62;
+  int32 buy_p_fc = 63;
+  int32 buy_p_num = 64;
+  int32 sail_p_addr = 65;
+  int32 sail_p_fc = 66;
+  int32 sail_p_num = 67;
+  int32 bat_soc_addr = 68;
+  int32 bat_soc_fc = 69;
+  int32 bat_soc_num = 70;
+  int32 bat_p_addr = 71;
+  int32 bat_p_fc = 72;
+  int32 bat_p_num = 73;
+  int32 pv_str_total_p_addr = 74;
+  int32 pv_str_total_p_fc = 75;
+  int32 pv_str_total_p_num = 76;
+  int32 pv_str_total_eh_addr = 77;
+  int32 pv_str_total_eh_fc = 78;
+  int32 pv_str_total_eh_num = 79;
+  repeated PvStrAddrMO pv_str_real_addr = 80;
+  int32 inv_sw_addr = 81;
+  int32 inv_sw_fc = 82;
+  int32 inv_sw_num = 83;
+  int32 pd_sw_addr = 84;
+  int32 pd_sw_fc = 85;
+  int32 pd_sw_num = 86;
+  int32 open_val = 87;
+  int32 close_val = 88;
+  int32 pd_val_type = 89;
+  int32 pd_val_sf = 90;
+  int32 reserve9 = 91;
+  int32 reserve10 = 92;
+  int32 reserve11 = 93;
+  int32 reserve12 = 94;
+  int32 reserve13 = 95;
+  int32 reserve14 = 96;
+  int32 s_interval = 97;
+  int32 reserve15 = 98;
+  int32 dev_mode = 99;
+  int32 dev_addr = 100;
+  int32 baud_bd = 101;
+  int32 parity = 102;
+  int32 start = 103;
+  int32 stop = 104;
+  int32 reserve16 = 105;
+}
+
+message LoggerConfigMO {
+  int32 work_mode = 1;
+  int32 comm_mode = 2;
+  int32 dhcp_sw = 3;
+  string ip = 4;
+  string netmask = 5;
+  string gw = 6;
+  string dns = 7;
+  string ap_ssid = 8;
+  string ap_pwd = 9;
+  string sp_apn = 10;
+  string sp_name = 11;
+  string sp_pwd = 12;
+  string gprs_no = 13;
+  int32 reserve19 = 14;
+  int32 svr_port = 15;
+  string svr_host = 16;
+  int32 reserve20 = 17;
+}
+
+message ConfigParaMO {
+  repeated PDbusConfigMO pdbus_cfg = 1;
+  repeated InvConfigMO inv_cfg = 2;
+  repeated LoggerConfigMO log_cfg = 3;
+}
+
+message WriteHRegResDTO {
+  int32 offset = 1;
+  int32 time = 2;
+  int32 action = 3;
+  int64 gw_sn = 4;
+  int64 log_sn = 5;
+  int32 ap = 6;
+  int32 cp = 7;
+  repeated ConfigParaMO cfg_para = 8;
+}
+
+message WriteHRegReqDTO {
+  int32 offset = 1;
+  int32 time = 2;
+  int32 action = 3;
+  int64 gw_sn = 4;
+  int64 log_sn = 5;
+  int32 cp = 6;
+  int32 err_code = 7;
+}
+
+message ReadHRegReqDTO {
+  int32 offset = 1;
+  int32 time = 2;
+  int32 action = 3;
+  int64 gw_sn = 4;
+  int64 log_sn = 5;
+  int32 ap = 6;
+  int32 cp = 7;
+  repeated ConfigParaMO cfg_para = 8;
+}
+
+message ReadHRegResDTO {
+  int32 offset = 1;
+  int32 time = 2;
+  int32 action = 3;
+  int64 gw_sn = 4;
+  int64 log_sn = 5;
+}

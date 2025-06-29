@@ -1,0 +1,51 @@
+syntax = "proto3";
+
+message StorageRegisterReqDTO {
+  string dtu_sn = 1;
+  int32 time = 2;
+  string dtu_ver = 3;
+  string hw_ver = 4;
+  string sw_ver = 5;
+  string rf_hw_ver = 6;
+  string rf_sw_ver = 7;
+  string net_hw_ver = 8;
+  string net_sw_ver = 9;
+  string imei = 10;
+  string conn_way = 11;
+  InvInfoMO inv = 12;
+  repeated BmsInfoMO bmss = 13;
+  MeterInfoMO meter = 14;
+  string rid = 15;
+}
+
+message InvInfoMO {
+  string sn = 1;
+  string hw_m_ver = 2;
+  string sw_m_ver = 3;
+  string hw_s_ver = 4;
+  string sw_s_ver = 5;
+  string hw_hmi_ver = 6;
+  string sw_hmi_ver = 7;
+  string rf_hw_ver = 8;
+  string rf_sw_ver = 9;
+  string grid_code = 10;
+  string grid_ver = 11;
+}
+
+message BmsInfoMO {
+  string sn = 1;
+  string hw_ver = 2;
+  string sw_ver = 3;
+}
+
+message MeterInfoMO {
+  string sn = 1;
+  string hw_ver = 2;
+  string sw_ver = 3;
+}
+
+message RegisterResDTO {
+  int32 time = 1;
+  string ymd_hms = 2;
+  int32 offset = 3;
+}

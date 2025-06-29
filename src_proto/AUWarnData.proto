@@ -1,0 +1,44 @@
+syntax = "proto3";
+
+message WarnMO {
+  optional int64 sn = 1;
+  optional int32 code = 2;
+  optional int32 num = 3;
+  optional uint32 s_time = 4;
+  optional uint32 e_time = 5;
+  optional int32 w_data1 = 6;
+  optional int32 w_data2 = 7;
+}
+
+message AUWarnReqDTO {
+  optional uint32 time = 1;
+  repeated WarnMO warns = 2;
+}
+
+message AUWarnResDTO {
+  optional int32 oft = 1;
+  optional uint32 time = 2;
+  optional int32 err_code = 3;
+}
+
+message AUWaveReqDTO {
+  optional int64 sn = 1;
+  optional int32 ap = 2;
+  optional int32 cp = 3;
+  optional uint32 time = 4;
+  optional int64 pv_sn = 5;
+  optional int32 code = 6;
+  optional int32 num = 7;
+  optional uint32 warn_time = 8;
+  optional int32 data_len = 9;
+  optional int32 pos = 10;
+  optional bytes warn_data = 11;
+  optional int64 tid = 12;
+}
+
+message AUWaveResDTO {
+  optional int32 oft = 1;
+  optional uint32 time = 2;
+  optional int32 err_code = 3;
+  optional int64 tid = 4;
+}

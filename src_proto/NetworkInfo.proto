@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+message NetworkInfoReq {
+  optional bytes dtu_sn = 1;
+  optional uint32 time = 2;
+  optional int32 net_set_mod = 3;
+  optional int32 net_set_time = 4;
+  optional int32 net_set_state = 5;
+  optional int32 net_work_mod = 6;
+  optional int32 net_work_time = 7;
+  optional int32 csq = 8;
+  optional int32 net_work_state = 9;
+  optional int32 ap_set_state = 10;
+}
+
+message NetworkInfoRes {
+  optional int32 offset = 1;
+  optional uint32 time = 2;
+}

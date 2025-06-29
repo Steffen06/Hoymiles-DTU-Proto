@@ -1,0 +1,67 @@
+syntax = "proto3";
+
+message CommDevCfgFetchResDTO {
+  optional uint32 time = 1;
+  optional int64 tid = 2;
+  optional int64 sn = 3;
+  optional int32 cp = 4;
+  optional int32 type = 5;
+  optional int32 data_type = 6;
+}
+
+message CommDevCfgFetchReqDTO {
+  optional uint32 time = 1;
+  optional int64 tid = 2;
+  optional int32 rid = 3;
+  optional bytes data = 4;
+  optional int32 crc = 5;
+  optional int64 sn = 6;
+  optional int32 ap = 7;
+  optional int32 cp = 8;
+  optional int32 type = 9;
+  optional int32 s_addr = 10;
+  optional int32 data_type = 11;
+}
+
+message CommDevCfgPutResDTO {
+  optional uint32 time = 1;
+  optional int64 tid = 2;
+  optional int32 rid = 3;
+  optional bytes data = 4;
+  optional int32 crc = 5;
+  optional int64 sn = 6;
+  optional int32 ap = 7;
+  optional int32 cp = 8;
+  optional int32 type = 9;
+  optional int32 s_addr = 10;
+  optional int32 data_type = 11;
+}
+
+message CommDevCfgPutReqDTO {
+  optional uint32 time = 1;
+  optional int64 tid = 2;
+  optional int64 sn = 3;
+  optional int32 status = 4;
+  optional int32 cp = 5;
+}
+
+message CommDevCfgReportReqDTO {
+  optional uint32 time = 1;
+  optional int64 tid = 2;
+  optional int32 rid = 3;
+  optional bytes data = 4;
+  optional int32 crc = 5;
+  optional int64 sn = 6;
+  optional int32 ap = 7;
+  optional int32 cp = 8;
+  optional int32 type = 9;
+  optional int32 s_addr = 10;
+  optional int32 data_type = 11;
+}
+
+message CommDevCfgReportResDTO {
+  optional int64 sn = 1;
+  optional int64 tid = 2;
+  optional int32 cp = 3;
+  optional uint32 time = 4;
+}

@@ -11,7 +11,7 @@ This plugin is based on the Protobuf example from the [Wireshark Protobuf docume
 
 
 ## Protocol structure
-Hoymiles uses a proprietary implementation of the [Protobuf Protocol](https://protobuf.dev/) with an Header with additional raw Data about the following Data followed by Data encoded and serialized with the Protobuf Protocol. For mor details about the Protocol strukture see [protocol.md](../protocol.md). This approach has the advantage for the possibility for integrity check of the Data. But with the Disadvantage that a custom plugin like this is required.
+Hoymiles uses a proprietary implementation of the [Protobuf Protocol](https://protobuf.dev/) with an Header with additional raw Data about the following Data followed by Data encoded and serialized with the Protobuf Protocol. For mor details about the Protocol strukture see [message structure](../README.md#message-structure). This approach has the advantage for the possibility for integrity check of the Data. But with the Disadvantage that a custom plugin like this is required.
 
 
 ## Features / To-dos

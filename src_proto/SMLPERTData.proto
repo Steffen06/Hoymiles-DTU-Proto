@@ -1,0 +1,48 @@
+syntax = "proto3";
+
+message DTLInvPVMO {
+  optional int32 pi = 1;
+  optional int32 v = 2;
+  optional int32 i = 3;
+}
+
+message DTLInvMO {
+  optional int32 p = 1;
+  optional int32 e = 2;
+  repeated DTLInvPVMO pvstr = 3;
+}
+
+message SMLPEPvMO {
+  optional int32 pi = 1;
+  optional int32 v = 2;
+  optional int32 p = 3;
+  optional int32 ed = 4;
+  optional int32 et = 5;
+}
+
+message SMLPEMO {
+  optional int64 sn = 1;
+  repeated SMLPEPvMO pv = 2;
+  optional int32 v = 3;
+  optional int32 i = 4;
+  optional int32 tmp = 5;
+  optional int32 wc = 6;
+  optional int32 cs = 7;
+}
+
+message DTLReqDTO {
+  optional int32 oft = 1;
+  optional uint32 time = 2;
+  optional int64 sn = 3;
+  optional int32 ap = 4;
+  optional int32 cp = 5;
+  repeated DTLInvMO invs = 6;
+  repeated SMLPEMO smlpes = 7;
+}
+
+message DTLResDTO {
+  optional int32 oft = 1;
+  optional uint32 time = 2;
+  optional int64 sn = 3;
+  optional int32 cp = 4;
+}

@@ -1,0 +1,71 @@
+syntax = "proto3";
+
+message GetConfigRes {
+  optional int32 offset = 1;
+  optional uint32 time = 2;
+}
+
+message GetConfigReq {
+  optional int32 offset = 1;
+  optional uint32 time = 2;
+  optional int32 lock_password = 3;
+  optional int32 lock_time = 4;
+  optional int32 limit_power_mypower = 5;
+  optional int32 zero_export_433_addr = 6;
+  optional int32 zero_export_enable = 7;
+  optional int32 netmode_select = 8;
+  optional int32 channel_select = 9;
+  optional int32 server_send_time = 10;
+  optional int32 wifi_rssi = 11;
+  optional int32 serverport = 12;
+  optional bytes apn_set = 13;
+  optional bytes meter_kind = 14;
+  optional bytes meter_interface = 15;
+  optional bytes wifi_ssid = 16;
+  optional bytes wifi_passward = 17;
+  optional bytes server_domain_name = 18;
+  optional int32 inv_type = 19;
+  optional bytes dtu_sn = 20;
+  optional int32 access_model = 21;
+  optional int32 mac_0 = 22;
+  optional int32 mac_1 = 23;
+  optional int32 mac_2 = 24;
+  optional int32 mac_3 = 25;
+  optional int32 dhcp_switch = 26;
+  optional int32 ip_addr_0 = 27;
+  optional int32 ip_addr_1 = 28;
+  optional int32 ip_addr_2 = 29;
+  optional int32 ip_addr_3 = 30;
+  optional int32 subnet_mask_0 = 31;
+  optional int32 subnet_mask_1 = 32;
+  optional int32 subnet_mask_2 = 33;
+  optional int32 subnet_mask_3 = 34;
+  optional int32 default_gateway_0 = 35;
+  optional int32 default_gateway_1 = 36;
+  optional int32 default_gateway_2 = 37;
+  optional int32 default_gateway_3 = 38;
+  optional bytes ka_nub = 39;
+  optional bytes apn_name = 40;
+  optional bytes apn_passward = 41;
+  optional int32 sub1g_sweep_switch = 42;
+  optional int32 sub1g_work_channel = 43;
+  optional int32 cable_dns_0 = 44;
+  optional int32 cable_dns_1 = 45;
+  optional int32 cable_dns_2 = 46;
+  optional int32 cable_dns_3 = 47;
+  optional int32 wifi_ip_addr_0 = 48;
+  optional int32 wifi_ip_addr_1 = 49;
+  optional int32 wifi_ip_addr_2 = 50;
+  optional int32 wifi_ip_addr_3 = 51;
+  optional int32 mac_4 = 52;
+  optional int32 mac_5 = 53;
+  optional int32 wifi_mac_0 = 54;
+  optional int32 wifi_mac_1 = 55;
+  optional int32 wifi_mac_2 = 56;
+  optional int32 wifi_mac_3 = 57;
+  optional int32 wifi_mac_4 = 58;
+  optional int32 wifi_mac_5 = 59;
+  optional bytes gprs_imei = 60;
+  optional bytes dtu_ap_ssid = 61;
+  optional bytes dtu_ap_pass = 62;
+}

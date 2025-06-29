@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+message PVInvWarnReqDTO {
+  optional int64 inv_sn = 1;
+  optional uint32 time = 2;
+  repeated int32 fc = 3;
+  repeated int32 subfc = 4;
+  repeated uint32 ymd_hms = 5;
+}
+
+message PVInvWarnResDTO {
+  optional uint32 time = 1;
+  optional string ymd_hms = 2;
+  optional int32 offset = 3;
+}

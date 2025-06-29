@@ -1,0 +1,106 @@
+syntax = "proto3";
+
+message LrBaseParameter {
+  optional uint32 cmd_source = 1;
+  optional uint32 wk_mod = 2;
+  optional uint32 pq_mod = 3;
+  optional uint32 vsg_ct = 4;
+  optional uint32 v_gro = 5;
+  optional uint32 vf_mod = 6;
+  optional sint32 p_set = 7;
+  optional sint32 q_set = 8;
+  optional sint32 p_fct = 9;
+  optional uint32 v_bus = 10;
+  optional sint32 i_bus = 11;
+  optional sint32 i_pq = 12;
+  optional sint32 i_vf = 13;
+  optional uint32 f_out = 14;
+  optional uint32 ph_out = 15;
+  optional uint32 iso_det = 16;
+  optional uint32 zo_pwm = 17;
+  optional uint32 zo_pwmt = 18;
+  optional uint32 fcap_rep = 19;
+  optional uint32 Red_lim = 20;
+  optional uint32 scram = 21;
+  optional uint32 pg_clear = 22;
+  optional uint32 his_clear = 23;
+  optional uint32 di2_set = 24;
+}
+
+message LrCtrParam {
+  optional uint32 p_appr = 1;
+  optional uint32 i_appr = 2;
+  optional uint32 i_disac = 3;
+  optional uint32 i_chgac = 4;
+  optional uint32 p_disac = 5;
+  optional uint32 p_chgac = 6;
+  optional uint32 p_indr = 7;
+  optional uint32 p_capr = 8;
+  optional uint32 i_indr = 9;
+  optional uint32 i_capr = 10;
+  optional uint32 v_busdc = 11;
+  optional uint32 v_ofl = 12;
+  optional uint32 i_disdc = 13;
+  optional uint32 i_chgdc = 14;
+}
+
+message LrTimerSync {
+  optional uint32 year = 1;
+  optional uint32 mon_day = 2;
+  optional uint32 hou_min = 3;
+  optional uint32 second = 4;
+  optional uint32 syn_en = 5;
+}
+
+message LrChillerParam {
+  optional uint32 f_wc = 1;
+  optional uint32 w_fun = 2;
+  optional uint32 bj_pse = 3;
+  optional uint32 bj_fault_reset = 4;
+  optional uint32 bj_w_wcs = 5;
+  optional uint32 bj_w_tcm = 6;
+  optional sint32 bj_w_cup = 7;
+  optional sint32 bj_w_rws = 8;
+  optional sint32 bj_w_ows = 9;
+  optional uint32 bj_w_hup = 10;
+  optional sint32 bj_w_crd = 11;
+  optional sint32 bj_w_hrd = 12;
+  optional sint32 bj_w_uc = 13;
+  optional uint32 bj_w_war = 14;
+  optional uint32 bj_w_fcm = 15;
+  optional uint32 xm_pse = 16;
+  optional uint32 xm_w_wcs = 17;
+  optional uint32 xm_w_mc = 18;
+  optional uint32 xm_w_ts = 19;
+}
+
+message LrBatParam {
+  optional uint32 cha_or_discha_en = 1;
+  optional sint32 bat_agr = 2;
+}
+
+message HPCSLRUserSetGetResDTO {
+  optional uint32 time = 1;
+  optional int32 err_code = 2;
+}
+
+message HPCSLRUserSetGetReqDTO {
+  optional LrBaseParameter bs_prm = 1;
+  optional LrCtrParam ctr_prm = 2;
+  optional LrTimerSync tm_syn = 3;
+  optional LrChillerParam ch_prm = 4;
+  optional LrBatParam bat_prm = 5;
+}
+
+message HPCSLRUserSetPutResDTO {
+  optional LrBaseParameter bs_prm = 1;
+  optional LrCtrParam ctr_prm = 2;
+  optional LrTimerSync tm_syn = 3;
+  optional LrChillerParam ch_prm = 4;
+  optional LrBatParam bat_prm = 5;
+}
+
+message HPCSLRUserSetPutReqDTO {
+  optional uint32 time = 1;
+  optional int32 err_code = 2;
+}

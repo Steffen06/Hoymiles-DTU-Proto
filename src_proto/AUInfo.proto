@@ -1,0 +1,55 @@
+syntax = "proto3";
+
+message BmsMO {
+  optional int64 sn = 1;
+  optional string hw = 2;
+  optional int32 sw = 3;
+  optional int32 cap = 4;
+}
+
+message InvMO {
+  optional int32 bootfw = 1;
+  optional int32 sw = 2;
+  optional int32 hw_pn = 3;
+  optional int32 hw = 4;
+  optional int32 gpf_code = 5;
+  optional int32 gpf = 6;
+  optional int32 rule_id = 7;
+  optional uint32 sw_tm = 8;
+}
+
+message FeatureMO {
+  optional int32 key = 1;
+  optional bytes value = 2;
+}
+
+message AUInfoReqDTO {
+  optional int64 sn = 1;
+  optional int32 type = 2;
+  repeated int64 ssn = 3;
+  optional uint32 time = 4;
+  optional int32 oft = 5;
+  optional int32 hw_ver = 6;
+  optional int32 hw_pn = 7;
+  optional int32 rule_id = 8;
+  optional int32 boot_fw = 9;
+  optional int32 sw = 10;
+  optional int32 hw = 11;
+  optional int32 sw_tm = 12;
+  optional int32 rf_hw = 13;
+  optional int32 rf_sw = 14;
+  optional int32 rf_fqband = 15;
+  optional int32 rf_chtnum = 16;
+  optional int32 rf_chnum = 17;
+  optional int32 rf_rp = 18;
+  optional int32 rf_chtotal = 19;
+  repeated InvMO m_inv = 20;
+  repeated BmsMO m_bms = 21;
+  repeated FeatureMO m_feature = 22;
+  optional int32 ssl = 23;
+}
+
+message AUInfoResDTO {
+  optional int32 oft = 1;
+  optional uint32 time = 2;
+}

@@ -1,0 +1,43 @@
+syntax = "proto3";
+
+message ESWarnReqDTO {
+  optional int64 inv_sn = 1;
+  optional uint32 time = 2;
+  repeated WarnMO warns = 3;
+}
+
+message WarnMO {
+  optional int32 code = 1;
+  optional int32 num = 2;
+  optional int32 flag = 3;
+  optional uint32 s_time = 4;
+  optional uint32 e_time = 5;
+  optional int64 w_data = 6;
+}
+
+message ESWarnResDTO {
+  optional uint32 time = 1;
+  optional bytes ymd_hms = 2;
+  optional int32 offset = 3;
+}
+
+message ESWaveReqDTO {
+  optional int64 inv_sn = 1;
+  optional uint32 time = 2;
+  optional int32 ap = 3;
+  optional int32 cp = 4;
+  optional int32 code = 5;
+  optional int32 num = 6;
+  optional int32 num2 = 7;
+  optional int32 warn_time = 8;
+  optional int32 data_len = 9;
+  optional int32 pos = 10;
+  optional bytes w_data = 11;
+}
+
+message ESWaveResDTO {
+  optional uint32 time = 1;
+  optional bytes ymd_hms = 2;
+  optional int32 offset = 3;
+  optional int32 cp = 4;
+}

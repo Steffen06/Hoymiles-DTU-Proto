@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+message HPCSLRInfoReqDTO {
+  optional int64 sn = 1;
+  optional string pro_ser_ver = 2;
+  optional string sw_arm_ver = 3;
+  optional string sw_dm_ver = 4;
+  optional string sw_fpga_ver = 5;
+  optional string sw_func_ver = 6;
+  optional string sw_ct_ver = 7;
+  optional uint32 time = 8;
+  optional int32 offset = 9;
+  optional string hd_ver = 10;
+}
+
+message HPCSLRInfoResDTO {
+  optional uint32 time = 1;
+  optional string ymd_hms = 2;
+  optional int32 offset = 3;
+  optional int32 cp = 4;
+}

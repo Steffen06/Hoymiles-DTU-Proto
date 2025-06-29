@@ -1,0 +1,78 @@
+syntax = "proto3";
+
+message PVInvDataReqDTO {
+  int64 sn = 1;
+  uint32 time = 2;
+  sint32 offset = 3;
+  sint32 ap = 4;
+  sint32 cp = 5;
+  SystemParm sysprm = 6;
+  ObserParm obsprm = 7;
+  UserParm usrprm = 8;
+  repeated DC_Inf dc_inf = 9;
+  repeated sint32 fc = 12;
+  repeated sint32 subfc = 13;
+  repeated sint32 wc = 14;
+  repeated sint32 subwc = 15;
+}
+
+message PVInvDataResDTO {
+  uint32 time = 1;
+  string ymd_hms = 2;
+  sint32 offset = 3;
+  sint32 cp = 4;
+}
+
+message SystemParm {
+  sint32 prt = 1;
+  sint32 vrt = 2;
+  sint32 irt = 3;
+  sint32 frt = 4;
+  sint32 grid_code = 5;
+  sint32 pcom_addr = 6;
+}
+
+message ObserParm {
+  sint32 vbus = 1;
+  sint32 grid_uab = 2;
+  sint32 grid_ubc = 3;
+  sint32 grid_uca = 4;
+  sint32 i_lphu = 5;
+  sint32 i_lphv = 6;
+  sint32 i_lphw = 7;
+  sint32 grid_phf = 8;
+  sint32 inv_state = 9;
+  sint32 otp_fct = 10;
+  sint32 otp_act = 11;
+  sint32 otp_inact = 12;
+  sint32 otp_app = 13;
+  sint32 pid_opsta = 14;
+  sint32 temp1 = 15;
+  sint32 temp2 = 16;
+  sint32 rd = 17;
+  sint32 rtl = 18;
+  sint32 rth = 19;
+  sint32 dgen = 20;
+  sint32 mgenl = 21;
+  sint32 mgenh = 22;
+  sint32 ygenl = 23;
+  sint32 ygenh = 24;
+  sint32 tgenl = 25;
+  sint32 tgenh = 26;
+  sint32 grid_ubl = 27;
+  sint32 ac_ubl = 28;
+  uint32 iv_state = 29;
+}
+
+message UserParm {
+  sint32 di1 = 1;
+  sint32 di2 = 2;
+  sint32 ai1 = 3;
+  sint32 ai2 = 4;
+}
+
+message DC_Inf {
+  repeated sint32 pvsv = 1;
+  repeated sint32 pvsi = 2;
+  repeated sint32 bstp = 3;
+}

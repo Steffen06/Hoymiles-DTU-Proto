@@ -1,0 +1,78 @@
+syntax = "proto3";
+
+message CommandResDTO {
+  optional int32 time = 1;
+  optional int32 action = 2;
+  optional int32 dev_kind = 3;
+  optional int32 package_nub = 4;
+  optional int32 package_now = 5;
+  optional int64 tid = 6;
+  optional bytes data = 7;
+  repeated bytes es_to_sn = 8;
+  repeated int64 mi_to_sn = 9;
+  optional int32 system_total_a = 10;
+  optional int32 system_total_b = 11;
+  optional int32 system_total_c = 12;
+  repeated int64 mi_sn_item_a = 13;
+  repeated int64 mi_sn_item_b = 14;
+  repeated int64 mi_sn_item_c = 15;
+}
+
+message CommandReqDTO {
+  optional bytes dtu_sn = 1;
+  optional int32 time = 2;
+  optional int32 action = 3;
+  optional int32 package_now = 4;
+  optional int32 err_code = 5;
+  optional int64 tid = 6;
+}
+
+message ESOperatingStatusMO {
+  optional bytes es_sn = 1;
+  optional int32 progress_rate = 2;
+}
+
+message MIOperatingStatusMO {
+  optional int64 mi_sn = 1;
+  optional int32 progress_rate = 2;
+}
+
+message MIErrorStatusMO {
+  optional int64 mi_sn = 1;
+  optional int64 error_code = 2;
+}
+
+message ESSucStatusMO {
+  optional bytes es_sn = 1;
+}
+
+message ESErrorStatusMO {
+  optional bytes es_sn = 1;
+  optional int64 error_code = 2;
+}
+
+message CommandStatusReqDTO {
+  optional bytes dtu_sn = 1;
+  optional int32 time = 2;
+  optional int32 action = 3;
+  optional int32 package_nub = 4;
+  optional int32 package_now = 5;
+  optional int64 tid = 6;
+  repeated bytes es_sns_sucs = 7;
+  repeated int64 mi_sns_sucs = 8;
+  repeated bytes es_sns_failds = 9;
+  repeated int64 mi_sns_failds = 10;
+  repeated ESOperatingStatusMO es_mOperatingStatus = 11;
+  repeated MIOperatingStatusMO mi_mOperatingStatus = 12;
+  repeated MIErrorStatusMO mi_mErrorStatus = 13;
+  repeated ESSucStatusMO es_mSucStatus = 14;
+  repeated ESErrorStatusMO es_mErrorStatus = 15;
+}
+
+message CommandStatusResDTO {
+  optional int32 time = 1;
+  optional int32 action = 2;
+  optional int32 package_now = 3;
+  optional int64 tid = 4;
+  optional int32 err_code = 5;
+}

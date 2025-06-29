@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+message HPCSInfoReqDTO {
+  int64 sn = 1;
+  string pro_ser_ver = 2;
+  string sw_arm_ver = 3;
+  string sw_dm_ver = 4;
+  string sw_fpga_ver = 5;
+  string sw_func_ver = 6;
+  string sw_ct_ver = 7;
+  uint32 time = 8;
+  int32 offset = 9;
+}
+
+message HPCSInfoResDTO {
+  uint32 time = 1;
+  string ymd_hms = 2;
+  int32 offset = 3;
+  int32 cp = 4;
+}

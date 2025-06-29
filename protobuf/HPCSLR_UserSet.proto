@@ -1,0 +1,106 @@
+syntax = "proto3";
+
+message LrBaseParameter {
+  uint32 cmd_source = 1;
+  uint32 wk_mod = 2;
+  uint32 pq_mod = 3;
+  uint32 vsg_ct = 4;
+  uint32 v_gro = 5;
+  uint32 vf_mod = 6;
+  sint32 p_set = 7;
+  sint32 q_set = 8;
+  sint32 p_fct = 9;
+  uint32 v_bus = 10;
+  sint32 i_bus = 11;
+  sint32 i_pq = 12;
+  sint32 i_vf = 13;
+  uint32 f_out = 14;
+  uint32 ph_out = 15;
+  uint32 iso_det = 16;
+  uint32 zo_pwm = 17;
+  uint32 zo_pwmt = 18;
+  uint32 fcap_rep = 19;
+  uint32 Red_lim = 20;
+  uint32 scram = 21;
+  uint32 pg_clear = 22;
+  uint32 his_clear = 23;
+  uint32 di2_set = 24;
+}
+
+message LrCtrParam {
+  uint32 p_appr = 1;
+  uint32 i_appr = 2;
+  uint32 i_disac = 3;
+  uint32 i_chgac = 4;
+  uint32 p_disac = 5;
+  uint32 p_chgac = 6;
+  uint32 p_indr = 7;
+  uint32 p_capr = 8;
+  uint32 i_indr = 9;
+  uint32 i_capr = 10;
+  uint32 v_busdc = 11;
+  uint32 v_ofl = 12;
+  uint32 i_disdc = 13;
+  uint32 i_chgdc = 14;
+}
+
+message LrTimerSync {
+  uint32 year = 1;
+  uint32 mon_day = 2;
+  uint32 hou_min = 3;
+  uint32 second = 4;
+  uint32 syn_en = 5;
+}
+
+message LrChillerParam {
+  uint32 f_wc = 1;
+  uint32 w_fun = 2;
+  uint32 bj_pse = 3;
+  uint32 bj_fault_reset = 4;
+  uint32 bj_w_wcs = 5;
+  uint32 bj_w_tcm = 6;
+  sint32 bj_w_cup = 7;
+  sint32 bj_w_rws = 8;
+  sint32 bj_w_ows = 9;
+  uint32 bj_w_hup = 10;
+  sint32 bj_w_crd = 11;
+  sint32 bj_w_hrd = 12;
+  sint32 bj_w_uc = 13;
+  uint32 bj_w_war = 14;
+  uint32 bj_w_fcm = 15;
+  uint32 xm_pse = 16;
+  uint32 xm_w_wcs = 17;
+  uint32 xm_w_mc = 18;
+  uint32 xm_w_ts = 19;
+}
+
+message LrBatParam {
+  uint32 cha_or_discha_en = 1;
+  sint32 bat_agr = 2;
+}
+
+message HPCSLRUserSetGetResDTO {
+  uint32 time = 1;
+  int32 err_code = 2;
+}
+
+message HPCSLRUserSetGetReqDTO {
+  LrBaseParameter bs_prm = 1;
+  LrCtrParam ctr_prm = 2;
+  LrTimerSync tm_syn = 3;
+  LrChillerParam ch_prm = 4;
+  LrBatParam bat_prm = 5;
+}
+
+message HPCSLRUserSetPutResDTO {
+  LrBaseParameter bs_prm = 1;
+  LrCtrParam ctr_prm = 2;
+  LrTimerSync tm_syn = 3;
+  LrChillerParam ch_prm = 4;
+  LrBatParam bat_prm = 5;
+}
+
+message HPCSLRUserSetPutReqDTO {
+  uint32 time = 1;
+  int32 err_code = 2;
+}

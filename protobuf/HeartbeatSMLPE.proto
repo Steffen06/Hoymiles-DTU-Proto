@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+message HbSmlpeReqDTO {
+  int32 offset = 1;
+  int32 time = 2;
+  int32 csq = 3;
+  int64 gw_sn = 4;
+  int64 log_sn = 5;
+  int32 ping_oft = 6;
+  int32 rs_tms = 7;
+}
+
+message HbSmlpeResDTO {
+  int32 offset = 1;
+  int32 time = 2;
+}
