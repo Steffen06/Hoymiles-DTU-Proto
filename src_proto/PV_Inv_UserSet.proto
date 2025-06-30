@@ -1,21 +1,19 @@
 syntax = "proto3";
 
 message BaseParam {
-  optional uint32 cmd_source = 1;
-  optional uint32 q_ctrlmd = 2;
-  optional sint32 pf_set = 3;
-  optional sint32 q_set = 4;
-  optional uint32 p_set = 5;
-  optional uint32 r_autorun = 6;
-  optional uint32 r_delay = 7;
-  optional uint32 vbus_adval = 8;
-  optional sint32 ivf_set = 9;
-  optional uint32 grid_qmax = 10;
-  optional uint32 r_ptm = 11;
-  optional uint32 grid_apmax = 12;
-  optional uint32 grid_pmax = 13;
-  optional uint32 t_pd = 14;
-  optional uint32 iv_cmd = 15;
+  optional uint32 q_ctrlmd = 1;
+  optional sint32 pf_set = 2;
+  optional sint32 q_set = 3;
+  optional uint32 p_set = 4;
+  optional uint32 r_autorun = 5;
+  optional uint32 r_delay = 6;
+  optional uint32 vbus_adval = 7;
+  optional uint32 grid_qmax = 8;
+  optional uint32 r_ptm = 9;
+  optional uint32 grid_apmax = 10;
+  optional uint32 grid_pmax = 11;
+  optional uint32 t_pd = 12;
+  optional uint32 iv_cmd = 13;
 }
 
 message RunOperateParam {
@@ -33,6 +31,9 @@ message RunOperateParam {
   optional uint32 svg_st = 12;
   optional uint32 svg_et = 13;
   optional uint32 en_cmd = 14;
+  optional uint32 fan_cyc = 15;
+  optional uint32 svg_mode = 16;
+  optional uint32 svg_uset = 17;
 }
 
 message DiSet {

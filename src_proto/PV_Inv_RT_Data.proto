@@ -61,7 +61,7 @@ message ObserParm {
   optional sint32 tgenh = 26;
   optional sint32 grid_ubl = 27;
   optional sint32 ac_ubl = 28;
-  optional uint32 iv_state = 29;
+  optional sint32 sys_state = 29;
 }
 
 message UserParm {

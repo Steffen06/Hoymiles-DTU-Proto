@@ -4,14 +4,13 @@ message PVInvInfoReqDTO {
   optional int64 sn = 1;
   optional string pro_ser_ver = 2;
   optional string sw_arm_ver = 3;
-  optional string sw_dm_ver = 4;
-  optional string sw_ds_ver = 5;
-  optional string sw_fpga_ver = 6;
-  optional string sw_func_ver = 7;
-  optional string sw_dc_dc_ver = 8;
-  optional string sw_dc_ac_ver = 9;
-  optional uint32 time = 10;
-  optional int32 offset = 11;
+  optional string sw_fpga_ver = 4;
+  optional string sw_func_ver = 5;
+  optional string sw_dc_dc_ver = 6;
+  optional string sw_dc_ac_ver = 7;
+  optional uint32 time = 8;
+  optional int32 offset = 9;
+  optional string sw_softw_ver = 10;
 }
 
 message PVInvInfoResDTO {
