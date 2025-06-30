@@ -39,6 +39,8 @@ message GWSetConfigRes {
   int32 cable_dns_3 = 36;
   string dtu_ap_ssid = 37;
   string dtu_ap_pass = 38;
+  string dtu_ap_old_pass = 39;
+  int32 app_page = 40;
 }
 
 message GWSetConfigReq {

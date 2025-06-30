@@ -16,3 +16,15 @@ message LineSeries {
 message LineChartArray {
   repeated LineChart line_charts = 1;
 }
+
+message ChartV2 {
+  string key = 1;
+  string date = 2;
+  string quota = 3;
+  repeated int32 xp = 4;
+  repeated float data = 5;
+}
+
+message ChartArrayV2 {
+  repeated ChartV2 charts = 1;
+}

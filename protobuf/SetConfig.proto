@@ -51,10 +51,13 @@ message SetConfigRes {
   string dtu_ap_ssid = 48;
   string dtu_ap_pass = 49;
   int32 app_page = 50;
+  int32 wifi_channel = 51;
+  string dtu_ap_old_pass = 52;
 }
 
 message SetConfigReq {
   int32 offset = 1;
   uint32 time = 2;
   int32 err_code = 3;
+  int32 switch_channel = 4;
 }

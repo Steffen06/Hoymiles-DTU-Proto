@@ -51,10 +51,13 @@ message SetConfigRes {
   optional bytes dtu_ap_ssid = 48;
   optional bytes dtu_ap_pass = 49;
   optional int32 app_page = 50;
+  optional int32 wifi_channel = 51;
+  optional bytes dtu_ap_old_pass = 52;
 }
 
 message SetConfigReq {
   optional int32 offset = 1;
   optional uint32 time = 2;
   optional int32 err_code = 3;
+  optional int32 switch_channel = 4;
 }

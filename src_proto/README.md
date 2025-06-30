@@ -25,7 +25,6 @@ This folder contains unmodified protobuf files. For modified protobuf files see 
 |  12547 | 0x3103 | WriteHRegResDTO | 0x3003 | WriteHRegReqDTO | [DevConfigSMLPE](DevConfigSMLPE.proto) |
 |  12552 | 0x3108 | CmdSmlpeResDTO | 0x3008 | CmdSmlpeReqDTO | [CmdSMLPE](CmdSMLPE.proto) |
 | -31999 | 0x8301 | HBResDTO | 0x8201 | HBReqDTO | [APPHeartbeatPB](APPHeartbeatPB.proto) |
-| -31998 | 0x8302 | APPInfoDataResDTO | 0x8202 | APPInfoDataReqDTO | [APPInfomationData](APPInfomationData.proto) |
 | -31998 | 0x8302 | RegisterResDTO | 0x8202 | StorageRegisterReqDTO | [StorageRegisterPB](StorageRegisterPB.proto) |
 | -31997 | 0x8303 | StorageDataRes | 0x8203 | StorageDataReqDTO | [StorageData](StorageData.proto) |
 | -31995 | 0x8305 | CommandResDTO | 0x8205 | CommandReqDTO | [CommandPB](CommandPB.proto) |
@@ -59,9 +58,12 @@ This folder contains unmodified protobuf files. For modified protobuf files see 
 | -23799 | 0xA309 | GetConfigRes | 0xA209 | GetConfigReq | [GetConfig](GetConfig.proto) |
 | -23792 | 0xA310 | SetConfigRes | 0xA210 | SetConfigReq | [SetConfig](SetConfig.proto) |
 | -23791 | 0xA311 | RealResDTO | 0xA211 | RealReqDTO | [RealDataNew](RealDataNew.proto) |
+| -23791 | 0xA311 | APPInfoDataResDTO | 0xA211 | APPInfoDataReqDTO | [APPInfomationData](APPInfomationData.proto) |
 | -23790 | 0xA312 | GPSTResDTO | 0xA212 | GPSTReqDTO | [GPSTData](GPSTData.proto) |
 | -23789 | 0xA313 | AutoSearchRes | 0xA213 | AutoSearchReq | [AutoSearch](AutoSearch.proto) |
 | -23788 | 0xA314 | NetworkInfoRes | 0xA214 | NetworkInfoReq | [NetworkInfo](NetworkInfo.proto) |
+| -23788 | 0xA314 | GetConfigRes | 0xA214 | GetConfigReq | [GetConfig](GetConfig.proto) |
+| -23788 | 0xA314 | SetConfigRes | 0xA214 | SetConfigReq | [SetConfig](SetConfig.proto) |
 | -23787 | 0xA315 | AppGetHistPowerRes | 0xA215 | AppGetHistPowerReq | [AppGetHistPower](AppGetHistPower.proto) |
 | -23786 | 0xA316 | AppGetHistEDRes | 0xA216 | AppGetHistEDReq | [AppGetHistED](AppGetHistED.proto) |
 | -15614 | 0xC302 | ESRegResDTO | 0xC202 | ESRegReqDTO | [ESRegPB](ESRegPB.proto) |
@@ -81,32 +83,29 @@ This folder contains unmodified protobuf files. For modified protobuf files see 
 | -13887 | 0xC9C1 | PVInvEnergyCurveResDTO | 0xC8C1 | PVInvEnergyCurveReqDTO | [PV_Inv_EnergyCurve](PV_Inv_EnergyCurve.proto) |
 | -13872 | 0xC9D0 | PVInvEventLogResDTO | 0xC8D0 | PVInvEventLogReqDTO | [PV_Inv_EventLog](PV_Inv_EventLog.proto) |
 | -13054 | 0xCD02 | HPCSInfoResDTO | 0xCC02 | HPCSInfoReqDTO | [HPCS_Information](HPCS_Information.proto) |
-|  52482 | 0xCD02 | PVInvInfoResDTO | 0xCC02 | PVInvInfoReqDTO | [PV_Inv_Information](PV_Inv_Information.proto) |
 | -13053 | 0xCD03 | HPCSDataResDTO | 0xCC03 | HPCSDataReqDTO | [HPCS_RT_Data](HPCS_RT_Data.proto) |
 | -13053 | 0xCD03 | HPCSLRDataResDTO | 0xCC03 | HPCSLRDataReqDTO | [HPCSLR_RT_Data](HPCSLR_RT_Data.proto) |
 | -13053 | 0xCD03 | HPCSInfoResDTO | 0xCC03 | HPCSInfoReqDTO | [HPCS_Information](HPCS_Information.proto) |
-|  52483 | 0xCD03 | PVInvDataResDTO | 0xCC03 | PVInvDataReqDTO | [PV_Inv_RT_Data](PV_Inv_RT_Data.proto) |
 | -13049 | 0xCD07 | HPCSLRUserSetGetResDTO | 0xCC07 | HPCSLRUserSetGetReqDTO | [HPCSLR_UserSet](HPCSLR_UserSet.proto) |
 | -13049 | 0xCD07 | HPCSUserSetGetResDTO | 0xCC07 | HPCSUserSetGetReqDTO | [HPCS_UserSet](HPCS_UserSet.proto) |
 | -13048 | 0xCD08 | HPCSLRUserSetGetReqDTO | 0xCC08 | HPCSLRUserSetGetResDTO | [HPCSLR_UserSet](HPCSLR_UserSet.proto) |
 | -13048 | 0xCD08 | HPCSUserSetGetReqDTO | 0xCC08 | HPCSUserSetGetResDTO | [HPCS_UserSet](HPCS_UserSet.proto) |
 | -13047 | 0xCD09 | HPCSWarnResDTO | 0xCC09 | HPCSWarnReqDTO | [HPCS_Warn](HPCS_Warn.proto) |
 |  -9471 | 0xDB01 | GWInfoResDTO | 0xDA01 | GWInfoReqDTO | [GWInfo](GWInfo.proto) |
+|  -9471 | 0xDB01 | GWGetConfigRes | 0xDA01 | GWGetConfigReq | [GWGetConfig](GWGetConfig.proto) |
+|  -9471 | 0xDB01 | GWSetConfigRes | 0xDA01 | GWSetConfigReq | [GWSetConfig](GWSetConfig.proto) |
 |  -9470 | 0xDB02 | GWHBResDTO | 0xDA02 | GWHBReqDTO | [GWHeartbeat](GWHeartbeat.proto) |
 |  -9469 | 0xDB03 | CommCmdResDTO | 0xDA03 | CommCmdReqDTO | [CommCmd](CommCmd.proto) |
 |  -9468 | 0xDB04 | CommCmdStatusResDTO | 0xDA04 | CommCmdStatusReqDTO | [CommCmd](CommCmd.proto) |
 |  -9466 | 0xDB06 | GWNetInfoRes | 0xDA06 | GWNetInfoReq | [GWNetInfo](GWNetInfo.proto) |
+|  -9466 | 0xDB06 | GWGetConfigRes | 0xDA06 | GWGetConfigReq | [GWGetConfig](GWGetConfig.proto) |
+|  -9466 | 0xDB06 | GWSetConfigRes | 0xDA06 | GWSetConfigReq | [GWSetConfig](GWSetConfig.proto) |
 |  -9465 | 0xDB07 | SetConfigRes | 0xDA07 | SetConfigReq | [SetConfig](SetConfig.proto) |
-|  -9465 | 0xDB07 | GWSetConfigRes | 0xDA07 | GWSetConfigReq | [GWSetConfig](GWSetConfig.proto) |
 |  -9464 | 0xDB08 | GetConfigRes | 0xDA08 | GetConfigReq | [GetConfig](GetConfig.proto) |
-|  -9464 | 0xDB08 | GWGetConfigRes | 0xDA08 | GWGetConfigReq | [GWGetConfig](GWGetConfig.proto) |
 |  -9221 | 0xDBFB | MemReadResDTO | 0xDAFB | MemReadReqDTO | [GWMemRW](GWMemRW.proto) |
 |  -9220 | 0xDBFC | MemWriteResDTO | 0xDAFC | MemWriteReqDTO | [GWMemRW](GWMemRW.proto) |
-|  -9220 | 0xDBFC | GWSetConfigRes | 0xDAFC | GWSetConfigReq | [GWSetConfig](GWSetConfig.proto) |
 |  -9218 | 0xDBFE | CommDevCfgFetchResDTO | 0xDAFE | CommDevCfgFetchReqDTO | [CommDevCfg](CommDevCfg.proto) |
-|  -9218 | 0xDBFE | GWGetConfigRes | 0xDAFE | GWGetConfigReq | [GWGetConfig](GWGetConfig.proto) |
 |  -9217 | 0xDBFF | CommDevCfgPutResDTO | 0xDAFF | CommDevCfgPutReqDTO | [CommDevCfg](CommDevCfg.proto) |
-|  -9217 | 0xDBFF | GWSetConfigRes | 0xDAFF | GWSetConfigReq | [GWSetConfig](GWSetConfig.proto) |
 |  -3838 | 0xF102 | InfoResDTO | 0xF002 | InfoReqDTO | [SMLPEInfo](SMLPEInfo.proto) |
 |  -3837 | 0xF103 | DTLResDTO | 0xF003 | DTLReqDTO | [SMLPERTData](SMLPERTData.proto) |
 |  -3836 | 0xF104 | DTLStateResDTO | 0xF004 | DTLStateReqDTO | [SMLPEState](SMLPEState.proto) |
@@ -209,8 +208,7 @@ The following file tree represents the file structure of the proto files extract
              ┃     ┣━📄 SMLPERTData.proto
              ┃     ┗━📄 SMLPEState.proto
              ┗━📁 net
-                ┣━📁 docs
-                ┃  ┗━📄 ChartPB.proto
                 ┣━📄 CfgRuleConfigPB.proto
+                ┣━📄 ChartPB.proto
                 ┗━📄 PlaybackDataPB.proto
 ```

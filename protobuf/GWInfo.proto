@@ -13,6 +13,7 @@ message GWInfoMO {
   int32 ssl = 10;
   int64 dfs = 11;
   int64 sv = 12;
+  string enc_rand = 13;
 }
 
 message DevInfoMO {

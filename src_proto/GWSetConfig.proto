@@ -39,6 +39,8 @@ message GWSetConfigRes {
   optional int32 cable_dns_3 = 36;
   optional bytes dtu_ap_ssid = 37;
   optional bytes dtu_ap_pass = 38;
+  optional bytes dtu_ap_old_pass = 39;
+  optional int32 app_page = 40;
 }
 
 message GWSetConfigReq {
