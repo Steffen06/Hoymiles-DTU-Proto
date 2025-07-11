@@ -26,8 +26,8 @@ Compile *.proto files with protoc. see: [proto/README.md](proto/README.md)
 | 2 Bytes | Command ID | see [src_proto/README.md](src_proto/README.md) |
 | 2 Bytes | Sequence-Counter | increment per message |
 | 2 Bytes | Checksum | CRC-16/MODBUS of Payload |
-| 2 Bytes | Total length | Payload + 10 Bytes |
-| 2 Bytes | Payload  | decode with matching command from Command ID from  coresponding protobuf file |
+| 2 Bytes | Total length | Payload Size (in Bytes) + 10 Bytes (for header fields) |
+| n Bytes | Payload  | decode with matching command from Command ID from  coresponding protobuf file |
 
 ### Checksum
 
