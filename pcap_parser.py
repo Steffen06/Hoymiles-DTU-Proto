@@ -10,7 +10,7 @@ from datetime import datetime
 from google.protobuf import symbol_database
 from google.protobuf import json_format
 
-from protobuf import (AlarmData_pb2,AppAUGetHistED_pb2,AppAUGetHistPower_pb2,AppFWOTA_pb2,APPGetConfig_pb2,AppGetHistED_pb2,AppGetHistPower_pb2,APPHeartbeatPB_pb2,APPInfomationData_pb2,APPNetworkInfo_pb2,APPSetConfig_pb2,AUDspCmdSet_pb2,AUInfo_pb2,AURealData_pb2,AutoSearch_pb2,CmdSMLPE_pb2,CommandPB_pb2,CommCmd_pb2,CommDevCfg_pb2,DevConfigSMLPE_pb2,DevConfig_pb2,ESCheckPB_pb2,ESCPCfg_pb2,ESDataPB_pb2,ESDebugLog_pb2,ESParaSet_pb2,ESRegPB_pb2,ESUserSet_pb2,EventData_pb2,FileDataSMLPE_pb2,GetConfig_pb2,GPSTData_pb2,GWGetConfig_pb2,GWHeartbeat_pb2,GWInfo_pb2,GWMemRW_pb2,GWNetInfo_pb2,GWSetConfig_pb2,GWWarn_pb2,HeartbeatSMLPE_pb2,HPCSLR_Information_pb2,HPCSLR_RT_Data_pb2,HPCSLR_UserSet_pb2,HPCSLR_Warn_pb2,HPCS_Information_pb2,HPCS_RT_Data_pb2,HPCS_UserSet_pb2,HPCS_Warn_pb2,NetworkInfo_pb2,PlaybackDataPB_pb2,PV_Inv_Curve_pb2,PV_Inv_EnergyCurve_pb2,PV_Inv_EventLog_pb2,PV_Inv_Information_pb2,PV_Inv_RT_Data_pb2,PV_Inv_Update_pb2,PV_Inv_UserSet_pb2,PV_Inv_Warn_pb2,RealDataNew_pb2,RealData_pb2,SetConfig_pb2,SMLPEInfo_pb2,SMLPENetwork_pb2,SMLPERTData_pb2,SMLPEState_pb2,StorageRegisterPB_pb2,WarnData_pb2,)
+from protobuf import (AlarmData_pb2,AppAUGetHistED_pb2,AppAUGetHistPower_pb2,AppFWOTA_pb2,APPGetConfig_pb2,AppGetHistED_pb2,AppGetHistPower_pb2,APPHeartbeatPB_pb2,APPInfomationData_pb2,APPNetworkInfo_pb2,APPSetConfig_pb2,AUDspCmdSet_pb2,AUInfo_pb2,AURealData_pb2,AutoSearch_pb2,CfgRuleConfigPB_pb2,ChartPB_pb2,CmdSMLPE_pb2,CommandPB_pb2,CommCmd_pb2,CommDevCfg_pb2,DevConfigSMLPE_pb2,DevConfig_pb2,ESCheckPB_pb2,ESCommCfg_pb2,ESCPCfg_pb2,ESDataPB_pb2,ESDebugLog_pb2,ESParaSet_pb2,ESRegPB_pb2,ESUserSet_pb2,EventData_pb2,FileDataSMLPE_pb2,GetConfig_pb2,GPSTData_pb2,GWGetConfig_pb2,GWHeartbeat_pb2,GWInfo_pb2,GWMemRW_pb2,GWNetInfo_pb2,GWSetConfig_pb2,GWWarn_pb2,HeartbeatSMLPE_pb2,HPCSLR_Information_pb2,HPCSLR_RT_Data_pb2,HPCSLR_UserSet_pb2,HPCSLR_Warn_pb2,HPCS_Information_pb2,HPCS_RT_Data_pb2,HPCS_UserSet_pb2,HPCS_Warn_pb2,NetworkInfo_pb2,PlaybackDataPB_pb2,PV_Inv_Curve_pb2,PV_Inv_EnergyCurve_pb2,PV_Inv_EventLog_pb2,PV_Inv_Information_pb2,PV_Inv_RT_Data_pb2,PV_Inv_Update_pb2,PV_Inv_UserSet_pb2,PV_Inv_Warn_pb2,RealDataNew_pb2,RealData_pb2,SetConfig_pb2,SMLPEInfo_pb2,SMLPENetwork_pb2,SMLPERTData_pb2,SMLPEState_pb2,StorageRegisterPB_pb2,WarnData_pb2,)
 
 commands = {
     0x2201: 'APPInfoDataReqDTO', 0x2301: 'APPInfoDataResDTO',
@@ -78,6 +78,7 @@ commands = {
     0xC208: 'ESUserSetPutReqDTO', 0xC308: 'ESUserSetPutResDTO',
     0xC2FE: 'CommDevCfgFetchReqDTO', 0xC3FE: 'CommDevCfgFetchResDTO',
     0xC2FF: 'CommDevCfgPutReqDTO', 0xC3FF: 'CommDevCfgPutResDTO',
+    # 0xC2FF: 'ESHMIDCfgMO', 0xC3FF: 'ESCOMMCfgBO',
     0xC802: 'PVInvInfoReqDTO', 0xC902: 'PVInvInfoResDTO',
     0xC803: 'PVInvDataReqDTO', 0xC903: 'PVInvDataResDTO',
     0xC807: 'PVInvUserSetGetReqDTO', 0xC907: 'PVInvUserSetGetResDTO',
@@ -98,6 +99,7 @@ commands = {
     0xCC08: 'HPCSUserSetGetResDTO', 0xCD08: 'HPCSUserSetGetReqDTO',
     0xCC09: 'HPCSWarnReqDTO', 0xCD09: 'HPCSWarnResDTO',
     0xDA01: 'GWInfoReqDTO', 0xDB01: 'GWInfoResDTO',
+    # 0xDA01: 'ESRegReqDTO', 0xDB01: 'ESRegResDTO',
     # 0xDA01: 'GWGetConfigReq', 0xDB01: 'GWGetConfigRes',
     # 0xDA01: 'GWSetConfigReq', 0xDB01: 'GWSetConfigRes',
     0xDA02: 'GWHBReqDTO', 0xDB02: 'GWHBResDTO',

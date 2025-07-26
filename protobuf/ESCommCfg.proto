@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+message ESHMIDCfgMO {
+  int32 ess_cfd = 1;
+  int32 sol_acen = 2;
+  int32 gen_acen = 3;
+  int32 i_lmt = 4;
+}
+
+message ESCOMMCfgBO {
+  ESHMIDCfgMO mid = 1;
+}

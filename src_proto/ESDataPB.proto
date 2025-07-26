@@ -93,9 +93,7 @@ message SmartLoadPhaseMO {
 }
 
 message DSmartLoadMO {
-  optional LoadParamMO param = 1;
   repeated SmartLoadPhaseMO phase = 2;
-  optional int32 total_power = 3;
 }
 
 message InvParamMO {
@@ -123,6 +121,10 @@ message InvParamMO {
   optional int32 arcok = 24;
   optional int32 coa_s = 25;
   optional int32 ips_en = 26;
+  optional int32 tbat = 27;
+  optional int32 ex_spd1 = 28;
+  optional int32 ex_spd2 = 29;
+  optional int32 ex_spd3 = 30;
 }
 
 message InvPhaseMO {
@@ -244,6 +246,45 @@ message DFlowMO {
   optional int32 soc = 7;
 }
 
+message DHmidMO {
+  optional int32 fc = 1;
+  optional int32 tev = 2;
+  optional int32 tcop = 3;
+  optional int32 rel_sts = 4;
+}
+
+message DBmsPackMO {
+  optional int64 sn = 1;
+  optional int32 sts = 2;
+  optional int32 hs = 3;
+  optional int32 dcdc_fc = 4;
+  optional int32 ov = 5;
+  optional int32 il1 = 6;
+  optional int32 il2 = 7;
+  optional int32 hv = 8;
+  optional int32 tev = 9;
+  optional int32 trad = 10;
+  optional int32 tftp = 11;
+  optional int32 tftn = 12;
+  optional int32 bms_fc = 13;
+  optional int32 soc = 14;
+  optional int32 soh = 15;
+  optional int32 v = 16;
+  optional int32 i = 17;
+  optional int32 p = 18;
+  optional int32 icm = 19;
+  optional int32 idm = 20;
+  optional int32 vc = 21;
+  optional int32 vd = 22;
+  optional int32 tch = 23;
+  optional int32 tcl = 24;
+  optional int32 vch = 25;
+  optional int32 vcl = 26;
+  optional int32 edchg = 27;
+  optional int32 echg = 28;
+  optional int32 cc = 29;
+}
+
 message ESDataReqDTO {
   optional int64 sn = 1;
   optional uint32 time = 2;
@@ -263,6 +304,8 @@ message ESDataReqDTO {
   repeated DSmartLoadMO smart_load = 16;
   optional DFlowMO pflow = 17;
   repeated DChgCPMO cps = 18;
+  repeated DHmidMO mid = 19;
+  repeated DBmsPackMO bps = 20;
 }
 
 message ESDataResDTO {

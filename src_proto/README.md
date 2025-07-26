@@ -72,6 +72,7 @@ This folder contains unmodified protobuf files. For modified protobuf files see 
 | -15608 | 0xC308 | ESUserSetPutResDTO | 0xC208 | ESUserSetPutReqDTO | [ESUserSet](ESUserSet.proto) |
 | -15362 | 0xC3FE | CommDevCfgFetchResDTO | 0xC2FE | CommDevCfgFetchReqDTO | [CommDevCfg](CommDevCfg.proto) |
 | -15361 | 0xC3FF | CommDevCfgPutResDTO | 0xC2FF | CommDevCfgPutReqDTO | [CommDevCfg](CommDevCfg.proto) |
+| -15361 | 0xC3FF | ESCOMMCfgBO | 0xC2FF | ESHMIDCfgMO | [ESCommCfg](ESCommCfg.proto) |
 | -14078 | 0xC902 | PVInvInfoResDTO | 0xC802 | PVInvInfoReqDTO | [PV_Inv_Information](PV_Inv_Information.proto) |
 | -14077 | 0xC903 | PVInvDataResDTO | 0xC803 | PVInvDataReqDTO | [PV_Inv_RT_Data](PV_Inv_RT_Data.proto) |
 | -14073 | 0xC907 | PVInvUserSetGetResDTO | 0xC807 | PVInvUserSetGetReqDTO | [PV_Inv_UserSet](PV_Inv_UserSet.proto) |
@@ -92,6 +93,7 @@ This folder contains unmodified protobuf files. For modified protobuf files see 
 | -13048 | 0xCD08 | HPCSUserSetGetReqDTO | 0xCC08 | HPCSUserSetGetResDTO | [HPCS_UserSet](HPCS_UserSet.proto) |
 | -13047 | 0xCD09 | HPCSWarnResDTO | 0xCC09 | HPCSWarnReqDTO | [HPCS_Warn](HPCS_Warn.proto) |
 |  -9471 | 0xDB01 | GWInfoResDTO | 0xDA01 | GWInfoReqDTO | [GWInfo](GWInfo.proto) |
+|  -9471 | 0xDB01 | ESRegResDTO | 0xDA01 | ESRegReqDTO | [ESRegPB](ESRegPB.proto) |
 |  -9471 | 0xDB01 | GWGetConfigRes | 0xDA01 | GWGetConfigReq | [GWGetConfig](GWGetConfig.proto) |
 |  -9471 | 0xDB01 | GWSetConfigRes | 0xDA01 | GWSetConfigReq | [GWSetConfig](GWSetConfig.proto) |
 |  -9470 | 0xDB02 | GWHBResDTO | 0xDA02 | GWHBReqDTO | [GWHeartbeat](GWHeartbeat.proto) |
@@ -147,6 +149,7 @@ The following file tree represents the file structure of the proto files extract
              ┣━📁 ld
              ┃  ┣━📁 es
              ┃  ┃  ┣━📄 ESCheckPB.proto
+             ┃  ┃  ┣━📄 ESCommCfg.proto
              ┃  ┃  ┣━📄 ESCPCfg.proto
              ┃  ┃  ┣━📄 ESDataPB.proto
              ┃  ┃  ┣━📄 ESDebugLog.proto

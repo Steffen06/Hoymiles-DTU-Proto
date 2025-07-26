@@ -7,8 +7,9 @@ message ESRegReqDTO {
   optional int32 gen_mode = 4;
   optional uint32 time = 5;
   optional int32 offset = 6;
-  repeated RegMidMO mid = 7;
   optional int64 dfs = 8;
+  optional int32 ems_mod = 9;
+  repeated RegMidMO mid = 10;
 }
 
 message RegInvMO {
@@ -28,6 +29,7 @@ message RegInvMO {
   optional int32 bms_prot = 14;
   optional int32 bms_type = 15;
   repeated ChgCPMO cps = 16;
+  repeated BmsPackMO bps = 17;
 }
 
 message RegMeterMO {
@@ -37,14 +39,24 @@ message RegMeterMO {
 
 message RegMidMO {
   optional int64 sn = 1;
-  optional string sw_ver = 2;
-  optional string hw_ver = 3;
+  optional int32 sw_ver = 2;
+  optional int32 hw_ver = 3;
 }
 
 message ChgCPMO {
   optional int64 sn = 1;
   optional int32 sw_ver = 2;
   optional int32 hw_ver = 3;
+}
+
+message BmsPackMO {
+  optional int32 c_no = 1;
+  optional int64 sn = 2;
+  optional int32 sw_dcdc_ver = 3;
+  optional int32 sw_bms_ver = 4;
+  optional int32 sox_ver = 5;
+  optional int32 hw_ver = 6;
+  optional int32 cap = 7;
 }
 
 message ESRegResDTO {
