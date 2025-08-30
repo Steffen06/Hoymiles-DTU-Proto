@@ -10,6 +10,8 @@ message ESRegReqDTO {
   optional int64 dfs = 8;
   optional int32 ems_mod = 9;
   repeated RegMidMO mid = 10;
+  optional int32 ap = 11;
+  optional int32 cp = 12;
 }
 
 message RegInvMO {

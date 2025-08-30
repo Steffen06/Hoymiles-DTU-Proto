@@ -14,6 +14,8 @@ message BaseParam {
   optional uint32 grid_pmax = 11;
   optional uint32 t_pd = 12;
   optional uint32 iv_cmd = 13;
+  optional uint32 t_ensoft = 14;
+  optional uint32 op_gradient = 15;
 }
 
 message RunOperateParam {

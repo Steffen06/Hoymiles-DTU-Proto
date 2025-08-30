@@ -60,6 +60,7 @@ message GridPhaseMO {
   optional int32 pf = 6;
   optional int32 ef = 7;
   optional int32 ec = 8;
+  optional int32 l = 9;
 }
 
 message DGridMO {
@@ -138,6 +139,7 @@ message InvPhaseMO {
   optional int32 veps = 8;
   optional int32 ieps = 9;
   optional int32 peps = 10;
+  optional int32 l = 11;
 }
 
 message DInvMO {
@@ -251,6 +253,7 @@ message DHmidMO {
   optional int32 tev = 2;
   optional int32 tcop = 3;
   optional int32 rel_sts = 4;
+  optional int32 sts = 5;
 }
 
 message DBmsPackMO {

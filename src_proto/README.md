@@ -93,7 +93,6 @@ This folder contains unmodified protobuf files. For modified protobuf files see 
 | -13048 | 0xCD08 | HPCSUserSetGetReqDTO | 0xCC08 | HPCSUserSetGetResDTO | [HPCS_UserSet](HPCS_UserSet.proto) |
 | -13047 | 0xCD09 | HPCSWarnResDTO | 0xCC09 | HPCSWarnReqDTO | [HPCS_Warn](HPCS_Warn.proto) |
 |  -9471 | 0xDB01 | GWInfoResDTO | 0xDA01 | GWInfoReqDTO | [GWInfo](GWInfo.proto) |
-|  -9471 | 0xDB01 | ESRegResDTO | 0xDA01 | ESRegReqDTO | [ESRegPB](ESRegPB.proto) |
 |  -9471 | 0xDB01 | GWGetConfigRes | 0xDA01 | GWGetConfigReq | [GWGetConfig](GWGetConfig.proto) |
 |  -9471 | 0xDB01 | GWSetConfigRes | 0xDA01 | GWSetConfigReq | [GWSetConfig](GWSetConfig.proto) |
 |  -9470 | 0xDB02 | GWHBResDTO | 0xDA02 | GWHBReqDTO | [GWHeartbeat](GWHeartbeat.proto) |

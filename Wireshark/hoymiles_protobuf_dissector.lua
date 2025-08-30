@@ -86,7 +86,6 @@ do
         [0xCC08] = "HPCSUserSetGetResDTO", [0xCD08] = "HPCSUserSetGetReqDTO",
         [0xCC09] = "HPCSWarnReqDTO", [0xCD09] = "HPCSWarnResDTO",
         [0xDA01] = "GWInfoReqDTO", [0xDB01] = "GWInfoResDTO",
-        -- [0xDA01] = "ESRegReqDTO", [0xDB01] = "ESRegResDTO",
         -- [0xDA01] = "GWGetConfigReq", [0xDB01] = "GWGetConfigRes",
         -- [0xDA01] = "GWSetConfigReq", [0xDB01] = "GWSetConfigRes",
         [0xDA02] = "GWHBReqDTO", [0xDB02] = "GWHBResDTO",
