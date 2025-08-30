@@ -20,6 +20,11 @@ Compile *.proto files with protoc. see: [proto/README.md](proto/README.md)
 
 ## Message Structure
 
+> [!IMPORTANT]
+> With App `v3.3.2` and DTU `V01.01.00`, Hoymiles has added the ability to encrypt some of the traffic. This also added additional header fields when the data is encrypted.
+> 
+> This hasn't been implemented yet and is therefore not currently supported. Implementation is planned for the future.
+
 | Size | Type | Additional Informations |
 | --- | --- | --- |
 | 2 Bytes | Header | `0x484D` static, Value for Chars `HM` |
