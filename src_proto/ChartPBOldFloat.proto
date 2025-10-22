@@ -3,14 +3,14 @@ syntax = "proto3";
 message LineChart {
   repeated string x_axis = 1;
   repeated LineSeries series = 2;
-  string type = 3;
+  optional string type = 3;
 }
 
 message LineSeries {
-  string type = 1;
-  repeated double data = 2;
-  int32 did = 3;
-  int32 port = 4;
+  optional string type = 1;
+  repeated float data = 2;
+  optional int32 did = 3;
+  optional int32 port = 4;
 }
 
 message LineChartArray {
@@ -18,11 +18,11 @@ message LineChartArray {
 }
 
 message ChartV2 {
-  string key = 1;
-  string date = 2;
-  string quota = 3;
+  optional string key = 1;
+  optional string date = 2;
+  optional string quota = 3;
   repeated int32 xp = 4;
-  repeated double data = 5;
+  repeated float data = 5;
 }
 
 message ChartArrayV2 {

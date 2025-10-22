@@ -56,6 +56,7 @@ This folder contains unmodified protobuf files. For modified protobuf files see 
 | -23801 | 0xA307 | DevConfigFetchResDTO | 0xA207 | DevConfigFetchReqDTO | [DevConfig](DevConfig.proto) |
 | -23800 | 0xA308 | DevConfigPutResDTO | 0xA208 | DevConfigPutReqDTO | [DevConfig](DevConfig.proto) |
 | -23799 | 0xA309 | GetConfigRes | 0xA209 | GetConfigReq | [GetConfig](GetConfig.proto) |
+| -23792 | 0xA310 | APPInfoDataResDTO | 0xA210 | APPInfoDataReqDTO | [APPInfomationData](APPInfomationData.proto) |
 | -23792 | 0xA310 | SetConfigRes | 0xA210 | SetConfigReq | [SetConfig](SetConfig.proto) |
 | -23791 | 0xA311 | RealResDTO | 0xA211 | RealReqDTO | [RealDataNew](RealDataNew.proto) |
 | -23791 | 0xA311 | APPInfoDataResDTO | 0xA211 | APPInfoDataReqDTO | [APPInfomationData](APPInfomationData.proto) |
@@ -63,7 +64,6 @@ This folder contains unmodified protobuf files. For modified protobuf files see 
 | -23789 | 0xA313 | AutoSearchRes | 0xA213 | AutoSearchReq | [AutoSearch](AutoSearch.proto) |
 | -23788 | 0xA314 | NetworkInfoRes | 0xA214 | NetworkInfoReq | [NetworkInfo](NetworkInfo.proto) |
 | -23788 | 0xA314 | GetConfigRes | 0xA214 | GetConfigReq | [GetConfig](GetConfig.proto) |
-| -23788 | 0xA314 | SetConfigRes | 0xA214 | SetConfigReq | [SetConfig](SetConfig.proto) |
 | -23787 | 0xA315 | AppGetHistPowerRes | 0xA215 | AppGetHistPowerReq | [AppGetHistPower](AppGetHistPower.proto) |
 | -23786 | 0xA316 | AppGetHistEDRes | 0xA216 | AppGetHistEDReq | [AppGetHistED](AppGetHistED.proto) |
 | -15614 | 0xC302 | ESRegResDTO | 0xC202 | ESRegReqDTO | [ESRegPB](ESRegPB.proto) |
@@ -76,7 +76,6 @@ This folder contains unmodified protobuf files. For modified protobuf files see 
 | -14078 | 0xC902 | PVInvInfoResDTO | 0xC802 | PVInvInfoReqDTO | [PV_Inv_Information](PV_Inv_Information.proto) |
 | -14077 | 0xC903 | PVInvDataResDTO | 0xC803 | PVInvDataReqDTO | [PV_Inv_RT_Data](PV_Inv_RT_Data.proto) |
 | -14073 | 0xC907 | PVInvUserSetGetResDTO | 0xC807 | PVInvUserSetGetReqDTO | [PV_Inv_UserSet](PV_Inv_UserSet.proto) |
-| -14072 | 0xC908 | PVInvUserSetGetReqDTO | 0xC808 | PVInvUserSetGetResDTO | [PV_Inv_UserSet](PV_Inv_UserSet.proto) |
 | -14071 | 0xC909 | PVInvWarnResDTO | 0xC809 | PVInvWarnReqDTO | [PV_Inv_Warn](PV_Inv_Warn.proto) |
 | -14013 | 0xC943 | PVInvUpdateResDTO | 0xC843 | PVInvUpdateReqDTO | [PV_Inv_Update](PV_Inv_Update.proto) |
 | -14012 | 0xC944 | PVInvOTAResDTO | 0xC844 | PVInvOTAReqDTO | [PV_Inv_Update](PV_Inv_Update.proto) |
@@ -89,12 +88,9 @@ This folder contains unmodified protobuf files. For modified protobuf files see 
 | -13053 | 0xCD03 | HPCSInfoResDTO | 0xCC03 | HPCSInfoReqDTO | [HPCS_Information](HPCS_Information.proto) |
 | -13049 | 0xCD07 | HPCSLRUserSetGetResDTO | 0xCC07 | HPCSLRUserSetGetReqDTO | [HPCSLR_UserSet](HPCSLR_UserSet.proto) |
 | -13049 | 0xCD07 | HPCSUserSetGetResDTO | 0xCC07 | HPCSUserSetGetReqDTO | [HPCS_UserSet](HPCS_UserSet.proto) |
-| -13048 | 0xCD08 | HPCSLRUserSetGetReqDTO | 0xCC08 | HPCSLRUserSetGetResDTO | [HPCSLR_UserSet](HPCSLR_UserSet.proto) |
-| -13048 | 0xCD08 | HPCSUserSetGetReqDTO | 0xCC08 | HPCSUserSetGetResDTO | [HPCS_UserSet](HPCS_UserSet.proto) |
 | -13047 | 0xCD09 | HPCSWarnResDTO | 0xCC09 | HPCSWarnReqDTO | [HPCS_Warn](HPCS_Warn.proto) |
 |  -9471 | 0xDB01 | GWInfoResDTO | 0xDA01 | GWInfoReqDTO | [GWInfo](GWInfo.proto) |
 |  -9471 | 0xDB01 | GWGetConfigRes | 0xDA01 | GWGetConfigReq | [GWGetConfig](GWGetConfig.proto) |
-|  -9471 | 0xDB01 | GWSetConfigRes | 0xDA01 | GWSetConfigReq | [GWSetConfig](GWSetConfig.proto) |
 |  -9470 | 0xDB02 | GWHBResDTO | 0xDA02 | GWHBReqDTO | [GWHeartbeat](GWHeartbeat.proto) |
 |  -9469 | 0xDB03 | CommCmdResDTO | 0xDA03 | CommCmdReqDTO | [CommCmd](CommCmd.proto) |
 |  -9468 | 0xDB04 | CommCmdStatusResDTO | 0xDA04 | CommCmdStatusReqDTO | [CommCmd](CommCmd.proto) |
@@ -212,5 +208,6 @@ The following file tree represents the file structure of the proto files extract
              ┗━📁 net
                 ┣━📄 CfgRuleConfigPB.proto
                 ┣━📄 ChartPB.proto
+                ┣━📄 ChartPBOldFloat.proto
                 ┗━📄 PlaybackDataPB.proto
 ```

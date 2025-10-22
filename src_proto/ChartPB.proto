@@ -8,7 +8,7 @@ message LineChart {
 
 message LineSeries {
   optional string type = 1;
-  repeated float data = 2;
+  repeated double data = 2;
   optional int32 did = 3;
   optional int32 port = 4;
 }
@@ -22,7 +22,7 @@ message ChartV2 {
   optional string date = 2;
   optional string quota = 3;
   repeated int32 xp = 4;
-  repeated float data = 5;
+  repeated double data = 5;
 }
 
 message ChartArrayV2 {
