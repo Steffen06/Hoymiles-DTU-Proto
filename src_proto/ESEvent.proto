@@ -1,0 +1,31 @@
+syntax = "proto3";
+
+message BatExtDMO {
+  optional int64 sn = 1;
+  optional int32 rsoc = 2;
+  optional int32 p_cpa = 3;
+  optional int32 c_eff = 4;
+  optional int32 dch_r = 5;
+  optional int64 mu_tim = 6;
+  optional int32 kwh_dch = 7;
+  optional int32 kwh_ch = 8;
+  optional int32 ah_dch = 9;
+  optional int32 ah_ch = 10;
+  optional int32 ext_tim = 11;
+  optional int32 ext_chtim = 12;
+  optional int32 ddch_num = 13;
+  optional int32 dch_num = 14;
+  optional int32 cyc_num = 15;
+}
+
+message ESEventReqDTO {
+  optional int64 sn = 1;
+  optional int64 evt_type = 2;
+  repeated BatExtDMO bat_ex = 3;
+}
+
+message ESEventResDTO {
+  optional int64 sn = 1;
+  optional int32 oft = 2;
+  optional uint32 time = 3;
+}

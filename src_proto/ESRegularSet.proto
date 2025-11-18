@@ -1,0 +1,88 @@
+syntax = "proto3";
+
+message ESSafetySetMO {
+  optional int32 cty_code = 1;
+  optional int32 vers = 2;
+  optional bytes data = 3;
+}
+
+message ESAdvancedSetSysMO {
+  optional int32 meter_model = 1;
+  optional int32 gct_rev = 2;
+  optional int32 gct_ir = 3;
+  optional int32 pct_rev = 4;
+  optional int32 pct_ir = 5;
+  optional int32 midgat_en = 6;
+  optional int32 disp_mode = 7;
+  optional int32 disp_lumin = 8;
+  optional int32 buzzer_model = 9;
+  optional int32 gen_portm = 10;
+  optional int32 bms_comty = 11;
+  optional int32 tre_unbalen = 12;
+}
+
+message ESAdvancedSetBatMO {
+  optional int32 max_dchgp = 1;
+  optional int32 max_chgp = 2;
+  optional int32 max_soc = 3;
+  optional int32 min_soc = 4;
+  optional int32 minsoc_Repp = 5;
+  optional int32 rsoc_Repp = 6;
+  optional int32 peak_Repp = 7;
+  optional int32 vall_chgp = 8;
+  optional int32 prti_dchgp = 9;
+}
+
+message ESAdvancedSetPvMO {
+  optional int32 mppt_scanen = 1;
+  optional int32 mppt_period = 2;
+}
+
+message ESAdvancedSetEpsMO {
+  optional int32 eps_mode = 1;
+  optional int32 ext_bypas = 2;
+  optional int32 pv_offg = 3;
+  optional int32 psave_mode = 4;
+  optional int32 min_load = 5;
+}
+
+message ESAdvancedSetGenMO {
+  optional int32 pso = 1;
+  optional int32 sig_type = 2;
+  optional int32 min_tim = 3;
+  optional int32 max_tim = 4;
+  optional int32 prt_dly = 5;
+  optional int32 syn_tim = 6;
+  optional int32 shut_dly = 7;
+  optional int32 exe_inter = 8;
+  optional int32 rated_p = 9;
+  optional int32 high_v = 10;
+  optional int32 low_v = 11;
+  optional int32 high_frq = 12;
+  optional int32 low_frq = 13;
+  optional int32 max_chgp = 14;
+}
+
+message ESAdvancedSetMO {
+  optional int32 type = 1;
+  optional ESAdvancedSetSysMO sys_set = 2;
+  optional ESAdvancedSetBatMO bat_set = 3;
+  optional ESAdvancedSetPvMO pv_set = 4;
+  optional ESAdvancedSetEpsMO eps_set = 5;
+  optional ESAdvancedSetGenMO gen_set = 6;
+}
+
+message ESExpertSetMO {
+  optional bytes data = 1;
+}
+
+message ESBmsSetMO {
+  optional bytes data = 1;
+}
+
+message ESParaSetBO {
+  optional ESSafetySetMO saf_set = 1;
+  optional ESAdvancedSetMO adv_set = 2;
+  optional ESExpertSetMO exp_set = 3;
+  optional ESBmsSetMO bms_set = 4;
+}

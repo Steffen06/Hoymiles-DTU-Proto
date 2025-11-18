@@ -73,6 +73,9 @@ message LCtrlTiMO {
   optional uint32 wr2 = 4;
   optional uint32 wr2_tr1 = 5;
   optional uint32 wr2_tr2 = 6;
+  optional int32 soc_en = 7;
+  optional int32 sta_soc = 8;
+  optional int32 stp_soc = 9;
 }
 
 message LCtrlAiMO {

@@ -1,0 +1,88 @@
+syntax = "proto3";
+
+message ESSafetySetMO {
+  int32 cty_code = 1;
+  int32 vers = 2;
+  bytes data = 3;
+}
+
+message ESAdvancedSetSysMO {
+  int32 meter_model = 1;
+  int32 gct_rev = 2;
+  int32 gct_ir = 3;
+  int32 pct_rev = 4;
+  int32 pct_ir = 5;
+  int32 midgat_en = 6;
+  int32 disp_mode = 7;
+  int32 disp_lumin = 8;
+  int32 buzzer_model = 9;
+  int32 gen_portm = 10;
+  int32 bms_comty = 11;
+  int32 tre_unbalen = 12;
+}
+
+message ESAdvancedSetBatMO {
+  int32 max_dchgp = 1;
+  int32 max_chgp = 2;
+  int32 max_soc = 3;
+  int32 min_soc = 4;
+  int32 minsoc_Repp = 5;
+  int32 rsoc_Repp = 6;
+  int32 peak_Repp = 7;
+  int32 vall_chgp = 8;
+  int32 prti_dchgp = 9;
+}
+
+message ESAdvancedSetPvMO {
+  int32 mppt_scanen = 1;
+  int32 mppt_period = 2;
+}
+
+message ESAdvancedSetEpsMO {
+  int32 eps_mode = 1;
+  int32 ext_bypas = 2;
+  int32 pv_offg = 3;
+  int32 psave_mode = 4;
+  int32 min_load = 5;
+}
+
+message ESAdvancedSetGenMO {
+  int32 pso = 1;
+  int32 sig_type = 2;
+  int32 min_tim = 3;
+  int32 max_tim = 4;
+  int32 prt_dly = 5;
+  int32 syn_tim = 6;
+  int32 shut_dly = 7;
+  int32 exe_inter = 8;
+  int32 rated_p = 9;
+  int32 high_v = 10;
+  int32 low_v = 11;
+  int32 high_frq = 12;
+  int32 low_frq = 13;
+  int32 max_chgp = 14;
+}
+
+message ESAdvancedSetMO {
+  int32 type = 1;
+  ESAdvancedSetSysMO sys_set = 2;
+  ESAdvancedSetBatMO bat_set = 3;
+  ESAdvancedSetPvMO pv_set = 4;
+  ESAdvancedSetEpsMO eps_set = 5;
+  ESAdvancedSetGenMO gen_set = 6;
+}
+
+message ESExpertSetMO {
+  bytes data = 1;
+}
+
+message ESBmsSetMO {
+  bytes data = 1;
+}
+
+message ESParaSetBO {
+  ESSafetySetMO saf_set = 1;
+  ESAdvancedSetMO adv_set = 2;
+  ESExpertSetMO exp_set = 3;
+  ESBmsSetMO bms_set = 4;
+}

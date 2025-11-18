@@ -73,6 +73,9 @@ message LCtrlTiMO {
   uint32 wr2 = 4;
   uint32 wr2_tr1 = 5;
   uint32 wr2_tr2 = 6;
+  int32 soc_en = 7;
+  int32 sta_soc = 8;
+  int32 stp_soc = 9;
 }
 
 message LCtrlAiMO {

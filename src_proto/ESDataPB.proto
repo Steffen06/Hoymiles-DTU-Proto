@@ -226,6 +226,7 @@ message ChgCPParamMO {
   optional int32 p = 6;
   optional int32 wc = 7;
   optional int64 sn = 8;
+  optional int32 gec = 9;
 }
 
 message ChgCPBillMO {
@@ -236,6 +237,7 @@ message ChgCPBillMO {
   optional uint32 e_time = 5;
   optional int32 ec = 6;
   optional int32 sts = 7;
+  optional int32 gec = 8;
 }
 
 message DFlowMO {
@@ -285,7 +287,6 @@ message DBmsPackMO {
   optional int32 vcl = 26;
   optional int32 edchg = 27;
   optional int32 echg = 28;
-  optional int32 cc = 29;
 }
 
 message ESDataReqDTO {
