@@ -21,6 +21,7 @@ This folder contains unmodified protobuf files. For modified protobuf files see 
 |   [^2] | 0x230C | RealResDTO | 0x220C | RealReqDTO | [RealDataNew](RealDataNew.proto) |
 |   [^2] | 0x230D | RealResDTO | 0x220D | RealReqDTO | [RealDataNew](RealDataNew.proto) |
 |  12545 | 0x3101 | HbSmlpeResDTO | 0x3001 | HbSmlpeReqDTO | [HeartbeatSMLPE](HeartbeatSMLPE.proto) |
+| -31998 | 0x8302 | APPInfoDataResDTO | 0x8202 | APPInfoDataReqDTO | [APPInfomationData](APPInfomationData.proto) |
 | -30463 | 0x8901 | AUInfoResDTO | 0x8801 | AUInfoReqDTO | [AUInfo](AUInfo.proto) |
 | -30462 | 0x8902 | GWHBResDTO | 0x8802 | GWHBReqDTO | [GWHeartbeat](GWHeartbeat.proto) |
 | -30461 | 0x8903 | AuRealResDTO | 0x8803 | AuRealReqDTO | [AURealData](AURealData.proto) |
@@ -43,36 +44,44 @@ This folder contains unmodified protobuf files. For modified protobuf files see 
 | -23803 | 0xA305 | CommandResDTO | 0xA205 | CommandReqDTO | [CommandPB](CommandPB.proto) |
 | -23802 | 0xA306 | CommandStatusResDTO | 0xA206 | CommandStatusReqDTO | [CommandPB](CommandPB.proto) |
 | -23799 | 0xA309 | GetConfigRes | 0xA209 | GetConfigReq | [GetConfig](GetConfig.proto) |
-| -23792 | 0xA310 | APPInfoDataResDTO | 0xA210 | APPInfoDataReqDTO | [APPInfomationData](APPInfomationData.proto) |
+| -23792 | 0xA310 | SetConfigRes | 0xA210 | SetConfigReq | [SetConfig](SetConfig.proto) |
 | -23791 | 0xA311 | RealResDTO | 0xA211 | RealReqDTO | [RealDataNew](RealDataNew.proto) |
-| -23791 | 0xA311 | APPInfoDataResDTO | 0xA211 | APPInfoDataReqDTO | [APPInfomationData](APPInfomationData.proto) |
 | -23790 | 0xA312 | GPSTResDTO | 0xA212 | GPSTReqDTO | [GPSTData](GPSTData.proto) |
 | -23789 | 0xA313 | AutoSearchRes | 0xA213 | AutoSearchReq | [AutoSearch](AutoSearch.proto) |
-| -23788 | 0xA314 | GetConfigRes | 0xA214 | GetConfigReq | [GetConfig](GetConfig.proto) |
 | -23788 | 0xA314 | NetworkInfoRes | 0xA214 | NetworkInfoReq | [NetworkInfo](NetworkInfo.proto) |
 | -23787 | 0xA315 | AppGetHistPowerRes | 0xA215 | AppGetHistPowerReq | [AppGetHistPower](AppGetHistPower.proto) |
 | -23786 | 0xA316 | AppGetHistEDRes | 0xA216 | AppGetHistEDReq | [AppGetHistED](AppGetHistED.proto) |
+| -23784 | 0xA318 | CommCmdResDTO | 0xA218 | CommCmdReqDTO | [CommCmd](CommCmd.proto) |
+| -23784 | 0xA318 | CommCmdStatusResDTO | 0xA218 | CommCmdStatusReqDTO | [CommCmd](CommCmd.proto) |
 |  -9471 | 0xDB01 | GWInfoResDTO | 0xDA01 | GWInfoReqDTO | [GWInfo](GWInfo.proto) |
 |  -9471 | 0xDB01 | ReadHRegResDTO | 0xDA01 | ReadHRegReqDTO | [DevConfigSMLPE](DevConfigSMLPE.proto) |
+|  -9471 | 0xDB01 | CmdSmlpeResDTO | 0xDA01 | CmdSmlpeReqDTO | [CmdSMLPE](CmdSMLPE.proto) |
 |  -9471 | 0xDB01 | ESDataResDTO | 0xDA01 | ESDataReqDTO | [ESDataPB](ESDataPB.proto) |
+|  -9471 | 0xDB01 | CommCmdResDTO | 0xDA01 | CommCmdReqDTO | [CommCmd](CommCmd.proto) |
 |  -9471 | 0xDB01 | CommCmdStatusResDTO | 0xDA01 | CommCmdStatusReqDTO | [CommCmd](CommCmd.proto) |
-|  -9471 | 0xDB01 | GWGetConfigRes | 0xDA01 | GWGetConfigReq | [GWGetConfig](GWGetConfig.proto) |
-|  -9471 | 0xDB01 | PVInvDataResDTO | 0xDA01 | PVInvDataReqDTO | [PV_Inv_RT_Data](PV_Inv_RT_Data.proto) |
 |  -9471 | 0xDB01 | PVInvCurveResDTO | 0xDA01 | PVInvCurveReqDTO | [PV_Inv_Curve](PV_Inv_Curve.proto) |
 |  -9471 | 0xDB01 | PVInvInfoResDTO | 0xDA01 | PVInvInfoReqDTO | [PV_Inv_Information](PV_Inv_Information.proto) |
+|  -9471 | 0xDB01 | PVInvDataResDTO | 0xDA01 | PVInvDataReqDTO | [PV_Inv_RT_Data](PV_Inv_RT_Data.proto) |
 |  -9471 | 0xDB01 | HPCSInfoResDTO | 0xDA01 | HPCSInfoReqDTO | [HPCS_Information](HPCS_Information.proto) |
 |  -9470 | 0xDB02 | GWHBResDTO | 0xDA02 | GWHBReqDTO | [GWHeartbeat](GWHeartbeat.proto) |
 |  -9469 | 0xDB03 | CommCmdResDTO | 0xDA03 | CommCmdReqDTO | [CommCmd](CommCmd.proto) |
+|  -9468 | 0xDB04 | CommCmdStatusResDTO | 0xDA04 | CommCmdStatusReqDTO | [CommCmd](CommCmd.proto) |
 |  -9466 | 0xDB06 | GWNetInfoRes | 0xDA06 | GWNetInfoReq | [GWNetInfo](GWNetInfo.proto) |
-|  -9466 | 0xDB06 | GWGetConfigRes | 0xDA06 | GWGetConfigReq | [GWGetConfig](GWGetConfig.proto) |
+|  -9465 | 0xDB07 | SetConfigRes | 0xDA07 | SetConfigReq | [SetConfig](SetConfig.proto) |
+|  -9465 | 0xDB07 | GWSetConfigRes | 0xDA07 | GWSetConfigReq | [GWSetConfig](GWSetConfig.proto) |
+|  -9464 | 0xDB08 | GetConfigRes | 0xDA08 | GetConfigReq | [GetConfig](GetConfig.proto) |
+|  -9464 | 0xDB08 | GWGetConfigRes | 0xDA08 | GWGetConfigReq | [GWGetConfig](GWGetConfig.proto) |
 |  -9221 | 0xDBFB | MemReadResDTO | 0xDAFB | MemReadReqDTO | [GWMemRW](GWMemRW.proto) |
-|  -9220 | 0xDBFC | DTLStateResDTO | 0xDAFC | DTLStateReqDTO | [SMLPEState](SMLPEState.proto) |
 |  -9220 | 0xDBFC | DTLResDTO | 0xDAFC | DTLReqDTO | [SMLPERTData](SMLPERTData.proto) |
 |  -9220 | 0xDBFC | MemWriteResDTO | 0xDAFC | MemWriteReqDTO | [GWMemRW](GWMemRW.proto) |
 |  -9220 | 0xDBFC | WriteHRegResDTO | 0xDAFC | WriteHRegReqDTO | [DevConfigSMLPE](DevConfigSMLPE.proto) |
+|  -9220 | 0xDBFC | DTLStateResDTO | 0xDAFC | DTLStateReqDTO | [SMLPEState](SMLPEState.proto) |
 |  -9220 | 0xDBFC | InfoResDTO | 0xDAFC | InfoReqDTO | [SMLPEInfo](SMLPEInfo.proto) |
+|  -9220 | 0xDBFC | GWSetConfigRes | 0xDAFC | GWSetConfigReq | [GWSetConfig](GWSetConfig.proto) |
+|  -9218 | 0xDBFE | GWGetConfigRes | 0xDAFE | GWGetConfigReq | [GWGetConfig](GWGetConfig.proto) |
 |  -9218 | 0xDBFE | CommDevCfgFetchResDTO | 0xDAFE | CommDevCfgFetchReqDTO | [CommDevCfg](CommDevCfg.proto) |
 |  -9217 | 0xDBFF | CommDevCfgPutResDTO | 0xDAFF | CommDevCfgPutReqDTO | [CommDevCfg](CommDevCfg.proto) |
+|  -9217 | 0xDBFF | GWSetConfigRes | 0xDAFF | GWSetConfigReq | [GWSetConfig](GWSetConfig.proto) |
 
 [^1]: automatically derived from found commands, generated files and previous observations
 [^2]: gathered from other sources (not found in the files)
@@ -140,7 +149,8 @@ The following file tree represents the file structure of the proto files extract
              ┃  ┃  ┣━📄 PV_Inv_RT_Data.proto
              ┃  ┃  ┣━📄 PV_Inv_Update.proto
              ┃  ┃  ┣━📄 PV_Inv_UserSet.proto
-             ┃  ┃  ┗━📄 PV_Inv_Warn.proto
+             ┃  ┃  ┣━📄 PV_Inv_Warn.proto
+             ┃  ┃  ┗━📄 PV_Inv_Wave.proto
              ┃  ┣━📁 lr
              ┃  ┃  ┣━📄 HPCSLR_Information.proto
              ┃  ┃  ┣━📄 HPCSLR_RT_Data.proto

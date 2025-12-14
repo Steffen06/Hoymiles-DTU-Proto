@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+message PVInvWaveReqDTO {
+  int64 inv_sn = 1;
+  uint32 time = 2;
+  int32 fault_num = 3;
+  int32 ap = 4;
+  int32 cp = 5;
+  int32 length = 6;
+  bytes wave_data = 7;
+}
+
+message PVInvWaveResDTO {
+  uint32 time = 1;
+  string ymd_hms = 2;
+  int32 cpu_type = 3;
+  int32 fault_num = 4;
+  int32 ap = 5;
+  int32 cp = 6;
+}
