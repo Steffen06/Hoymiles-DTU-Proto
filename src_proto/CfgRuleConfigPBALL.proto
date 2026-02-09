@@ -43,8 +43,31 @@ message RuleConfigBO {
   repeated CfgSubTableBO sub_list = 3;
   optional int32 dev_type = 4;
   repeated string prefix = 5;
+  optional int32 plat_type = 6;
+}
+
+message GridFileRuleBO {
+  optional int32 rid = 1;
+  optional int32 grid_id = 2;
+  optional int32 min_ver = 3;
+  optional int32 max_ver = 4;
+  repeated string prefix = 5;
+}
+
+message GridFileConfigBO {
+  optional int32 id = 1;
+  optional int32 ver = 2;
+  optional string name = 3;
+  optional int32 country_std = 4;
+  optional string country_code = 5;
+  repeated CfgItemBO list = 6;
 }
 
 message RuleDataDTO {
   repeated RuleConfigBO cfg = 1;
+}
+
+message GridFileDataDTO {
+  repeated GridFileRuleBO rule = 1;
+  repeated GridFileConfigBO cfg = 2;
 }

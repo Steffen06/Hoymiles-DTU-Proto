@@ -26,15 +26,15 @@ message ESAdvancedSetBatMO {
   int32 max_chgp = 2;
   int32 max_soc = 3;
   int32 min_soc = 4;
-  int32 minsoc_Repp = 5;
-  int32 rsoc_Repp = 6;
-  int32 peak_Repp = 7;
+  int32 minsoc_repp = 5;
+  int32 rsoc_repp = 6;
+  int32 peak_repp = 7;
   int32 vall_chgp = 8;
   int32 prti_dchgp = 9;
 }
 
 message ESAdvancedSetPvMO {
-  int32 mppt_scanen = 1;
+  int32 mppt_scanban = 1;
   int32 mppt_period = 2;
 }
 
@@ -80,7 +80,7 @@ message ESBmsSetMO {
   bytes data = 1;
 }
 
-message ESParaSetBO {
+message ESRegularSetBO {
   ESSafetySetMO saf_set = 1;
   ESAdvancedSetMO adv_set = 2;
   ESExpertSetMO exp_set = 3;

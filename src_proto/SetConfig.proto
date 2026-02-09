@@ -53,6 +53,7 @@ message SetConfigRes {
   optional int32 app_page = 50;
   optional int32 wifi_channel = 51;
   optional bytes dtu_ap_old_pass = 52;
+  optional int64 tid = 53;
 }
 
 message SetConfigReq {

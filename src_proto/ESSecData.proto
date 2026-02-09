@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+message ESSecDatReqDTO {
+  optional int64 sn = 1;
+  optional SysPFMO sys = 2;
+}
+
+message SysPFMO {
+  optional int32 pv2l = 1;
+  optional int32 pv2b = 2;
+  optional int32 pv2g = 3;
+  optional int32 b2l = 4;
+  optional int32 g2l = 5;
+  optional int32 b2g = 6;
+  optional int32 l2c = 7;
+}
+
+message ESSecDatResDTO {
+  optional int32 dly = 1;
+  optional int32 dur = 2;
+}

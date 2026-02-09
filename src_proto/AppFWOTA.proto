@@ -3,6 +3,8 @@ syntax = "proto3";
 message FWInfoResDTO {
   repeated FWModMO mods = 1;
   optional int32 p_len = 2;
+  optional int32 chk = 3;
+  optional uint32 time = 4;
 }
 
 message FWModMO {
@@ -18,6 +20,14 @@ message FWModMO {
 message FWInfoReqDTO {
   optional int64 sn = 1;
   optional int32 err_code = 2;
+  repeated FWStaMO stas = 3;
+}
+
+message FWStaMO {
+  optional int32 fid = 1;
+  optional int32 sta = 2;
+  optional int32 rate = 3;
+  optional int32 remain_time = 4;
 }
 
 message FWOTAReqDTO {
@@ -32,4 +42,5 @@ message FWOTAResDTO {
   optional int32 fid = 2;
   optional int32 s_range = 3;
   optional int32 e_range = 4;
+  optional uint32 time = 5;
 }

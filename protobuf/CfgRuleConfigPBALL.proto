@@ -1,0 +1,73 @@
+syntax = "proto3";
+
+message CfgItemBO {
+  int32 id = 1;
+  int32 stc_id = 2;
+  string name = 3;
+  string key = 4;
+  int32 type = 6;
+  int32 mark = 7;
+  string content = 8;
+  int32 position = 9;
+  string unit = 10;
+  float min = 11;
+  float max = 12;
+  int32 multiple = 13;
+  int32 scale = 14;
+  int32 length = 15;
+  int32 show = 16;
+  int32 edit = 17;
+  int32 change = 18;
+  int32 card_idx = 20;
+  string remarks = 22;
+}
+
+message CfgSettingBO {
+  int32 id = 1;
+  string name = 2;
+  int32 type = 3;
+  int32 lock = 4;
+  repeated CfgItemBO list = 5;
+}
+
+message CfgSubTableBO {
+  int32 id = 1;
+  int32 stc_id = 2;
+  string name = 3;
+  repeated CfgItemBO list = 5;
+}
+
+message RuleConfigBO {
+  int32 rid = 1;
+  repeated CfgSettingBO set_list = 2;
+  repeated CfgSubTableBO sub_list = 3;
+  int32 dev_type = 4;
+  repeated string prefix = 5;
+  int32 plat_type = 6;
+}
+
+message GridFileRuleBO {
+  int32 rid = 1;
+  int32 grid_id = 2;
+  int32 min_ver = 3;
+  int32 max_ver = 4;
+  repeated string prefix = 5;
+}
+
+message GridFileConfigBO {
+  int32 id = 1;
+  int32 ver = 2;
+  string name = 3;
+  int32 country_std = 4;
+  string country_code = 5;
+  repeated CfgItemBO list = 6;
+}
+
+message RuleDataDTO {
+  repeated RuleConfigBO cfg = 1;
+}
+
+message GridFileDataDTO {
+  repeated GridFileRuleBO rule = 1;
+  repeated GridFileConfigBO cfg = 2;
+}

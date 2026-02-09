@@ -42,6 +42,7 @@ This folder contains unmodified protobuf files. For modified protobuf files see 
 | -23805 | 0xA303 | RealDataResDTO | 0xA203 | RealDataReqDTO | [RealData](RealData.proto) |
 | -23804 | 0xA304 | WarnResDTO | 0xA204 | WarnReqDTO | [WarnData](WarnData.proto) |
 | -23803 | 0xA305 | CommandResDTO | 0xA205 | CommandReqDTO | [CommandPB](CommandPB.proto) |
+| -23803 | 0xA305 | CommCmdResDTO | 0xA205 | CommCmdReqDTO | [CommCmd](CommCmd.proto) |
 | -23802 | 0xA306 | CommandStatusResDTO | 0xA206 | CommandStatusReqDTO | [CommandPB](CommandPB.proto) |
 | -23799 | 0xA309 | GetConfigRes | 0xA209 | GetConfigReq | [GetConfig](GetConfig.proto) |
 | -23792 | 0xA310 | SetConfigRes | 0xA210 | SetConfigReq | [SetConfig](SetConfig.proto) |
@@ -53,11 +54,13 @@ This folder contains unmodified protobuf files. For modified protobuf files see 
 | -23786 | 0xA316 | AppGetHistEDRes | 0xA216 | AppGetHistEDReq | [AppGetHistED](AppGetHistED.proto) |
 | -23784 | 0xA318 | CommCmdResDTO | 0xA218 | CommCmdReqDTO | [CommCmd](CommCmd.proto) |
 | -23784 | 0xA318 | CommCmdStatusResDTO | 0xA218 | CommCmdStatusReqDTO | [CommCmd](CommCmd.proto) |
+| -23780 | 0xA31C | FWInfoResDTO | 0xA21C | FWInfoReqDTO | [AppFWOTA](AppFWOTA.proto) |
+| -23779 | 0xA31D | FWOTAResDTO | 0xA21D | FWOTAReqDTO | [AppFWOTA](AppFWOTA.proto) |
+| -23773 | 0xA323 | AppGetDevListRes | 0xA223 | AppGetDevListReq | [AppGetDevList](AppGetDevList.proto) |
 |  -9471 | 0xDB01 | GWInfoResDTO | 0xDA01 | GWInfoReqDTO | [GWInfo](GWInfo.proto) |
 |  -9471 | 0xDB01 | ReadHRegResDTO | 0xDA01 | ReadHRegReqDTO | [DevConfigSMLPE](DevConfigSMLPE.proto) |
 |  -9471 | 0xDB01 | CmdSmlpeResDTO | 0xDA01 | CmdSmlpeReqDTO | [CmdSMLPE](CmdSMLPE.proto) |
 |  -9471 | 0xDB01 | ESDataResDTO | 0xDA01 | ESDataReqDTO | [ESDataPB](ESDataPB.proto) |
-|  -9471 | 0xDB01 | CommCmdResDTO | 0xDA01 | CommCmdReqDTO | [CommCmd](CommCmd.proto) |
 |  -9471 | 0xDB01 | CommCmdStatusResDTO | 0xDA01 | CommCmdStatusReqDTO | [CommCmd](CommCmd.proto) |
 |  -9471 | 0xDB01 | PVInvCurveResDTO | 0xDA01 | PVInvCurveReqDTO | [PV_Inv_Curve](PV_Inv_Curve.proto) |
 |  -9471 | 0xDB01 | PVInvInfoResDTO | 0xDA01 | PVInvInfoReqDTO | [PV_Inv_Information](PV_Inv_Information.proto) |
@@ -127,6 +130,7 @@ The following file tree represents the file structure of the proto files extract
              ┃  ┃  ┣━📄 ESParaSet.proto
              ┃  ┃  ┣━📄 ESRegPB.proto
              ┃  ┃  ┣━📄 ESRegularSet.proto
+             ┃  ┃  ┣━📄 ESSecData.proto
              ┃  ┃  ┣━📄 ESUserSet.proto
              ┃  ┃  ┣━📄 ESWarnPB.proto
              ┃  ┃  ┣━📄 StorageData.proto
@@ -158,6 +162,7 @@ The following file tree represents the file structure of the proto files extract
              ┃  ┃  ┗━📄 HPCSLR_Warn.proto
              ┃  ┣━📁 power
              ┃  ┃  ┣━📄 AlarmData.proto
+             ┃  ┃  ┣━📄 AppGetDevList.proto
              ┃  ┃  ┣━📄 AppGetHistED.proto
              ┃  ┃  ┣━📄 AppGetHistPower.proto
              ┃  ┃  ┣━📄 APPHeartbeatPB.proto
@@ -184,7 +189,7 @@ The following file tree represents the file structure of the proto files extract
              ┃     ┣━📄 SMLPERTData.proto
              ┃     ┗━📄 SMLPEState.proto
              ┗━📁 net
-                ┣━📄 CfgRuleConfigPB.proto
+                ┣━📄 CfgRuleConfigPBALL.proto
                 ┣━📄 ChartPB.proto
                 ┣━📄 ChartPBOldFloat.proto
                 ┗━📄 PlaybackDataPB.proto

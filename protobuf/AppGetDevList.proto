@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+message AppGetDevListRes {
+  int32 cp = 1;
+  uint32 time = 2;
+}
+
+message APPDevListMO {
+  int64 sn = 1;
+  int32 rssi = 2;
+}
+
+message AppGetDevListReq {
+  int32 ap = 1;
+  int32 cp = 2;
+  repeated APPDevListMO dev_list = 3;
+}

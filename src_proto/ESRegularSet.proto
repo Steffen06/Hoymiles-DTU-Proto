@@ -26,15 +26,15 @@ message ESAdvancedSetBatMO {
   optional int32 max_chgp = 2;
   optional int32 max_soc = 3;
   optional int32 min_soc = 4;
-  optional int32 minsoc_Repp = 5;
-  optional int32 rsoc_Repp = 6;
-  optional int32 peak_Repp = 7;
+  optional int32 minsoc_repp = 5;
+  optional int32 rsoc_repp = 6;
+  optional int32 peak_repp = 7;
   optional int32 vall_chgp = 8;
   optional int32 prti_dchgp = 9;
 }
 
 message ESAdvancedSetPvMO {
-  optional int32 mppt_scanen = 1;
+  optional int32 mppt_scanban = 1;
   optional int32 mppt_period = 2;
 }
 
@@ -80,7 +80,7 @@ message ESBmsSetMO {
   optional bytes data = 1;
 }
 
-message ESParaSetBO {
+message ESRegularSetBO {
   optional ESSafetySetMO saf_set = 1;
   optional ESAdvancedSetMO adv_set = 2;
   optional ESExpertSetMO exp_set = 3;

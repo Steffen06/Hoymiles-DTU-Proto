@@ -53,6 +53,7 @@ message SetConfigRes {
   int32 app_page = 50;
   int32 wifi_channel = 51;
   string dtu_ap_old_pass = 52;
+  int64 tid = 53;
 }
 
 message SetConfigReq {
