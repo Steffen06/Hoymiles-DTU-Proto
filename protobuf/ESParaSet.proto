@@ -51,6 +51,19 @@ message EmsParUseTiSetMO {
   repeated TimeOfSetMO trs = 2;
 }
 
+message TouPlanMO {
+  int32 ms = 1;
+  int32 tr = 2;
+  int32 pwr = 3;
+  int32 gcf = 4;
+}
+
+message EmsParTouSetMO {
+  int32 type = 1;
+  int32 ver = 2;
+  repeated TouPlanMO plan = 3;
+}
+
 message ParaEmsMO {
   uint32 mode = 1;
   EmsParRevSocMO selfu = 2;
@@ -60,6 +73,7 @@ message ParaEmsMO {
   EmsParChgDchgMO dchg_m = 6;
   EmsParPeakCutMO peakcut = 7;
   EmsParUseTiSetMO tou = 8;
+  EmsParTouSetMO tous = 9;
 }
 
 message LCtrlManualMO {

@@ -12,6 +12,7 @@ message PVInvCurveReqDTO {
   optional int32 ap = 3;
   optional int32 cp = 4;
   repeated CurveMO curves = 5;
+  optional uint32 p_total = 6;
 }
 
 message PVInvCurveResDTO {

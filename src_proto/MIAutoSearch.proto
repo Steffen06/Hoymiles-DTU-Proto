@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+message MIDeviceSearchCmdBO {
+  optional uint32 search_cmd = 1;
+  optional uint32 device_total_nub = 2;
+  optional uint32 window_time = 3;
+  optional uint32 search_id = 4;
+  optional uint32 report_interval_sec = 5;
+  optional uint32 timeout = 6;
+}
+
+message MIDeviceInfoMO {
+  optional uint64 device_sn = 1;
+  optional uint32 close_time = 2;
+}
+
+message MIDeviceSearchRepBO {
+  optional uint32 device_total_nub = 1;
+  optional uint32 device_count = 2;
+  optional uint32 search_id = 3;
+  optional uint32 search_status = 4;
+  repeated MIDeviceInfoMO device_info = 5;
+}

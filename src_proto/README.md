@@ -44,6 +44,7 @@ This folder contains unmodified protobuf files. For modified protobuf files see 
 | -23803 | 0xA305 | CommandResDTO | 0xA205 | CommandReqDTO | [CommandPB](CommandPB.proto) |
 | -23803 | 0xA305 | CommCmdResDTO | 0xA205 | CommCmdReqDTO | [CommCmd](CommCmd.proto) |
 | -23802 | 0xA306 | CommandStatusResDTO | 0xA206 | CommandStatusReqDTO | [CommandPB](CommandPB.proto) |
+| -23801 | 0xA307 | DevConfigFetchResDTO | 0xA207 | DevConfigFetchReqDTO | [DevConfig](DevConfig.proto) |
 | -23799 | 0xA309 | GetConfigRes | 0xA209 | GetConfigReq | [GetConfig](GetConfig.proto) |
 | -23792 | 0xA310 | SetConfigRes | 0xA210 | SetConfigReq | [SetConfig](SetConfig.proto) |
 | -23791 | 0xA311 | RealResDTO | 0xA211 | RealReqDTO | [RealDataNew](RealDataNew.proto) |
@@ -59,7 +60,6 @@ This folder contains unmodified protobuf files. For modified protobuf files see 
 | -23773 | 0xA323 | AppGetDevListRes | 0xA223 | AppGetDevListReq | [AppGetDevList](AppGetDevList.proto) |
 |  -9471 | 0xDB01 | GWInfoResDTO | 0xDA01 | GWInfoReqDTO | [GWInfo](GWInfo.proto) |
 |  -9471 | 0xDB01 | ReadHRegResDTO | 0xDA01 | ReadHRegReqDTO | [DevConfigSMLPE](DevConfigSMLPE.proto) |
-|  -9471 | 0xDB01 | CmdSmlpeResDTO | 0xDA01 | CmdSmlpeReqDTO | [CmdSMLPE](CmdSMLPE.proto) |
 |  -9471 | 0xDB01 | ESDataResDTO | 0xDA01 | ESDataReqDTO | [ESDataPB](ESDataPB.proto) |
 |  -9471 | 0xDB01 | CommCmdStatusResDTO | 0xDA01 | CommCmdStatusReqDTO | [CommCmd](CommCmd.proto) |
 |  -9471 | 0xDB01 | PVInvCurveResDTO | 0xDA01 | PVInvCurveReqDTO | [PV_Inv_Curve](PV_Inv_Curve.proto) |
@@ -130,7 +130,6 @@ The following file tree represents the file structure of the proto files extract
              ┃  ┃  ┣━📄 ESParaSet.proto
              ┃  ┃  ┣━📄 ESRegPB.proto
              ┃  ┃  ┣━📄 ESRegularSet.proto
-             ┃  ┃  ┣━📄 ESSecData.proto
              ┃  ┃  ┣━📄 ESUserSet.proto
              ┃  ┃  ┣━📄 ESWarnPB.proto
              ┃  ┃  ┣━📄 StorageData.proto
@@ -173,6 +172,7 @@ The following file tree represents the file structure of the proto files extract
              ┃  ┃  ┣━📄 EventData.proto
              ┃  ┃  ┣━📄 GetConfig.proto
              ┃  ┃  ┣━📄 GPSTData.proto
+             ┃  ┃  ┣━📄 MIAutoSearch.proto
              ┃  ┃  ┣━📄 NetworkInfo.proto
              ┃  ┃  ┣━📄 RealData.proto
              ┃  ┃  ┣━📄 RealDataNew.proto
