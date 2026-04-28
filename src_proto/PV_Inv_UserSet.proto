@@ -36,6 +36,9 @@ message RunOperateParam {
   optional uint32 fan_cyc = 15;
   optional uint32 svg_mode = 16;
   optional uint32 svg_uset = 17;
+  optional uint32 pv_temp_tim = 18;
+  optional uint32 pv_temp_fun = 19;
+  optional uint32 fan_fun = 20;
 }
 
 message DiSet {

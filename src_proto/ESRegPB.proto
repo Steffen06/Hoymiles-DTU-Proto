@@ -12,6 +12,8 @@ message ESRegReqDTO {
   repeated RegMidMO mid = 10;
   optional int32 ap = 11;
   optional int32 cp = 12;
+  optional int32 pb_crc = 13;
+  repeated RegSmartDevMO smart = 14;
 }
 
 message RegDispMO {
@@ -39,11 +41,22 @@ message RegInvMO {
   repeated ChgCPMO cps = 16;
   repeated BmsPackMO bps = 17;
   repeated RegDispMO disp = 18;
+  repeated RegHpMO hp = 19;
+}
+
+message RegSmartDevMO {
+  optional int64 sn = 1;
+  optional int32 sw = 2;
+  optional int32 hw = 3;
+  optional int32 mm_sw = 4;
+  optional int32 mm_hw = 5;
 }
 
 message RegMeterMO {
   optional string sn = 1;
   optional string sn_pv = 2;
+  optional int32 sw_grid = 3;
+  optional int32 sw_pv = 4;
 }
 
 message RegMidMO {
@@ -66,6 +79,11 @@ message BmsPackMO {
   optional int32 sox_ver = 5;
   optional int32 hw_ver = 6;
   optional int32 cap = 7;
+}
+
+message RegHpMO {
+  optional int64 sn = 1;
+  optional int32 brand = 2;
 }
 
 message ESRegResDTO {

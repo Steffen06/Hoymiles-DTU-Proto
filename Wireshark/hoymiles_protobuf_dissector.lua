@@ -67,6 +67,7 @@ do
         -- [0xDA07] = "GWSetConfigReq", [0xDB07] = "GWSetConfigRes",
         [0xDA08] = "GetConfigReq", [0xDB08] = "GetConfigRes",
         -- [0xDA08] = "GWGetConfigReq", [0xDB08] = "GWGetConfigRes",
+        [0xDA0D] = "ShellyManuDetectReq", [0xDB0D] = "ShellyManuDetectRes",
         [0xDAFB] = "MemReadReqDTO", [0xDBFB] = "MemReadResDTO",
         [0xDAFC] = "DTLStateReqDTO", [0xDBFC] = "DTLStateResDTO",
         -- [0xDAFC] = "DTLReqDTO", [0xDBFC] = "DTLResDTO",

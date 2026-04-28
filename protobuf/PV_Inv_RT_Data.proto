@@ -62,6 +62,7 @@ message ObserParm {
   sint32 grid_ubl = 27;
   sint32 ac_ubl = 28;
   sint32 sys_state = 29;
+  sint32 reverse_dust = 30;
 }
 
 message UserParm {

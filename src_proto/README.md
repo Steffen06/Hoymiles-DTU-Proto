@@ -74,6 +74,7 @@ This folder contains unmodified protobuf files. For modified protobuf files see 
 |  -9465 | 0xDB07 | GWSetConfigRes | 0xDA07 | GWSetConfigReq | [GWSetConfig](GWSetConfig.proto) |
 |  -9464 | 0xDB08 | GetConfigRes | 0xDA08 | GetConfigReq | [GetConfig](GetConfig.proto) |
 |  -9464 | 0xDB08 | GWGetConfigRes | 0xDA08 | GWGetConfigReq | [GWGetConfig](GWGetConfig.proto) |
+|  -9459 | 0xDB0D | ShellyManuDetectRes | 0xDA0D | ShellyManuDetectReq | [Shelly](Shelly.proto) |
 |  -9221 | 0xDBFB | MemReadResDTO | 0xDAFB | MemReadReqDTO | [GWMemRW](GWMemRW.proto) |
 |  -9220 | 0xDBFC | DTLResDTO | 0xDAFC | DTLReqDTO | [SMLPERTData](SMLPERTData.proto) |
 |  -9220 | 0xDBFC | MemWriteResDTO | 0xDAFC | MemWriteReqDTO | [GWMemRW](GWMemRW.proto) |
@@ -132,6 +133,7 @@ The following file tree represents the file structure of the proto files extract
              ┃  ┃  ┣━📄 ESRegularSet.proto
              ┃  ┃  ┣━📄 ESUserSet.proto
              ┃  ┃  ┣━📄 ESWarnPB.proto
+             ┃  ┃  ┣━📄 Shelly.proto
              ┃  ┃  ┣━📄 StorageData.proto
              ┃  ┃  ┗━📄 StorageRegisterPB.proto
              ┃  ┣━📁 gw

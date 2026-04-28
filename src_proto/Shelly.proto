@@ -1,0 +1,117 @@
+syntax = "proto3";
+
+message ShellyDetectMO {
+  optional string id = 1;
+  optional int32 err_s = 2;
+  optional int32 ip = 3;
+}
+
+message ShellyDetectRes {
+  optional int32 cp = 1;
+  optional int32 oft = 2;
+  optional uint32 time = 3;
+  optional int64 tid = 4;
+}
+
+message ShellyDetectReq {
+  optional int32 ap = 1;
+  optional int32 cp = 2;
+  optional int32 oft = 3;
+  optional uint32 time = 4;
+  optional int64 tid = 5;
+  repeated ShellyDetectMO subs = 6;
+  optional int32 err_code = 7;
+}
+
+message ShellyManuDetectRes {
+  optional int32 oft = 1;
+  optional uint32 time = 2;
+  optional int64 tid = 3;
+  optional int32 devType = 4;
+  optional int32 ip = 5;
+}
+
+message ShellyManuDetectReq {
+  optional int32 oft = 1;
+  optional uint32 time = 2;
+  optional int64 tid = 3;
+  optional string id = 4;
+  optional int32 err_s = 5;
+  optional int32 err_code = 6;
+}
+
+message ShellyChannelInfoMO {
+  optional int32 chan = 1;
+  optional string name = 2;
+}
+
+message ShellyDevInfoMO {
+  optional int64 dev_sn = 1;
+  optional string id = 2;
+  optional string sw = 3;
+  optional int32 chan = 4;
+  optional string model = 5;
+  optional string name = 6;
+  optional int32 gen = 7;
+  optional string dev_name = 8;
+  optional bool auth = 9;
+  repeated ShellyChannelInfoMO chan_info = 10;
+  optional int32 hw = 11;
+  optional int32 sw_i = 12;
+}
+
+message ShellyChannelStatusMO {
+  optional int32 chan = 1;
+  optional int32 ph = 2;
+  optional int32 en = 3;
+  optional int32 p = 4;
+  optional int32 v = 5;
+  optional int32 freq = 6;
+  optional int32 i = 7;
+  optional int32 ed = 8;
+}
+
+message ShellyDevStatusMO {
+  optional int64 dev_sn = 1;
+  repeated ShellyChannelStatusMO channel_status = 2;
+}
+
+message ShellyScheduleMO {
+  optional int32 base = 1;
+  optional string cron = 2;
+  optional int32 info = 3;
+}
+
+message ShellyDevCfgMO {
+  optional int64 dev_sn = 1;
+  optional int32 cfg_type = 2;
+  repeated ShellyScheduleMO sched = 3;
+}
+
+message ShellyDevInfoRes {
+  optional int32 cp = 1;
+  optional int32 oft = 2;
+  optional uint32 time = 3;
+  optional int64 tid = 4;
+  optional int32 get_type = 5;
+  optional int64 dev_sn = 6;
+}
+
+message ShellyDevInfoReq {
+  optional int32 ap = 1;
+  optional int32 cp = 2;
+  optional int32 oft = 3;
+  optional uint32 time = 4;
+  optional int64 tid = 5;
+  optional int32 get_type = 6;
+  optional int32 dev_status = 7;
+  optional ShellyDevInfoMO info = 8;
+  optional ShellyDevStatusMO status = 9;
+  optional ShellyDevCfgMO cfg = 10;
+  optional int32 err_code = 11;
+}
+
+message ShellySchedSetBO {
+  repeated int32 del_id = 1;
+  repeated ShellyScheduleMO sched = 2;
+}

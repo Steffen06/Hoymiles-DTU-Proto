@@ -1,0 +1,117 @@
+syntax = "proto3";
+
+message ShellyDetectMO {
+  string id = 1;
+  int32 err_s = 2;
+  int32 ip = 3;
+}
+
+message ShellyDetectRes {
+  int32 cp = 1;
+  int32 oft = 2;
+  uint32 time = 3;
+  int64 tid = 4;
+}
+
+message ShellyDetectReq {
+  int32 ap = 1;
+  int32 cp = 2;
+  int32 oft = 3;
+  uint32 time = 4;
+  int64 tid = 5;
+  repeated ShellyDetectMO subs = 6;
+  int32 err_code = 7;
+}
+
+message ShellyManuDetectRes {
+  int32 oft = 1;
+  uint32 time = 2;
+  int64 tid = 3;
+  int32 devType = 4;
+  int32 ip = 5;
+}
+
+message ShellyManuDetectReq {
+  int32 oft = 1;
+  uint32 time = 2;
+  int64 tid = 3;
+  string id = 4;
+  int32 err_s = 5;
+  int32 err_code = 6;
+}
+
+message ShellyChannelInfoMO {
+  int32 chan = 1;
+  string name = 2;
+}
+
+message ShellyDevInfoMO {
+  int64 dev_sn = 1;
+  string id = 2;
+  string sw = 3;
+  int32 chan = 4;
+  string model = 5;
+  string name = 6;
+  int32 gen = 7;
+  string dev_name = 8;
+  bool auth = 9;
+  repeated ShellyChannelInfoMO chan_info = 10;
+  int32 hw = 11;
+  int32 sw_i = 12;
+}
+
+message ShellyChannelStatusMO {
+  int32 chan = 1;
+  int32 ph = 2;
+  int32 en = 3;
+  int32 p = 4;
+  int32 v = 5;
+  int32 freq = 6;
+  int32 i = 7;
+  int32 ed = 8;
+}
+
+message ShellyDevStatusMO {
+  int64 dev_sn = 1;
+  repeated ShellyChannelStatusMO channel_status = 2;
+}
+
+message ShellyScheduleMO {
+  int32 base = 1;
+  string cron = 2;
+  int32 info = 3;
+}
+
+message ShellyDevCfgMO {
+  int64 dev_sn = 1;
+  int32 cfg_type = 2;
+  repeated ShellyScheduleMO sched = 3;
+}
+
+message ShellyDevInfoRes {
+  int32 cp = 1;
+  int32 oft = 2;
+  uint32 time = 3;
+  int64 tid = 4;
+  int32 get_type = 5;
+  int64 dev_sn = 6;
+}
+
+message ShellyDevInfoReq {
+  int32 ap = 1;
+  int32 cp = 2;
+  int32 oft = 3;
+  uint32 time = 4;
+  int64 tid = 5;
+  int32 get_type = 6;
+  int32 dev_status = 7;
+  ShellyDevInfoMO info = 8;
+  ShellyDevStatusMO status = 9;
+  ShellyDevCfgMO cfg = 10;
+  int32 err_code = 11;
+}
+
+message ShellySchedSetBO {
+  repeated int32 del_id = 1;
+  repeated ShellyScheduleMO sched = 2;
+}
