@@ -55,6 +55,7 @@ This folder contains unmodified protobuf files. For modified protobuf files see 
 | -23786 | 0xA316 | AppGetHistEDRes | 0xA216 | AppGetHistEDReq | [AppGetHistED](AppGetHistED.proto) |
 | -23784 | 0xA318 | CommCmdResDTO | 0xA218 | CommCmdReqDTO | [CommCmd](CommCmd.proto) |
 | -23784 | 0xA318 | CommCmdStatusResDTO | 0xA218 | CommCmdStatusReqDTO | [CommCmd](CommCmd.proto) |
+| -23783 | 0xA319 | CommCmdStatusResDTO | 0xA219 | CommCmdStatusReqDTO | [CommCmd](CommCmd.proto) |
 | -23780 | 0xA31C | FWInfoResDTO | 0xA21C | FWInfoReqDTO | [AppFWOTA](AppFWOTA.proto) |
 | -23779 | 0xA31D | FWOTAResDTO | 0xA21D | FWOTAReqDTO | [AppFWOTA](AppFWOTA.proto) |
 | -23773 | 0xA323 | AppGetDevListRes | 0xA223 | AppGetDevListReq | [AppGetDevList](AppGetDevList.proto) |
@@ -74,6 +75,8 @@ This folder contains unmodified protobuf files. For modified protobuf files see 
 |  -9465 | 0xDB07 | GWSetConfigRes | 0xDA07 | GWSetConfigReq | [GWSetConfig](GWSetConfig.proto) |
 |  -9464 | 0xDB08 | GetConfigRes | 0xDA08 | GetConfigReq | [GetConfig](GetConfig.proto) |
 |  -9464 | 0xDB08 | GWGetConfigRes | 0xDA08 | GWGetConfigReq | [GWGetConfig](GWGetConfig.proto) |
+|  -9463 | 0xDB09 | LocalUpgInfoResDTO | 0xDA09 | LocalUpgInfoReqDTO | [LocalFWOTA](LocalFWOTA.proto) |
+|  -9461 | 0xDB0B | LocalUpgRateResDTO | 0xDA0B | LocalUpgRateReqDTO | [LocalFWOTA](LocalFWOTA.proto) |
 |  -9459 | 0xDB0D | ShellyManuDetectRes | 0xDA0D | ShellyManuDetectReq | [Shelly](Shelly.proto) |
 |  -9221 | 0xDBFB | MemReadResDTO | 0xDAFB | MemReadReqDTO | [GWMemRW](GWMemRW.proto) |
 |  -9220 | 0xDBFC | DTLResDTO | 0xDAFC | DTLReqDTO | [SMLPERTData](SMLPERTData.proto) |
@@ -145,7 +148,8 @@ The following file tree represents the file structure of the proto files extract
              ┃  ┃  ┣━📄 GWMemRW.proto
              ┃  ┃  ┣━📄 GWNetInfo.proto
              ┃  ┃  ┣━📄 GWSetConfig.proto
-             ┃  ┃  ┗━📄 GWWarn.proto
+             ┃  ┃  ┣━📄 GWWarn.proto
+             ┃  ┃  ┗━📄 LocalFWOTA.proto
              ┃  ┣━📁 lj
              ┃  ┃  ┣━📄 PV_Inv_Curve.proto
              ┃  ┃  ┣━📄 PV_Inv_EnergyCurve.proto

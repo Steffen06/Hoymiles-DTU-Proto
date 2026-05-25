@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+message LocalUpgInfoResDTO {
+  optional uint32 time = 1;
+  optional int32 total_size = 2;
+  optional int32 dev_type = 3;
+  optional int32 crc = 4;
+}
+
+message LocalUpgInfoReqDTO {
+  optional int32 err_code = 1;
+  optional int32 rate = 2;
+  optional int32 state = 3;
+  optional int32 s_range = 4;
+}
+
+message LocalUpgRateResDTO {
+  optional uint32 time = 1;
+}
+
+message LocalUpgRateReqDTO {
+  optional int32 err_code = 1;
+  optional int32 rate = 2;
+}

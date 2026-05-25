@@ -28,6 +28,12 @@ message APPDtuInfoMO {
   repeated int64 shls = 25;
   optional int32 type = 26;
   optional bytes enc_rand = 27;
+  optional int32 combo_boot_fw = 28;
+  optional int32 combo_sw = 29;
+  optional int32 combo_hw = 30;
+  optional int32 combo_sw_tm = 31;
+  optional int64 sub1g_dfs = 32;
+  repeated int64 devls = 33;
 }
 
 message APPMeterInfoMO {
@@ -62,6 +68,8 @@ message APPPvInfoMO {
   optional int32 pv_rf_sw = 10;
   optional int32 mi_rule_id = 11;
   optional uint32 pv_sw_btime = 12;
+  optional int64 pv_dfs = 13;
+  optional int64 sub1g_dfs = 14;
 }
 
 message APPFeatureMO {

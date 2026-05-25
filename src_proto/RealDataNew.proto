@@ -26,6 +26,12 @@ message MeterMO {
   optional int32 pf_a = 23;
   optional int32 pf_b = 24;
   optional int32 pf_c = 25;
+  optional int32 q_tt = 26;
+  optional int32 q_tta = 27;
+  optional int32 q_ttb = 28;
+  optional int32 q_ttc = 29;
+  optional int32 ep_delta = 30;
+  optional int32 en_delta = 31;
 }
 
 message RpMO {
@@ -61,7 +67,12 @@ message SGSMO {
   optional int32 crc = 11;
   optional int32 link = 12;
   optional int32 p_lim = 13;
-  optional int32 mi_signal = 20;
+  optional int32 mi_signal = 14;
+  optional int32 coa_s = 15;
+  optional int32 lim_p = 16;
+  optional int32 lim_q = 17;
+  optional int32 limr_pf = 18;
+  optional uint64 route_info = 19;
 }
 
 message TGSMO {
@@ -85,6 +96,13 @@ message TGSMO {
   optional int32 crc = 18;
   optional int32 link = 19;
   optional int32 mi_signal = 20;
+  optional int32 coa_s = 21;
+  optional int32 p_lim = 22;
+  optional int32 lim_p = 23;
+  optional int32 lim_q = 24;
+  optional int32 limr_pf = 25;
+  optional uint64 route_info = 26;
+  optional int32 i_l = 27;
 }
 
 message PvMO {
@@ -96,11 +114,47 @@ message PvMO {
   optional int32 et = 6;
   optional int32 ed = 7;
   optional int32 code = 8;
+  optional int32 e_delta = 9;
+}
+
+message SysPowerFlowMO {
+  optional int32 pv = 1;
+  optional int32 grid = 2;
+  optional int32 load = 3;
+  optional int32 sp = 4;
+  optional int32 plug = 5;
+}
+
+message ShellyParamMO {
+  optional int64 sn = 1;
+  optional int32 sts = 2;
+  optional int32 f = 3;
+  optional int32 etc = 4;
+  optional int32 etf = 5;
+  optional int32 rssi = 6;
+}
+
+message ShellyPhaseMO {
+  optional int32 ph = 1;
+  optional int32 v = 2;
+  optional int32 i = 3;
+  optional int32 p = 4;
+}
+
+message ShellyMO {
+  optional ShellyParamMO param = 1;
+  repeated ShellyPhaseMO phase = 2;
+  optional int32 ch = 3;
+}
+
+message DrmCtlLogMO {
+  optional int32 drm_data = 1;
+  optional uint32 time = 2;
 }
 
 message RealReqDTO {
   optional bytes sn = 1;
-  optional int32 time = 2;
+  optional uint32 time = 2;
   optional int32 ap = 3;
   optional int32 cp = 4;
   optional int32 ver = 5;
@@ -110,8 +164,11 @@ message RealReqDTO {
   repeated SGSMO sgs_datas = 9;
   repeated TGSMO tgs_datas = 10;
   repeated PvMO pv_datas = 11;
-  optional uint64 dtu_p = 12;
-  optional uint64 dtu_ed = 13;
+  optional int32 role = 12;
+  repeated SysPowerFlowMO syspf_datas = 13;
+  repeated ShellyMO me = 14;
+  repeated ShellyMO plug = 15;
+  repeated DrmCtlLogMO drm = 16;
 }
 
 message RealResDTO {
@@ -119,5 +176,6 @@ message RealResDTO {
   optional int32 cp = 2;
   optional int32 err_code = 3;
   optional int32 oft = 4;
-  optional int32 time = 5;
+  optional uint32 time = 5;
+  optional int64 mi_sn = 6;
 }
