@@ -56,6 +56,6 @@ If you find any bugs, errors or something else, feel free to create an Issue, ma
 
 A special thank you for the inspiration and other Information sources:
 
-- [suaveolent](https://github.com/suaveolent): [hoymiles-wifi](https://github.com/suaveolent/hoymiles-wifi) & [ha-hoymiles-wifi](ha-hoymiles-wifi) (direct communication with DTUs)
+- [suaveolent](https://github.com/suaveolent): [hoymiles-wifi](https://github.com/suaveolent/hoymiles-wifi) & [ha-hoymiles-wifi](https://github.com/suaveolent/ha-hoymiles-wifi) (direct communication with DTUs)
 - [DennisOSRM](https://github.com/DennisOSRM): [hms-mqtt-publisher](https://github.com/DennisOSRM/hms-mqtt-publisher) (direct communication with DTUs)
 - [tbnobody](https://github.com/tbnobody): [OpenDTU](https://github.com/tbnobody/OpenDTU) (open source DTU replacement)
