@@ -10,7 +10,7 @@ from datetime import datetime
 from google.protobuf import symbol_database
 from google.protobuf import json_format
 
-from protobuf import (AppAUGetHistED_pb2,AppAUGetHistPower_pb2,AppFWOTA_pb2,APPGetConfig_pb2,AppGetDevList_pb2,AppGetHistED_pb2,AppGetHistPower_pb2,APPHeartbeatPB_pb2,APPInfomationData_pb2,APPNetworkInfo_pb2,APPSetConfig_pb2,AUDspCmdSet_pb2,AUInfo_pb2,AURealData_pb2,AutoSearch_pb2,CommandPB_pb2,CommCmd_pb2,CommDevCfg_pb2,DevConfig_pb2,DevConfigSMLPE_pb2,ESDataPB_pb2,GetConfig_pb2,GPSTData_pb2,GWGetConfig_pb2,GWHeartbeat_pb2,GWInfo_pb2,GWMemRW_pb2,GWNetInfo_pb2,GWSetConfig_pb2,HeartbeatSMLPE_pb2,HPCS_Information_pb2,LocalFWOTA_pb2,NetworkInfo_pb2,PV_Inv_Curve_pb2,PV_Inv_Information_pb2,PV_Inv_RT_Data_pb2,RealData_pb2,RealDataNew_pb2,SetConfig_pb2,Shelly_pb2,SMLPEInfo_pb2,SMLPERTData_pb2,SMLPEState_pb2,WarnData_pb2,)
+from protobuf import (AppAUGetHistED_pb2,AppAUGetHistPower_pb2,AppFWOTA_pb2,APPGetConfig_pb2,AppGetDevList_pb2,AppGetHistED_pb2,AppGetHistPower_pb2,APPHeartbeatPB_pb2,APPInfomationData_pb2,APPNetworkInfo_pb2,APPSetConfig_pb2,AUDspCmdSet_pb2,AUInfo_pb2,AURealData_pb2,AutoSearch_pb2,CmdSMLPE_pb2,CommandPB_pb2,CommCmd_pb2,CommDevCfg_pb2,DevConfig_pb2,DevConfigSMLPE_pb2,ESDataPB_pb2,GetConfig_pb2,GPSTData_pb2,GWGetConfig_pb2,GWHeartbeat_pb2,GWInfo_pb2,GWMemRW_pb2,GWNetInfo_pb2,GWSetConfig_pb2,HeartbeatSMLPE_pb2,HPCS_Information_pb2,LocalFWOTA_pb2,NetworkInfo_pb2,PV_Inv_Curve_pb2,PV_Inv_Information_pb2,PV_Inv_RT_Data_pb2,RealData_pb2,RealDataNew_pb2,SetConfig_pb2,Shelly_pb2,WarnData_pb2,)
 
 commands = {
     0x2201: 'APPInfoDataReqDTO', 0x2301: 'APPInfoDataResDTO',
@@ -65,6 +65,7 @@ commands = {
     0xA21C: 'FWInfoReqDTO', 0xA31C: 'FWInfoResDTO',
     0xA21D: 'FWOTAReqDTO', 0xA31D: 'FWOTAResDTO',
     0xA223: 'AppGetDevListReq', 0xA323: 'AppGetDevListRes',
+    # 0xDA01: 'CmdSmlpeReqDTO', 0xDB01: 'CmdSmlpeResDTO',
     0xDA01: 'GWInfoReqDTO', 0xDB01: 'GWInfoResDTO',
     # 0xDA01: 'ReadHRegReqDTO', 0xDB01: 'ReadHRegResDTO',
     # 0xDA01: 'ESDataReqDTO', 0xDB01: 'ESDataResDTO',
@@ -85,11 +86,8 @@ commands = {
     0xDA0B: 'LocalUpgRateReqDTO', 0xDB0B: 'LocalUpgRateResDTO',
     0xDA0D: 'ShellyManuDetectReq', 0xDB0D: 'ShellyManuDetectRes',
     0xDAFB: 'MemReadReqDTO', 0xDBFB: 'MemReadResDTO',
-    # 0xDAFC: 'DTLStateReqDTO', 0xDBFC: 'DTLStateResDTO',
-    # 0xDAFC: 'DTLReqDTO', 0xDBFC: 'DTLResDTO',
     0xDAFC: 'MemWriteReqDTO', 0xDBFC: 'MemWriteResDTO',
     # 0xDAFC: 'WriteHRegReqDTO', 0xDBFC: 'WriteHRegResDTO',
-    # 0xDAFC: 'InfoReqDTO', 0xDBFC: 'InfoResDTO',
     # 0xDAFC: 'GWSetConfigReq', 0xDBFC: 'GWSetConfigRes',
     # 0xDAFE: 'GWGetConfigReq', 0xDBFE: 'GWGetConfigRes',
     0xDAFE: 'CommDevCfgFetchReqDTO', 0xDBFE: 'CommDevCfgFetchResDTO',

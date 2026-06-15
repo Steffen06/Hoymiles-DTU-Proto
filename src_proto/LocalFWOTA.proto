@@ -5,6 +5,7 @@ message LocalUpgInfoResDTO {
   optional int32 total_size = 2;
   optional int32 dev_type = 3;
   optional int32 crc = 4;
+  optional int64 sn = 5;
 }
 
 message LocalUpgInfoReqDTO {
